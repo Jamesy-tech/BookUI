@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>BookUI+ V1.0</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="icon" href="icon.png">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,200..1000;1,200..1000&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="popup.css">
+
+</head>
+<body>
+
+<nav>
+  <div class="logo">BookUI+ V1.0</div>
+  <ul>
+  
+    <li class="dropdown">
+      <a>Credits</a>
+      <div class="dropdown-content">
+        <a target="_blank" href="https://www.youtube.com/@jamesydeveloper">@JamesyDeveloper (YouTube)</a>
+        <a target="_blank" href="https://www.roblox.com/users/4624140937/profile">@JamesyDeveloper (Roblox)</a>
+         <a target="_blank" href="https://github.com/Jamesy-tech">@Jamesy-tech (GitHub)</a>
+      </div>
+    </li>
+ 
+
+        <li class="dropdown">
+      <a>Help</a>
+      <div class="dropdown-content">
+        <a href="https://github.com/Jamesy-tech/BookUI">GitHub Repository</a>
+        <a href="https://github.com/Jamesy-tech/BookUI/blob/main/README.md">Documentation</a>
+      </div>
+    </li>
+
+  </ul>
+</nav>
+
+<div class="body">
+  <div class="command-panel">
+
+    <div class="card" data-command="document.designMode = 'on';"><h3>Edit</h3><p>Temporary edit the current page you are on.</p></div>
+     <div class="card" data-command='(function(){  const keys = Object.keys(localStorage);  const action = prompt("Choose action: view / set / remove / clear", "view");  if (action === "view") {    let choice = prompt("Choose a key:\n" + keys.join("\n"));    if (choice && localStorage.getItem(choice) !== null) {      alert(choice + " = " + localStorage.getItem(choice));    } else {      alert("Key not found.");    }  }  else if (action === "set") {    let choice = prompt("Choose existing key or type new:\n" + keys.join("\n"));    if (choice) {      let value = prompt("Value for " + choice + "?", localStorage.getItem(choice) || "");      localStorage.setItem(choice, value);      alert("Saved " + choice + "=" + value);    }  }  else if (action === "remove") {    let choice = prompt("Choose key to remove:\n" + keys.join("\n"));    if (choice && localStorage.getItem(choice) !== null) {      localStorage.removeItem(choice);      alert("Removed " + choice);    } else {      alert("Key not found.");    }  }  else if (action === "clear") {    if (confirm("Clear ALL localStorage?")) {      localStorage.clear();      alert("All cleared");    }  }  else {    alert("Unknown action.");  }})();'><h3>LocalStorage</h3><p>Edit, view, remove or clear the LocalStorage of the current page you are on.</p></div>
+    <div class="card" data-command="print()"><h3>Print</h3><p>Print the current page you are on.</p></div>
+     <div class="card" data-command="alert(document.cookie)"><h3>Cookies</h3><p>View the cookies of the current page you are on.</p></div>
+      <div class="card" data-command="alert(document.body.innerText.split(/\s+/).length);"><h3>Word Count</h3><p>Show the amount of words that are on the current page.</p></div>
+
+   <div class="card" data-command="document.execCommand('undo');">
+  <h3>Undo</h3>
+  <p>Revert your last change and restore the previous state.</p>
+</div>
+
+<div class="card" data-command="document.execCommand('redo');">
+  <h3>Redo</h3>
+  <p>Reapply the action you just undid to continue editing.</p>
+</div>
+
+<div class="card" data-command="(function(){const t=prompt('Clicks per second? (Max 200)','10');if(!t)return;const c=Math.min(200,Math.max(0,Number(t)));if(!c||isNaN(c)){alert('Invalid number');return}const i=1000/c;if(window.__autoclicker&&window.__autoclicker.running){window.__autoclicker.running=false;return}window.__autoclicker={running:true,lastX:0,lastY:0,target:document.elementFromPoint(window.innerWidth/2,window.innerHeight/2)};function m(e){window.__autoclicker.lastX=e.clientX;window.__autoclicker.lastY=e.clientY;window.__autoclicker.target=e.target}function k(e){if(e.key==='Escape'){window.__autoclicker.running=false}}window.addEventListener('mousemove',m);window.addEventListener('keydown',k);let l=performance.now(),a=0;function tick(n){a+=n-l;l=n;while(a>=i&&window.__autoclicker.running){try{const el=window.__autoclicker.target||document.elementFromPoint(window.__autoclicker.lastX||window.innerWidth/2,window.__autoclicker.lastY||window.innerHeight/2);if(el&&typeof el.click==='function')el.click()}catch{}a-=i}if(window.__autoclicker.running)requestAnimationFrame(tick);else{window.removeEventListener('mousemove',m);window.removeEventListener('keydown',k);delete window.__autoclicker;alert('Auto-clicker stopped')}}requestAnimationFrame(tick);alert('Auto-clicker started — move mouse to pick target element. Run again or press ESC to stop.')})()"><h3>Auto-Clicker</h3><p>Click repeatedly at set CPS. Press ESC to stop.</p></div>
+
+  </div>
+</div>
+
+<div class="command-input-container">
+  <input class="command-input" type="text" placeholder="Enter command and press Enter...">
+</div>
+<script src="popup.js"></script>
+
+</body>
+</html>
