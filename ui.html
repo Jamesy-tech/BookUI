@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>BookUI+ V1.0</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,200..1000;1,200..1000&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+
+<style>
+  body {
+    margin: 0;
+    font-family: 'Mulish', 'Roboto', sans-serif;
+    background-color: #0a0a0a;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+  }
+
+  nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: #101010;
+    padding: 12px 28px;
+    border-bottom: 2px solid #007bff;
+    flex-shrink: 0;
+  }
+
+  .logo {
+    font-size: 1.4rem;
+    font-weight: 700;
+    color: #007bff;
+    letter-spacing: 1px;
+  }
+
+  ul {
+    list-style: none;
+    display: flex;
+    gap: 24px;
+    margin: 0;
+    padding: 0;
+  }
+
+  li {
+    position: relative;
+    cursor: pointer;
+  }
+
+  a {
+    text-decoration: none;
+    color: #ccc;
+    font-weight: 500;
+    transition: 0.2s ease;
+  }
+
+  a:hover {
+    color: #007bff;
+  }
+
+  a::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -4px;
+    width: 0%;
+    height: 2px;
+    background-color: #007bff;
+    transition: width 0.3s ease;
+  }
+
+  a:hover::after {
+    width: 100%;
+  }
+
+  .dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #141414;
+    min-width: 160px;
+    top: 35px;
+    left: 0;
+    border: 1px solid #007bff;
+    border-radius: 4px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.5);
+    z-index: 1;
+  }
+
+  .dropdown-content a {
+    display: block;
+    padding: 10px 16px;
+    color: #ccc;
+  }
+
+  .dropdown-content a:hover {
+    background-color: #0d0d0d;
+    color: #007bff;
+  }
+
+  .dropdown.open .dropdown-content {
+    display: block;
+  }
+
+  .body {
+    flex: 1;
+    overflow-y: auto;
+    padding: 20px;
+  }
+
+  .command-panel {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px;
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+
+  .card {
+    background-color: #141414;
+    border: 1px solid #007bff;
+    border-radius: 8px;
+    padding: 20px;
+    transition: transform 0.2s, background-color 0.2s;
+    cursor: pointer;
+    height: auto; /* Cards don't stretch to full height */
+  }
+
+  .card:hover {
+    background-color: #1a1a1a;
+  }
+
+  .card h3 {
+    margin: 0 0 10px;
+    color: #007bff;
+  }
+
+  .card p {
+    margin: 0;
+    color: #ccc;
+    font-size: 0.95rem;
+  }
+
+  .command-input-container {
+    display: flex;
+    border-top: 2px solid #007bff;
+    padding: 12px 20px;
+    background-color: #101010;
+    flex-shrink: 0;
+  }
+
+  .command-input {
+    flex: 1;
+    padding: 10px 14px;
+    border-radius: 6px;
+    border: 1px solid #007bff;
+    background-color: #141414;
+    color: white;
+    font-family:monospace;
+    font-size: 0.9rem;
+    outline: none;
+  }
+
+  .command-input::placeholder {
+    color: #888;
+  }
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="logo">BookUI+ V1.0</div>
+  <ul>
+    <li class="dropdown">
+      <a>File</a>
+      <div class="dropdown-content">
+        <a href="#">New Project</a>
+        <a href="#">Open</a>
+        <a href="#">Save</a>
+      </div>
+    </li>
+    <li class="dropdown">
+      <a>Edit</a>
+      <div class="dropdown-content">
+        <a href="#">Undo</a>
+        <a href="#">Redo</a>
+        <a href="#">Preferences</a>
+      </div>
+    </li>
+    <li class="dropdown">
+      <a>View</a>
+      <div class="dropdown-content">
+        <a href="#">Timeline</a>
+        <a href="#">Explorer</a>
+        <a href="#">Properties</a>
+      </div>
+    </li>
+
+        <li class="dropdown">
+      <a>Help</a>
+      <div class="dropdown-content">
+        <a href="#">Timeline</a>
+        <a href="#">Explorer</a>
+        <a href="#">Properties</a>
+      </div>
+    </li>
+
+  </ul>
+</nav>
+
+<div class="body">
+  <div class="command-panel">
+
+    <div class="card" data-command="document.designMode = 'on';"><h3>Edit</h3><p>Temporary edit the current page you are on.</p></div>
+     <div class="card" data-command='(function(){  const keys = Object.keys(localStorage);  const action = prompt("Choose action: view / set / remove / clear", "view");  if (action === "view") {    let choice = prompt("Choose a key:\n" + keys.join("\n"));    if (choice && localStorage.getItem(choice) !== null) {      alert(choice + " = " + localStorage.getItem(choice));    } else {      alert("Key not found.");    }  }  else if (action === "set") {    let choice = prompt("Choose existing key or type new:\n" + keys.join("\n"));    if (choice) {      let value = prompt("Value for " + choice + "?", localStorage.getItem(choice) || "");      localStorage.setItem(choice, value);      alert("Saved " + choice + "=" + value);    }  }  else if (action === "remove") {    let choice = prompt("Choose key to remove:\n" + keys.join("\n"));    if (choice && localStorage.getItem(choice) !== null) {      localStorage.removeItem(choice);      alert("Removed " + choice);    } else {      alert("Key not found.");    }  }  else if (action === "clear") {    if (confirm("Clear ALL localStorage?")) {      localStorage.clear();      alert("All cleared");    }  }  else {    alert("Unknown action.");  }})();'><h3>LocalStorage</h3><p>Edit, view, remove or clear the LocalStorage of the current page you are on.</p></div>
+    <div class="card" data-command="print()"><h3>Print</h3><p>Print the current page you are on.</p></div>
+     <div class="card" data-command="alert(document.cookie)"><h3>Cookies</h3><p>View the cookies of the current page you are on.</p></div>
+      <div class="card" data-command="alert(document.body.innerText.split(/\s+/).length);"><h3>Word Count</h3><p>Show the amount of words that are on the current page.</p></div>
+
+   <div class="card" data-command="document.execCommand('undo');">
+  <h3>Undo</h3>
+  <p>Revert your last change and restore the previous state.</p>
+</div>
+
+<div class="card" data-command="document.execCommand('redo');">
+  <h3>Redo</h3>
+  <p>Reapply the action you just undid to continue editing.</p>
+</div>
+
+<div class="card" data-command="(function(){const t=prompt('Clicks per second? (Max 200)','10');if(!t)return;const c=Math.min(200,Math.max(0,Number(t)));if(!c||isNaN(c)){alert('Invalid number');return}const i=1000/c;if(window.__autoclicker&&window.__autoclicker.running){window.__autoclicker.running=false;return}window.__autoclicker={running:true,lastX:0,lastY:0,target:document.elementFromPoint(window.innerWidth/2,window.innerHeight/2)};function m(e){window.__autoclicker.lastX=e.clientX;window.__autoclicker.lastY=e.clientY;window.__autoclicker.target=e.target}function k(e){if(e.key==='Escape'){window.__autoclicker.running=false}}window.addEventListener('mousemove',m);window.addEventListener('keydown',k);let l=performance.now(),a=0;function tick(n){a+=n-l;l=n;while(a>=i&&window.__autoclicker.running){try{const el=window.__autoclicker.target||document.elementFromPoint(window.__autoclicker.lastX||window.innerWidth/2,window.__autoclicker.lastY||window.innerHeight/2);if(el&&typeof el.click==='function')el.click()}catch{}a-=i}if(window.__autoclicker.running)requestAnimationFrame(tick);else{window.removeEventListener('mousemove',m);window.removeEventListener('keydown',k);delete window.__autoclicker;alert('Auto-clicker stopped')}}requestAnimationFrame(tick);alert('Auto-clicker started — move mouse to pick target element. Run again or press ESC to stop.')})()"><h3>Auto-Clicker</h3><p>Click repeatedly at set CPS. Press ESC to stop.</p></div>
+
+  </div>
+</div>
+
+<div class="command-input-container">
+  <input class="command-input" type="text" placeholder="Enter command and press Enter...">
+</div>
+
+<script>
+const input = document.querySelector('.command-input');
+
+document.querySelectorAll('.dropdown > a').forEach(btn => {
+  btn.addEventListener('click', e => {
+    e.preventDefault();
+    const parent = btn.parentElement;
+    const isOpen = parent.classList.contains('open');
+    document.querySelectorAll('.dropdown').forEach(d => d.classList.remove('open'));
+    if (!isOpen) {
+      parent.classList.add('open');
+      const dropdown = parent.querySelector('.dropdown-content');
+      dropdown.style.left = '0';
+      dropdown.style.right = 'auto';
+      const rect = dropdown.getBoundingClientRect();
+      if (rect.right > window.innerWidth) {
+        dropdown.style.left = 'auto';
+        dropdown.style.right = '0';
+      }
+    }
+  });
+});
+
+document.addEventListener('click', e => {
+  if (!e.target.closest('.dropdown')) {
+    document.querySelectorAll('.dropdown').forEach(d => d.classList.remove('open'));
+  }
+});
+
+document.querySelectorAll('.card').forEach(card => {
+  card.addEventListener('click', () => {
+    input.value = card.getAttribute('data-command');
+    input.focus();
+  });
+});
+
+input.addEventListener('keydown', e => {
+  if (e.key === 'Enter') {
+    try {
+      window.top.eval(input.value);
+    } catch {}
+  //  input.value = '';
+  }
+});
+</script>
+
+
+</body>
+</html>
