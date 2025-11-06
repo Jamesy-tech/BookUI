@@ -1,11 +1,11 @@
-const input = document.querySelector('.command-input');
+const input = document.querySelector('.commandInputT5');
 
-document.querySelectorAll('.dropdown > a').forEach(btn => {
+document.querySelectorAll('.dropdownR8 > .linkV1').forEach(btn => {
   btn.addEventListener('click', e => {
     e.preventDefault();
     const parent = btn.parentElement;
     const isOpen = parent.classList.contains('open');
-    document.querySelectorAll('.dropdown').forEach(d => d.classList.remove('open'));
+    document.querySelectorAll('.dropdownR8').forEach(d => d.classList.remove('open'));
     if (!isOpen) {
       parent.classList.add('open');
       const dropdown = parent.querySelector('.dropdown-content');
@@ -21,12 +21,12 @@ document.querySelectorAll('.dropdown > a').forEach(btn => {
 });
 
 document.addEventListener('click', e => {
-  if (!e.target.closest('.dropdown')) {
-    document.querySelectorAll('.dropdown').forEach(d => d.classList.remove('open'));
+  if (!e.target.closest('.dropdownR8')) {
+    document.querySelectorAll('.dropdownR8').forEach(d => d.classList.remove('open'));
   }
 });
 
-document.querySelectorAll('.card').forEach(card => {
+document.querySelectorAll('.cardB9').forEach(card => {
   card.addEventListener('click', () => {
     input.value = card.getAttribute('data-command');
     input.focus();
@@ -38,6 +38,5 @@ input.addEventListener('keydown', e => {
     try {
       window.top.eval(input.value);
     } catch {}
-  //  input.value = '';
   }
 });
