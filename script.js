@@ -1,27 +1,37 @@
 const input = document.querySelector('.commandInputT5');
 
 const data = {
-  "name": "BookUI+",
-  "version": "V1.2"
+  name: "BookUI+",
+  version: "V1.2"
 };
 document.title = `${data.name} ${data.version}`;
-document.getElementById("nameElementR4").textContent =  `${data.name} ${data.version}`;
+document.getElementById("nameElementR4").textContent = `${data.name} ${data.version}`;
 
 document.querySelectorAll('.dropdownR8 > .linkV1').forEach(btn => {
   btn.addEventListener('click', e => {
     e.preventDefault();
     const parent = btn.parentElement;
+    const dropdown = parent.querySelector('.dropdownContentL4');
     const isOpen = parent.classList.contains('open');
+
     document.querySelectorAll('.dropdownR8').forEach(d => d.classList.remove('open'));
+
     if (!isOpen) {
       parent.classList.add('open');
-      const dropdown = parent.querySelector('.dropdown-content');
+
       dropdown.style.left = '0';
       dropdown.style.right = 'auto';
+      dropdown.style.top = '35px';
+      dropdown.style.bottom = 'auto';
+
       const rect = dropdown.getBoundingClientRect();
       if (rect.right > window.innerWidth) {
         dropdown.style.left = 'auto';
         dropdown.style.right = '0';
+      }
+      if (rect.bottom > window.innerHeight) {
+        dropdown.style.top = 'auto';
+        dropdown.style.bottom = '100%';
       }
     }
   });
