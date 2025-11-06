@@ -2,7 +2,7 @@
   "manifest_version": 3,
   "name": "BookUI+ V1.0",
   "version": "1.0",
-  "description": "A set of handy web commands and tools.",
+  "description": "Excute useful scripts into websites.",
   "permissions": ["activeTab", "scripting", "storage"],
   "host_permissions": ["<all_urls>"],
   "action": {
