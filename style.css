@@ -70,6 +70,7 @@ body.theme-morning-glow {
     background-color: var(--background-color);
     color: var(--text-color);
     font-family: 'Inter', 'Mulish' !important;
+    text-decoration: none;
 }
 
 .navbarX9 {
