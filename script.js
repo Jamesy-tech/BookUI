@@ -7,6 +7,20 @@ const data = {
 document.title = `${data.name} ${data.version}`;
 document.getElementById("nameElementR4").textContent = `${data.name} ${data.version}`;
 
+var originalColor = input.style.borderColor
+
+function switchTheme(theme) {
+    document.body.classList.forEach(cls => {
+        if (cls.startsWith('theme-')) {
+            document.body.classList.remove(cls);
+        }
+    });
+
+    if (theme) {
+        document.body.classList.add(`theme-${theme}`);
+    }
+}
+
 document.querySelectorAll('.dropdownR8 > .linkV1').forEach(btn => {
   btn.addEventListener('click', e => {
     e.preventDefault();
@@ -52,8 +66,34 @@ document.querySelectorAll('.cardB9').forEach(card => {
 
 input.addEventListener('keydown', e => {
   if (e.key === 'Enter') {
+    input.style.borderColor = "red";
+        setTimeout(function() {
+ input.style.borderColor = originalColor;
+}, 100);
     try {
       window.top.eval(input.value);
+      input.style.borderColor = 'lime';
     } catch {}
   }
 });
+
+input.focus();
+
+function switchTheme(theme) {
+    if (theme === "loadTheme") {
+        const saved = localStorage.getItem("theme")
+        if (saved) switchTheme(saved)
+        return
+    }
+    document.body.classList.forEach(cls => {
+        if (cls.startsWith("theme-")) document.body.classList.remove(cls)
+    })
+    if (theme) {
+        document.body.classList.add(`theme-${theme}`)
+        localStorage.setItem("theme", theme)
+    } else {
+        localStorage.removeItem("theme")
+    }
+}
+
+window.addEventListener("DOMContentLoaded", () => switchTheme("loadTheme"))
