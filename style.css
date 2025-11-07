@@ -150,7 +150,7 @@ body.theme-morning-glow {
     padding: 10px 16px;
     cursor:pointer;
     font-family: 'Inter', 'Mulish' !important;
-    text-decoration: none;
+    text-decoration: none !important;
     color: var(--muted-text);
 }
 
