@@ -109,6 +109,7 @@ body.theme-morning-glow {
     font-weight: 500;
     transition: 0.2s ease;
     cursor: pointer;
+    font-family: 'Inter', 'Mulish' !important;
 }
 
 .linkV1:hover {
@@ -147,6 +148,7 @@ body.theme-morning-glow {
     display: block;
     padding: 10px 16px;
     cursor:pointer;
+    font-family: 'Inter', 'Mulish' !important;
     text-decoration: none;
     color: var(--muted-text);
 }
@@ -193,6 +195,7 @@ body.theme-morning-glow {
     transition: transform 0.2s, background-color 0.2s;
     cursor: pointer;
     height: auto;
+    font-family: 'Inter', 'Mulish' !important;
 }
 
 .cardB9:hover {
