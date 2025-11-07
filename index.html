@@ -177,6 +177,36 @@
   <p>Fill form fields with random text depending on what type of input element it is.</p>
 </div>
 
+<div class="cardB9" data-command="(function(){const txt=prompt('Enter new document title:');if(txt)document.title=txt;})()">
+  <h3>Change Title</h3>
+  <p>Set a custom page title temporarily.</p>
+</div>
+
+<div class="cardB9" data-command="(function(){const elems=prompt('Enter CSS selector to log elements to console:','*');if(elems)console.log(document.querySelectorAll(elems));alert('Elements logged to console.');})()">
+  <h3>Log Elements</h3>
+  <p>Inspect selected elements in the console.</p>
+</div>
+
+<div class="cardB9" data-command="(function(){document.querySelectorAll('*').forEach(el=>el.setAttribute('data-debug','true'));alert('Debug attributes added.');})()">
+  <h3>Debug Attributes</h3>
+  <p>Mark all elements for inspection in DevTools.</p>
+</div>
+
+<div class="cardB9" data-command="(function(){const css=prompt('Enter custom CSS to inject:','body{border:5px solid red}');if(css){let s=document.createElement('style');s.textContent=css;document.head.appendChild(s);alert('CSS applied!');}})()">
+  <h3>Inject CSS</h3>
+  <p>Add custom CSS to the page instantly.</p>
+</div>
+
+<div class="cardB9" data-command="(function(){const html=prompt('Enter HTML to inject:','<div style=&quot;color:red;font-size:24px&quot;>Hello World!</div>');if(html){const container=document.createElement('div');container.innerHTML=html;document.body.appendChild(container);alert('HTML injected!');}})()">
+  <h3>Inject HTML</h3>
+  <p>Add any HTML snippet to the page instantly.</p>
+</div>
+
+<div class="cardB9" data-command="(function(){const el=prompt('Enter CSS selector to show again:');if(el)document.querySelectorAll(el).forEach(e=>e.style.display='');})()">
+  <h3>Show Elements</h3>
+  <p>Reveal elements hidden on the page.</p>
+</div>
+
   </div>
 </div>
 
@@ -187,4 +217,4 @@
 <script src="script.js"></script>
 
 </body>
-</html>
+</html>l>
