@@ -65,7 +65,7 @@ body.theme-morning-glow {
 
 .bodyA9 {
     margin: 0;
-    font-family: 'Mulish', 'Roboto', sans-serif;
+    font-family: 'Inter', 'Mulish' !important;
     background-color: var(--background-color);
     color: var(--text-color);
     display: flex;
