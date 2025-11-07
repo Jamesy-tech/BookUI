@@ -130,10 +130,10 @@
       <p>Turn the entire page black and white.</p>
     </div>
 
-    <div class="cardB9" data-command="(function(){const url=prompt('Replace all images with image URL:','https://placekitten.com/400/300');if(!url)return;document.querySelectorAll('img').forEach(img=>{img.dataset._orig=img.src;img.src=url});alert('All images replaced. Original URLs saved in data-_orig on each image.');})()">
+  <!--  <div class="cardB9" data-command="(function(){const url=prompt('Replace all images with image URL:','https://placekitten.com/400/300');if(!url)return;document.querySelectorAll('img').forEach(img=>{img.dataset._orig=img.src;img.src=url});alert('All images replaced. Original URLs saved in data-_orig on each image.');})()">
       <h3>Replace Images</h3>
       <p>Replace every &lt;img&gt; src on the page with a URL you provide (original saved in data-_orig).</p>
-    </div>
+    </div> -->
 
     <div class="cardB9" data-command="(function(){const from=prompt('Text to find:');if(from===null)return;const to=prompt('Replace with:','');if(to===null)return;const walker=document.createTreeWalker(document.body,NodeFilter.SHOW_TEXT);let n;let count=0;while(n=walker.nextNode()){if(n.nodeValue.includes(from)){n.nodeValue=n.nodeValue.split(from).join(to);count++}}alert('Replaced occurrences in '+count+' text nodes.');})()">
       <h3>Find & Replace</h3>
@@ -145,25 +145,26 @@
       <p>Add a dismissible banner at the top of the current page.</p>
     </div>
 
-    <div class="cardB9" data-command="(function(){const speed=prompt('Auto scroll speed (px per 50ms). Use negative to scroll up','20');if(speed===null)return;let s=Number(speed)||0;if(window.__autoscrollId){clearInterval(window.__autoscrollId);delete window.__autoscrollId;alert('Auto-scroll stopped');return}window.__autoscrollId=setInterval(()=>window.scrollBy(0,s),50);alert('Auto-scroll started — click this card again to stop.');})()">
+   <!-- <div class="cardB9" data-command="(function(){const speed=prompt('Auto scroll speed (px per 50ms). Use negative to scroll up','20');if(speed===null)return;let s=Number(speed)||0;if(window.__autoscrollId){clearInterval(window.__autoscrollId);delete window.__autoscrollId;alert('Auto-scroll stopped');return}window.__autoscrollId=setInterval(()=>window.scrollBy(0,s),50);alert('Auto-scroll started — click this card again to stop.');})()">
       <h3>Auto Scroll</h3>
       <p>Start/stop a gentle auto-scroll; useful for long pages.</p>
-    </div>
-
+    </div> -->
+ 
     <div class="cardB9" data-command="(function(){if(window.__origFetch) {window.fetch=window.__origFetch;delete window.__origFetch;alert('Fetch restored');return}window.__origFetch=window.fetch;window.fetch=function(){console.log('fetch called with',arguments);return window.__origFetch.apply(this,arguments)};alert('fetch is now being logged to console.')})()">
       <h3>Log Fetch</h3>
       <p>Temporarily monkeypatch fetch to log requests in the console.</p>
     </div>
 
-    <div class="cardB9" data-command="(function(){const imgs=Array.from(document.images).map(i=>i.src);if(!imgs.length){alert('No images to list');return}const list=imgs.join('\\n');const w=window.open('about:blank','_blank');w.document.write('<pre>'+list.replace(/&/g,'&amp;')+'</pre>');w.document.title='Image URLs';})()">
+  <!--  <div class="cardB9" data-command="(function(){const imgs=Array.from(document.images).map(i=>i.src);if(!imgs.length){alert('No images to list');return}const list=imgs.join('\\n');const w=window.open('about:blank','_blank');w.document.write('<pre>'+list.replace(/&/g,'&amp;')+'</pre>');w.document.title='Image URLs';})()">
       <h3>List Image URLs</h3>
       <p>Open a new tab listing every image URL on the page.</p>
-    </div>
+    </div> -->
 
-    <div class="cardB9" data-command="(function(){const forms=document.querySelectorAll('form');if(!forms.length){alert('No forms found');return}forms.forEach(f=>{f.querySelectorAll('input,textarea,select').forEach(el=>{if(el.type==='email')el.value='user@example.com';else if(el.type==='tel')el.value='0123456789';else if(el.type==='password')el.value='Password123!';else if(el.tagName.toLowerCase()==='select')el.selectedIndex=1;else el.value=el.value||'lorem ipsum';})});alert('Filled forms with dummy data.');})()">
+  
+ <!--   <div class="cardB9" data-command="(function(){const forms=document.querySelectorAll('form');if(!forms.length){alert('No forms found');return}forms.forEach(f=>{f.querySelectorAll('input,textarea,select').forEach(el=>{if(el.type==='email')el.value='user@example.com';else if(el.type==='tel')el.value='0123456789';else if(el.type==='password')el.value='Password123!';else if(el.tagName.toLowerCase()==='select')el.selectedIndex=1;else el.value=el.value||'lorem ipsum';})});alert('Filled forms with dummy data.');})()">
       <h3>Auto-Fill Forms</h3>
       <p>Fill form fields with random text depending on type.</p>
-    </div>
+    </div> -->
 
     <div class="cardB9" data-command="(function(){const txt=prompt('Enter new document title:');if(txt)document.title=txt;})()">
       <h3>Change Title</h3>
