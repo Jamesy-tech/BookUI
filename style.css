@@ -211,7 +211,7 @@ body.theme-morning-glow {
 .cardB9 p {
     margin: 0;
     color: var(--muted-text);
-    font-size: 0.95rem;
+    font-size: 0.95rem !important;
 }
 
 .inputContainerF1 {
@@ -230,7 +230,7 @@ body.theme-morning-glow {
     background-color: var(--panel-color);
     color: var(--text-color);
     font-family: monospace;
-    font-size: 0.9rem;
+    font-size: 0.9rem !important;
     outline: none;
 }
 
