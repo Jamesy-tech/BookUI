@@ -9,7 +9,7 @@
 <link rel="stylesheet" href="style.css">
 <link rel="icon" href="icon.png">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,200..1000;1,200..1000&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Mulish:ital,wght@0,200..1000;1,200..1000&family=Roboto:ital,wght@0,100..900;1,100..900&family=Rubik:ital,wght@0,300..900;1,300..900&family=Stack+Sans+Text:wght@200..700&display=swap" rel="stylesheet">
 
 </head>
 <body class="bodyA9">
@@ -100,11 +100,6 @@
       <p>Display the current browser window size.</p>
     </div>
 
-    <div class="cardB9" data-command="(function(){const s=prompt('Enter text to search:');if(s)window.find(s);})()">
-      <h3>Find Text</h3>
-      <p>Search for text on the current page manually.</p>
-    </div>
-
     <div class="cardB9" data-command="(function(){const s=prompt('Enter background color (e.g. red or #ff0000):');if(s)document.body.style.background=s;})()">
       <h3>Change Background</h3>
       <p>Temporarily change the background color of the page.</p>
@@ -113,11 +108,6 @@
     <div class="cardB9" data-command="(function(){let s=document.createElement('style');s.textContent='*{transition:all .2s ease!important;transform:rotate(180deg)!important;}';document.head.append(s);setTimeout(()=>s.remove(),2000);})();">
       <h3>Flip Page</h3>
       <p>Flip everything on the page upside down for 2 seconds.</p>
-    </div>
-
-    <div class="cardB9" data-command="(function(){const s=document.createElement('script');s.src='https://unpkg.com/particles.js';document.body.appendChild(s);alert('Particles.js added (if allowed).')})();">
-      <h3>Add Particles</h3>
-      <p>Load a particle animation library into the current page.</p>
     </div>
 
     <div class="cardB9" data-command="alert('You have '+(performance.memory?Math.round(performance.memory.usedJSHeapSize/1048576)+'MB used JS heap':'no memory API available'))">
