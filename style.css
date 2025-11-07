@@ -1,8 +1,73 @@
+
+:root {
+    --primary-color: #007bff;
+    --background-color: #0a0a0a;
+    --panel-color: #141414;
+    --text-color: #ffffff;
+    --muted-text: #ccc;
+}
+
+body.theme-purple {
+    --primary-color: #b388ff;
+    --background-color: #0a0a0a;
+    --panel-color: #141414;
+    --text-color: #ffffff;
+    --muted-text: #ccc;
+}
+
+body.theme-cyan {
+    --primary-color: #00e5ff;
+    --background-color: #0a0a0a;
+    --panel-color: #141414;
+    --text-color: #ffffff;
+    --muted-text: #ccc;
+}
+
+body.theme-pink {
+    --primary-color: #ff80ab;
+    --background-color: #0a0a0a;
+    --panel-color: #141414;
+    --text-color: #ffffff;
+    --muted-text: #ccc;
+}
+
+body.theme-orange {
+    --primary-color: #ff9100;
+    --background-color: #0a0a0a;
+    --panel-color: #141414;
+    --text-color: #ffffff;
+    --muted-text: #ccc;
+}
+
+body.theme-lime {
+    --primary-color: #c6ff00;
+    --background-color: #0a0a0a;
+    --panel-color: #141414;
+    --text-color: #ffffff;
+    --muted-text: #ccc;
+}
+
+body.theme-red {
+    --primary-color: #ff4747;
+}
+
+body.theme-green {
+    --primary-color: #00c853;
+}
+
+body.theme-morning-glow {
+    --primary-color: #F9A825;
+    --background-color: #000000;
+    --panel-color: #0d0d0d;
+    --text-color: #ffffff;
+    --muted-text: #cccccc;
+}
+
 .bodyA9 {
     margin: 0;
     font-family: 'Mulish', 'Roboto', sans-serif;
-    background-color: #0a0a0a;
-    color: white;
+    background-color: var(--background-color);
+    color: var(--text-color);
     display: flex;
     flex-direction: column;
     height: 100vh;
@@ -14,14 +79,14 @@
     justify-content: space-between;
     background-color: #101010;
     padding: 10px 28px;
-    border-bottom: 2px solid #007bff;
+    border-bottom: 2px solid var(--primary-color);
     flex-shrink: 0;
 }
 
 .brandQ3 {
     font-size: 1.4rem;
     font-weight: 700;
-    color: #007bff;
+    color: var(--primary-color);
     letter-spacing: 1px;
 }
 
@@ -40,14 +105,14 @@
 
 .linkV1 {
     text-decoration: none;
-    color: #ccc;
+    color: var(--muted-text);
     font-weight: 500;
     transition: 0.2s ease;
-    cursor:pointer;
+    cursor: pointer;
 }
 
 .linkV1:hover {
-    color: #007bff;
+    color: var(--primary-color);
 }
 
 .linkV1::after {
@@ -57,7 +122,7 @@
     bottom: -4px;
     width: 0%;
     height: 2px;
-    background-color: #007bff;
+    background-color: var(--primary-color);
     transition: width 0.3s ease;
 }
 
@@ -68,11 +133,11 @@
 .dropdownContentL4 {
     display: none;
     position: absolute;
-    background-color: #141414;
+    background-color: var(--panel-color);
     min-width: 160px;
     top: 35px;
     left: 0;
-    border: 1px solid #007bff;
+    border: 1px solid var(--primary-color);
     border-radius: 4px;
     box-shadow: 0 4px 8px rgba(0,0,0,0.5);
     z-index: 1;
@@ -81,13 +146,14 @@
 .dropdownContentL4 a {
     display: block;
     padding: 10px 16px;
-    text-decoration:none;
-    color: #ccc;
+    cursor:pointer;
+    text-decoration: none;
+    color: var(--muted-text);
 }
 
 .dropdownContentL4 a:hover {
     background-color: #0d0d0d;
-    color: #007bff;
+    color: var(--primary-color);
 }
 
 .dropdownR8.open .dropdownContentL4 {
@@ -119,8 +185,8 @@
 }
 
 .cardB9 {
-    background-color: #141414;
-    border: 1px solid #007bff;
+    background-color: var(--panel-color);
+    border: 1px solid var(--primary-color);
     border-radius: 8px;
     padding: 20px;
     transition: transform 0.2s, background-color 0.2s;
@@ -134,18 +200,18 @@
 
 .cardB9 h3 {
     margin: 0 0 10px;
-    color: #007bff;
+    color: var(--primary-color);
 }
 
 .cardB9 p {
     margin: 0;
-    color: #ccc;
+    color: var(--muted-text);
     font-size: 0.95rem;
 }
 
 .inputContainerF1 {
     display: flex;
-    border-top: 2px solid #007bff;
+    border-top: 2px solid var(--primary-color);
     padding: 12px 20px;
     background-color: #101010;
     flex-shrink: 0;
@@ -155,14 +221,14 @@
     flex: 1;
     padding: 10px 14px;
     border-radius: 6px;
-    border: 1px solid #007bff;
-    background-color: #141414;
-    color: white;
+    border: 1px solid var(--primary-color);
+    background-color: var(--panel-color);
+    color: var(--text-color);
     font-family: monospace;
     font-size: 0.9rem;
     outline: none;
 }
 
 .commandInputT5::placeholder {
-    color:white;
+    color: var(--text-color);
 }
