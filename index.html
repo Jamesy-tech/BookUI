@@ -1,210 +1,238 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>BookUI+</title>
 
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="stylesheet" href="style.css">
-<link rel="icon" href="icon.png">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Mulish:ital,wght@0,200..1000;1,200..1000&family=Roboto:ital,wght@0,100..900;1,100..900&family=Rubik:ital,wght@0,300..900;1,300..900&family=Stack+Sans+Text:wght@200..700&display=swap" rel="stylesheet">
+:root {
+    --primary-color: #007bff;
+    --background-color: #0a0a0a;
+    --panel-color: #141414;
+    --text-color: #ffffff;
+    --muted-text: #ccc;
+}
 
-</head>
-<body class="bodyA9">
+body.theme-purple {
+    --primary-color: #b388ff;
+    --background-color: #0a0a0a;
+    --panel-color: #141414;
+    --text-color: #ffffff;
+    --muted-text: #ccc;
+}
 
-<nav class="navbarX9">
-  <div class="brandQ3" id="nameElementR4">BookUI+</div>
-  <ul class="listM2">
-    <li class="dropdownR8">
-      <a class="linkV1">Theme</a>
-      <div class="dropdownContentL4">
-        <a onclick="switchTheme('blue')">Blue (Default)</a>
-        <a onclick="switchTheme('morning-glow')">Morning Glow</a>
-        <a onclick="switchTheme('red')">Red</a>
-        <a onclick="switchTheme('lime')">Lime</a>
-        <a onclick="switchTheme('green')">Green</a>
-        <a onclick="switchTheme('pink')">Pink</a>
-        <a onclick="switchTheme('cyan')">Cyan</a>
-      </div>
-    </li>
-    <li class="dropdownR8">
-      <a class="linkV1">Credits</a>
-      <div class="dropdownContentL4">
-        <a target="_blank" href="https://www.youtube.com/@jamesydeveloper">@JamesyDeveloper (YouTube)</a>
-        <a target="_blank" href="https://www.roblox.com/users/4624140937/profile">@JamesyDeveloper (Roblox)</a>
-        <a target="_blank" href="https://github.com/Jamesy-tech">@Jamesy-tech (GitHub)</a>
-      </div>
-    </li>
-    <li class="dropdownR8">
-      <a class="linkV1">Help</a>
-      <div class="dropdownContentL4">
-        <a href="https://github.com/Jamesy-tech/BookUI">GitHub Repository</a>
-        <a href="https://github.com/Jamesy-tech/BookUI/blob/main/README.md">Documentation</a>
-      </div>
-    </li>
-  </ul>
-</nav>
+body.theme-cyan {
+    --primary-color: #00e5ff;
+    --background-color: #0a0a0a;
+    --panel-color: #141414;
+    --text-color: #ffffff;
+    --muted-text: #ccc;
+}
 
-<div class="bodyY2">
-  <div class="panelC6">
+body.theme-pink {
+    --primary-color: #ff80ab;
+    --background-color: #0a0a0a;
+    --panel-color: #141414;
+    --text-color: #ffffff;
+    --muted-text: #ccc;
+}
 
-    <div class="cardB9" data-command="document.designMode = 'on';">
-      <h3>Edit</h3>
-      <p>Temporary edit the current page you are on.</p>
-    </div>
+body.theme-orange {
+    --primary-color: #ff9100;
+    --background-color: #0a0a0a;
+    --panel-color: #141414;
+    --text-color: #ffffff;
+    --muted-text: #ccc;
+}
 
-    <div class="cardB9" data-command='(function(){const keys=Object.keys(localStorage);const action=prompt("Choose action: view / set / remove / clear","view");if(action==="view"){let choice=prompt("Choose a key:\n"+keys.join("\n"));if(choice&&localStorage.getItem(choice)!==null){alert(choice+" = "+localStorage.getItem(choice));}else{alert("Key not found.");}}else if(action==="set"){let choice=prompt("Choose existing key or type new:\n"+keys.join("\n"));if(choice){let value=prompt("Value for "+choice+"?",localStorage.getItem(choice)||"");localStorage.setItem(choice,value);alert("Saved "+choice+"="+value);}}else if(action==="remove"){let choice=prompt("Choose key to remove:\n"+keys.join("\n"));if(choice&&localStorage.getItem(choice)!==null){localStorage.removeItem(choice);alert("Removed "+choice);}else{alert("Key not found.");}}else if(action==="clear"){if(confirm("Clear ALL localStorage?")){localStorage.clear();alert("All cleared");}}else{alert("Unknown action.");}})()'>
-      <h3>LocalStorage</h3>
-      <p>Edit, view, remove or clear the LocalStorage of the current page you are on.</p>
-    </div>
+body.theme-lime {
+    --primary-color: #c6ff00;
+    --background-color: #0a0a0a;
+    --panel-color: #141414;
+    --text-color: #ffffff;
+    --muted-text: #ccc;
+}
 
-    <div class="cardB9" data-command="print()">
-      <h3>Print</h3>
-      <p>Print the current page you are on.</p>
-    </div>
+body.theme-red {
+    --primary-color: #ff4747;
+}
 
-    <div class="cardB9" data-command="alert(document.cookie)">
-      <h3>Cookies</h3>
-      <p>View the cookies of the current page you are on.</p>
-    </div>
+body.theme-green {
+    --primary-color: #00c853;
+}
 
-    <div class="cardB9" data-command="alert(document.body.innerText.split(/\s+/).length);">
-      <h3>Word Count</h3>
-      <p>Show the amount of words that are on the current page.</p>
-    </div>
+body.theme-morning-glow {
+    --primary-color: #F9A825;
+    --background-color: #000000;
+    --panel-color: #0d0d0d;
+    --text-color: #ffffff;
+    --muted-text: #cccccc;
+}
 
-    <div class="cardB9" data-command="document.execCommand('undo');">
-      <h3>Undo</h3>
-      <p>Revert your last change and restore the previous state.</p>
-    </div>
+.bodyA9 {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    background-color: var(--background-color);
+    color: var(--text-color);
+    font-family: 'Inter', 'Mulish' !important;
+}
 
-    <div class="cardB9" data-command="document.execCommand('redo');">
-      <h3>Redo</h3>
-      <p>Reapply the action you just undid to continue editing.</p>
-    </div>
+.navbarX9 {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: #101010;
+    padding: 10px 28px;
+    border-bottom: 2px solid var(--primary-color);
+    flex-shrink: 0;
+}
 
-    <div class="cardB9" data-command="(function(){const t=prompt('Clicks per second? (Max 200)','10');if(!t)return;const c=Math.min(200,Math.max(0,Number(t)));if(!c||isNaN(c)){alert('Invalid number');return}const i=1000/c;if(window.__autoclicker&&window.__autoclicker.running){window.__autoclicker.running=false;return}window.__autoclicker={running:true,lastX:0,lastY:0,target:document.elementFromPoint(window.innerWidth/2,window.innerHeight/2)};function m(e){window.__autoclicker.lastX=e.clientX;window.__autoclicker.lastY=e.clientY;window.__autoclicker.target=e.target}function k(e){if(e.key==='Escape'){window.__autoclicker.running=false}}window.addEventListener('mousemove',m);window.addEventListener('keydown',k);let l=performance.now(),a=0;function tick(n){a+=n-l;l=n;while(a>=i&&window.__autoclicker.running){try{const el=window.__autoclicker.target||document.elementFromPoint(window.__autoclicker.lastX||window.innerWidth/2,window.__autoclicker.lastY||window.innerHeight/2);if(el&&typeof el.click==='function')el.click()}catch{}a-=i}if(window.__autoclicker.running)requestAnimationFrame(tick);else{window.removeEventListener('mousemove',m);window.removeEventListener('keydown',k);delete window.__autoclicker;alert('Auto-clicker stopped')}}requestAnimationFrame(tick);alert('Auto-clicker started — move mouse to pick target element. Run again or press ESC to stop.')})()">
-      <h3>Auto-Clicker</h3>
-      <p>Click repeatedly at set CPS. Press ESC to stop.</p>
-    </div>
+.brandQ3 {
+    font-size: 1.4rem !important;
+    font-weight: 700;
+    color: var(--primary-color);
+    letter-spacing: 1px;
+    font-family: 'Inter', 'Mulish' !important;
+}
 
-    <div class="cardB9" data-command="navigator.clipboard.writeText(window.location.href).then(()=>alert('Page URL copied!'))">
-      <h3>Copy URL</h3>
-      <p>Copy the current page URL to your clipboard.</p>
-    </div>
+.listM2 {
+    list-style: none;
+    display: flex;
+    gap: 24px;
+    margin: 0;
+    padding: 0;
+}
 
-    <div class="cardB9" data-command="alert('Viewport size: '+window.innerWidth+'×'+window.innerHeight)">
-      <h3>Viewport Size</h3>
-      <p>Display the current browser window size.</p>
-    </div>
+.itemK7 {
+    position: relative;
+    cursor: pointer;
+}
 
-    <div class="cardB9" data-command="(function(){const s=prompt('Enter background color (e.g. red or #ff0000):');if(s)document.body.style.background=s;})()">
-      <h3>Change Background</h3>
-      <p>Temporarily change the background color of the page.</p>
-    </div>
+.linkV1 {
+    text-decoration: none;
+    color: var(--muted-text);
+    font-weight: 500;
+    transition: 0.2s ease;
+    cursor: pointer;
+    font-family: 'Inter', 'Mulish' !important;
+}
 
-    <div class="cardB9" data-command="(function(){let s=document.createElement('style');s.textContent='*{transition:all .2s ease!important;transform:rotate(180deg)!important;}';document.head.append(s);setTimeout(()=>s.remove(),2000);})();">
-      <h3>Flip Page</h3>
-      <p>Flip everything on the page upside down for 2 seconds.</p>
-    </div>
+.linkV1:hover {
+    color: var(--primary-color);
+}
 
-    <div class="cardB9" data-command="alert('You have '+(performance.memory?Math.round(performance.memory.usedJSHeapSize/1048576)+'MB used JS heap':'no memory API available'))">
-      <h3>Memory Info</h3>
-      <p>Show current JavaScript memory usage (if supported).</p>
-    </div>
+.linkV1::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -4px;
+    width: 0%;
+    height: 2px;
+    background-color: var(--primary-color);
+    transition: width 0.3s ease;
+}
 
-    <div class="cardB9" data-command="(function(){let s=prompt('Enter CSS selector to highlight (e.g. img, p, div, * = all):');if(!s)return;document.querySelectorAll(s).forEach(e=>e.style.outline='2px solid red');})();">
-      <h3>Highlight Elements</h3>
-      <p>Highlight all elements matching a given CSS selector.</p>
-    </div>
+.linkV1:hover::after {
+    width: 100%;
+}
 
-    <div class="cardB9" data-command="(function(){alert('You are on: '+location.hostname+'\\nProtocol: '+location.protocol+'\\nPath: '+location.pathname);})();">
-      <h3>Page Info</h3>
-      <p>Display hostname, protocol, and path of the current page.</p>
-    </div>
+.dropdownContentL4 {
+    display: none;
+    position: absolute;
+    background-color: var(--panel-color);
+    min-width: 160px;
+    top: 35px;
+    left: 0;
+    border: 1px solid var(--primary-color);
+    border-radius: 4px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.5);
+    z-index: 1;
+}
 
-    <div class="cardB9" data-command="(function(){document.body.style.filter='grayscale(1)';})();">
-      <h3>Grayscale Mode</h3>
-      <p>Turn the entire page black and white.</p>
-    </div>
+.dropdownContentL4 a {
+    display: block;
+    padding: 10px 16px;
+    cursor:pointer;
+    font-family: 'Inter', 'Mulish' !important;
+    text-decoration: none;
+    color: var(--muted-text);
+}
 
-  <!--  <div class="cardB9" data-command="(function(){const url=prompt('Replace all images with image URL:','https://placekitten.com/400/300');if(!url)return;document.querySelectorAll('img').forEach(img=>{img.dataset._orig=img.src;img.src=url});alert('All images replaced. Original URLs saved in data-_orig on each image.');})()">
-      <h3>Replace Images</h3>
-      <p>Replace every &lt;img&gt; src on the page with a URL you provide (original saved in data-_orig).</p>
-    </div> -->
+.dropdownContentL4 a:hover {
+    background-color: #0d0d0d;
+    color: var(--primary-color);
+}
 
-    <div class="cardB9" data-command="(function(){const from=prompt('Text to find:');if(from===null)return;const to=prompt('Replace with:','');if(to===null)return;const walker=document.createTreeWalker(document.body,NodeFilter.SHOW_TEXT);let n;let count=0;while(n=walker.nextNode()){if(n.nodeValue.includes(from)){n.nodeValue=n.nodeValue.split(from).join(to);count++}}alert('Replaced occurrences in '+count+' text nodes.');})()">
-      <h3>Find & Replace</h3>
-      <p>Do a quick find-and-replace on visible text nodes.</p>
-    </div>
+.dropdownR8.open .dropdownContentL4 {
+    display: block;
+}
 
-    <div class="cardB9" data-command="(function(){const bar=document.createElement('div');bar.id='fake-admin-bar';bar.style.cssText='position:fixed;left:0;right:0;top:0;padding:10px 16px;background:linear-gradient(90deg,#ffb74d,#f9a825);color:#000;font-weight:700;z-index:99999;text-align:center;box-shadow:0 4px 12px rgba(0,0,0,.6)';bar.textContent=prompt('Banner text:','ADMIN MODE');const close=document.createElement('button');close.textContent='×';close.style.cssText='position:absolute;right:10px;top:6px;background:transparent;border:0;font-size:18px;cursor:pointer';close.onclick=()=>bar.remove();bar.appendChild(close);document.body.appendChild(bar);window.scrollTo(0,0);})()">
-      <h3>Admin Banner</h3>
-      <p>Add a dismissible banner at the top of the current page.</p>
-    </div>
+.dropdownR8 {
+    position: relative;
+}
 
-   <!-- <div class="cardB9" data-command="(function(){const speed=prompt('Auto scroll speed (px per 50ms). Use negative to scroll up','20');if(speed===null)return;let s=Number(speed)||0;if(window.__autoscrollId){clearInterval(window.__autoscrollId);delete window.__autoscrollId;alert('Auto-scroll stopped');return}window.__autoscrollId=setInterval(()=>window.scrollBy(0,s),50);alert('Auto-scroll started — click this card again to stop.');})()">
-      <h3>Auto Scroll</h3>
-      <p>Start/stop a gentle auto-scroll; useful for long pages.</p>
-    </div> -->
- 
-    <div class="cardB9" data-command="(function(){if(window.__origFetch) {window.fetch=window.__origFetch;delete window.__origFetch;alert('Fetch restored');return}window.__origFetch=window.fetch;window.fetch=function(){console.log('fetch called with',arguments);return window.__origFetch.apply(this,arguments)};alert('fetch is now being logged to console.')})()">
-      <h3>Log Fetch</h3>
-      <p>Temporarily monkeypatch fetch to log requests in the console.</p>
-    </div>
+.dropdownContentL4[data-reverse="true"] {
+    left: auto !important;
+    right: 0 !important;
+}
 
-  <!--  <div class="cardB9" data-command="(function(){const imgs=Array.from(document.images).map(i=>i.src);if(!imgs.length){alert('No images to list');return}const list=imgs.join('\\n');const w=window.open('about:blank','_blank');w.document.write('<pre>'+list.replace(/&/g,'&amp;')+'</pre>');w.document.title='Image URLs';})()">
-      <h3>List Image URLs</h3>
-      <p>Open a new tab listing every image URL on the page.</p>
-    </div> -->
+.bodyY2 {
+    flex: 1;
+    overflow-y: auto;
+    padding: 20px;
+    box-sizing: border-box;
+}
 
-  
- <!--   <div class="cardB9" data-command="(function(){const forms=document.querySelectorAll('form');if(!forms.length){alert('No forms found');return}forms.forEach(f=>{f.querySelectorAll('input,textarea,select').forEach(el=>{if(el.type==='email')el.value='user@example.com';else if(el.type==='tel')el.value='0123456789';else if(el.type==='password')el.value='Password123!';else if(el.tagName.toLowerCase()==='select')el.selectedIndex=1;else el.value=el.value||'lorem ipsum';})});alert('Filled forms with dummy data.');})()">
-      <h3>Auto-Fill Forms</h3>
-      <p>Fill form fields with random text depending on type.</p>
-    </div> -->
+.panelC6 {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px;
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
 
-    <div class="cardB9" data-command="(function(){const txt=prompt('Enter new document title:');if(txt)document.title=txt;})()">
-      <h3>Change Title</h3>
-      <p>Set a custom page title temporarily.</p>
-    </div>
+.cardB9 {
+    background-color: var(--panel-color);
+    border: 1px solid var(--primary-color);
+    border-radius: 8px;
+    padding: 20px;
+    transition: transform 0.2s, background-color 0.2s;
+    cursor: pointer;
+    height: auto;
+    font-family: 'Inter', 'Mulish' !important;
+}
 
-    <div class="cardB9" data-command="(function(){const elems=prompt('Enter CSS selector to log elements to console:','*');if(elems)console.log(document.querySelectorAll(elems));alert('Elements logged to console.');})()">
-      <h3>Log Elements</h3>
-      <p>Inspect selected elements in the console.</p>
-    </div>
+.cardB9:hover {
+    background-color: #1a1a1a;
+}
 
-    <div class="cardB9" data-command="(function(){document.querySelectorAll('*').forEach(el=>el.setAttribute('data-debug','true'));alert('Debug attributes added.');})()">
-      <h3>Debug Attributes</h3>
-      <p>Mark all elements for inspection in DevTools.</p>
-    </div>
+.cardB9 h3 {
+    margin: 0 0 10px;
+    color: var(--primary-color);
+}
 
-    <div class="cardB9" data-command="(function(){const css=prompt('Enter custom CSS to inject:','body{border:5px solid red}');if(css){let s=document.createElement('style');s.textContent=css;document.head.appendChild(s);alert('CSS applied!');}})()">
-      <h3>Inject CSS</h3>
-      <p>Add custom CSS to the page instantly.</p>
-    </div>
+.cardB9 p {
+    margin: 0;
+    color: var(--muted-text);
+    font-size: 0.95rem;
+}
 
- <div class="cardB9" data-command="(function(){const html=prompt('Enter HTML to inject:','&lt;div style=&quot;font-size:24px&quot;&gt;Hello World!&lt;/div&gt;');if(html){const container=document.createElement('div');container.innerHTML=html;document.body.appendChild(container);alert('HTML injected!');}})()">
-  <h3>Inject HTML</h3>
-  <p>Add any HTML snippet to the page instantly.</p>
-</div>
+.inputContainerF1 {
+    display: flex;
+    border-top: 2px solid var(--primary-color);
+    padding: 12px 20px;
+    background-color: #101010;
+    flex-shrink: 0;
+}
 
+.commandInputT5 {
+    flex: 1;
+    padding: 10px 14px;
+    border-radius: 6px;
+    border: 1px solid var(--primary-color);
+    background-color: var(--panel-color);
+    color: var(--text-color);
+    font-family: monospace;
+    font-size: 0.9rem;
+    outline: none;
+}
 
-    <div class="cardB9" data-command="(function(){const el=prompt('Enter CSS selector to show again:');if(el)document.querySelectorAll(el).forEach(e=>e.style.display='');})()">
-      <h3>Show Elements</h3>
-      <p>Reveal elements hidden on the page.</p>
-    </div>
-
-  </div>
-</div>
-
-<div class="inputContainerF1">
-  <input class="commandInputT5" type="text" placeholder="Execute a command...">
-</div>
-
-<script src="script.js"></script>
-
-</body>
-</html>
+.commandInputT5::placeholder {
+    color: var(--text-color);
+}
