@@ -83,10 +83,11 @@ body.theme-morning-glow {
 }
 
 .brandQ3 {
-    font-size: 1.4rem;
+    font-size: 1.4rem !important;
     font-weight: 700;
     color: var(--primary-color);
     letter-spacing: 1px;
+    font-family: 'Inter', 'Mulish' !important;
 }
 
 .listM2 {
