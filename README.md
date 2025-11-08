@@ -20,8 +20,7 @@ You can run code in it with or without knowing JavaScript. It’s made to be sim
 
 ## What It Does
 When you click BookUI+, it adds a small panel that appears over the page.  
-You can type code in it or use the buttons to perform actions.  
-It’s meant to make testing and trying things out easy without needing DevTools.
+You can type code in it or use the buttons to perform actions. Try having a bit of fun editing Google.
 
 ## Example Uses
 • Try small JavaScript commands  
