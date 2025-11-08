@@ -27,4 +27,4 @@ You can type code in it or use the buttons to perform actions. Try having a bit 
 • Edit or test code on a website  
 • Learn how code affects pages directly  
 
-BookUI+ V1.2 — a simple bookmarklet that helps you run and test code right from your browser.
+BookUI+ — a simple bookmarklet that helps you run and test code right from your browser.
