@@ -1,5 +1,3 @@
-// script.js
-
 const input = document.querySelector('.commandInputT5');
 
 const data = {
@@ -87,6 +85,13 @@ function switchTheme(theme) {
         if (saved) switchTheme(saved)
         return
     }
+
+    if (theme === "c00lgui") {
+      document.getElementById("nameElementR4").textContent = "c00lgui";
+     } else {
+     document.getElementById("nameElementR4").textContent = `${data.name} ${data.version}`;
+    }
+
     document.body.classList.forEach(cls => {
         if (cls.startsWith("theme-")) document.body.classList.remove(cls)
     })
