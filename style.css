@@ -1,4 +1,3 @@
-/* style.css */
 
 :root {
     --primary-color: #007bff;
@@ -49,6 +48,10 @@ body.theme-lime {
 }
 
 body.theme-red {
+    --primary-color: #ff4747;
+}
+
+body.theme-c00lgui {
     --primary-color: #ff4747;
 }
 
