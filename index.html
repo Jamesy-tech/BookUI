@@ -119,6 +119,8 @@
 
 
 
+
+
 <div class="cardB9" data-command="document.body.style.animation='shake 0.1s infinite';let s=document.createElement('style');s.id='shakeStyle';s.innerHTML='@keyframes shake{0%{transform:translate(0,0)}10%{transform:translate(-10px,10px)}20%{transform:translate(10px,-10px)}30%{transform:translate(-15px,15px)}40%{transform:translate(15px,-15px)}50%{transform:translate(-20px,20px)}60%{transform:translate(20px,-20px)}70%{transform:translate(-15px,15px)}80%{transform:translate(15px,-15px)}90%{transform:translate(-10px,10px)}100%{transform:translate(0,0)}}';document.head.appendChild(s);function stopShake(e){if(e.key==='Escape'){document.body.style.animation='';let t=document.getElementById('shakeStyle');if(t)t.remove();document.removeEventListener('keydown',stopShake);}}document.addEventListener('keydown',stopShake);">
 <h3>Shake Page</h3>
 <p>Intense camera shake effect.</p>
@@ -193,6 +195,12 @@
   <h3>Change Background</h3>
   <p>Temporarily change the background color until ESC is pressed to revert.</p>
 </div>
+
+<div class="cardB9" data-command="let f=prompt('Enter font name:');if(f){let s=document.createElement('style');s.innerHTML='*{font-family:'+f+' !important;}';document.head.appendChild(s);}">
+<h3>Change Font</h3>
+<p>Change the font for all elements on the page.</p>
+</div>
+
 
 
     <div class="cardB9" data-command="(function(){const elems=prompt('Enter CSS selector to log elements to console:','*');if(elems)console.log(document.querySelectorAll(elems));alert('Elements logged to console.');})()">
