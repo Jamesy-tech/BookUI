@@ -106,6 +106,12 @@
       <p>Search for text on the current page manually.</p>
     </div>
 
+    <div class="cardB9" data-command="let d=document.createElement('div');d.style.cssText='position:fixed;top:0;left:0;width:100vw;height:100vh;pointer-events:none;z-index:9999;background:linear-gradient(270deg,rgba(255,0,0,0.5),rgba(255,165,0,0.5),rgba(255,255,0,0.5),rgba(0,128,0,0.5),rgba(0,0,255,0.5),rgba(75,0,130,0.5),rgba(238,130,238,0.5));background-size:1400% 1400%;animation:disco 10s linear infinite';document.body.appendChild(d);let s=document.createElement('style');s.innerHTML='@keyframes disco{0%{background-position:0% 50%}50%{background-position:100% 50%}100%{background-position:0% 50%}}';document.head.appendChild(s);">
+<h3>Rainbow</h3>
+<p>Add an animated rainbow overlay to the current page you are on.</p>
+</div>
+
+
     <div class="cardB9" data-command="(function(){const s=prompt('Enter background color (e.g. red or #ff0000):');if(s)document.body.style.background=s;})()">
       <h3>Change Background</h3>
       <p>Temporarily change the background color of the page.</p>
@@ -114,11 +120,6 @@
     <div class="cardB9" data-command="(function(){let s=document.createElement('style');s.textContent='*{transition:all .2s ease!important;transform:rotate(180deg)!important;}';document.head.append(s);setTimeout(()=>s.remove(),2000);})();">
       <h3>Flip Page</h3>
       <p>Flip everything on the page upside down for 2 seconds.</p>
-    </div>
-
-    <div class="cardB9" data-command="(function(){const s=document.createElement('script');s.src='https://unpkg.com/particles.js';document.body.appendChild(s);alert('Particles.js added (if allowed).')})();">
-      <h3>Add Particles</h3>
-      <p>Load a particle animation library into the current page.</p>
     </div>
 
     <div class="cardB9" data-command="alert('You have '+(performance.memory?Math.round(performance.memory.usedJSHeapSize/1048576)+'MB used JS heap':'no memory API available'))">
@@ -151,11 +152,6 @@
       <p>Do a quick find-and-replace on visible text nodes.</p>
     </div>
 
-    <div class="cardB9" data-command="(function(){const bar=document.createElement('div');bar.id='fake-admin-bar';bar.style.cssText='position:fixed;left:0;right:0;top:0;padding:10px 16px;background:linear-gradient(90deg,#ffb74d,#f9a825);color:#000;font-weight:700;z-index:99999;text-align:center;box-shadow:0 4px 12px rgba(0,0,0,.6)';bar.textContent=prompt('Banner text:','ADMIN MODE — local preview');const close=document.createElement('button');close.textContent='×';close.style.cssText='position:absolute;right:10px;top:6px;background:transparent;border:0;font-size:18px;cursor:pointer';close.onclick=()=>bar.remove();bar.appendChild(close);document.body.appendChild(bar);window.scrollTo(0,0);})()">
-      <h3>Admin Banner</h3>
-      <p>Add a dismissible banner at the top of the current page.</p>
-    </div>
-
     <div class="cardB9" data-command="(function(){const speed=prompt('Auto scroll speed (px per 50ms). Use negative to scroll up','20');if(speed===null)return;let s=Number(speed)||0;if(window.__autoscrollId){clearInterval(window.__autoscrollId);delete window.__autoscrollId;alert('Auto-scroll stopped');return}window.__autoscrollId=setInterval(()=>window.scrollBy(0,s),50);alert('Auto-scroll started — click this card again to stop.');})()">
       <h3>Auto Scroll</h3>
       <p>Start/stop a gentle auto-scroll; useful for long pages.</p>
@@ -185,6 +181,11 @@
       <h3>Log Elements</h3>
       <p>Inspect selected elements in the console.</p>
     </div>
+
+    <div class="cardB9" data-command="document.body.style.filter = (document.body.style.filter === 'invert(1)') ? 'invert(0)' : 'invert(1)';">
+  <h3>Invert</h3>
+  <p>Invert all colors on the current page.</p>
+</div>
 
     <div class="cardB9" data-command="(function(){document.querySelectorAll('*').forEach(el=>el.setAttribute('data-debug','true'));alert('Debug attributes added.');})()">
       <h3>Debug Attributes</h3>
