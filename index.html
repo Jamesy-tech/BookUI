@@ -119,8 +119,7 @@
 
 
 
-
-    <div class="cardB9" data-command="document.body.style.animation='shake 0.1s infinite';let s=document.createElement('style');s.innerHTML='@keyframes shake{0%{transform:translate(0,0) rotate(0deg)}10%{transform:translate(-10px,10px) rotate(-2deg)}20%{transform:translate(10px,-10px) rotate(2deg)}30%{transform:translate(-15px,15px) rotate(-3deg)}40%{transform:translate(15px,-15px) rotate(3deg)}50%{transform:translate(-20px,20px) rotate(-4deg)}60%{transform:translate(20px,-20px) rotate(4deg)}70%{transform:translate(-15px,15px) rotate(-3deg)}80%{transform:translate(15px,-15px) rotate(3deg)}90%{transform:translate(-10px,10px) rotate(-2deg)}100%{transform:translate(0,0) rotate(0deg)}}';document.head.appendChild(s);">
+<div class="cardB9" data-command="document.body.style.animation='shake 0.1s infinite';let s=document.createElement('style');s.id='shakeStyle';s.innerHTML='@keyframes shake{0%{transform:translate(0,0)}10%{transform:translate(-10px,10px)}20%{transform:translate(10px,-10px)}30%{transform:translate(-15px,15px)}40%{transform:translate(15px,-15px)}50%{transform:translate(-20px,20px)}60%{transform:translate(20px,-20px)}70%{transform:translate(-15px,15px)}80%{transform:translate(15px,-15px)}90%{transform:translate(-10px,10px)}100%{transform:translate(0,0)}}';document.head.appendChild(s);function stopShake(e){if(e.key==='Escape'){document.body.style.animation='';let t=document.getElementById('shakeStyle');if(t)t.remove();document.removeEventListener('keydown',stopShake);}}document.addEventListener('keydown',stopShake);">
 <h3>Shake Page</h3>
 <p>Intense camera shake effect.</p>
 </div>
