@@ -106,17 +106,19 @@
       <p>Search for text on the current page manually.</p>
     </div>
 
-    <div class="cardB9" data-command="let d=document.createElement('div');d.style.cssText='position:fixed;top:0;left:0;width:100vw;height:100vh;pointer-events:none;z-index:9999;background:linear-gradient(270deg,rgba(255,0,0,0.5),rgba(255,165,0,0.5),rgba(255,255,0,0.5),rgba(0,128,0,0.5),rgba(0,0,255,0.5),rgba(75,0,130,0.5),rgba(238,130,238,0.5));background-size:1400% 1400%;animation:disco 10s linear infinite';document.body.appendChild(d);let s=document.createElement('style');s.innerHTML='@keyframes disco{0%{background-position:0% 50%}50%{background-position:100% 50%}100%{background-position:0% 50%}}';document.head.appendChild(s);">
-<h3>Rainbow</h3>
-<p>Add an animated rainbow overlay to the current page you are on.</p>
+<div class="cardB9" data-command="(function(){window.__effects=window.__effects||[];let d=document.createElement('div');d.className='__overlay';d.style.cssText='position:fixed;top:0;left:0;width:100vw;height:100vh;pointer-events:none;z-index:9999;background:linear-gradient(270deg,rgba(255,0,0,0.5),rgba(255,165,0,0.5),rgba(255,255,0,0.5),rgba(0,128,0,0.5),rgba(0,0,255,0.5),rgba(75,0,130,0.5),rgba(238,130,238,0.5));background-size:1400% 1400%;animation:disco 10s linear infinite';document.body.appendChild(d);let s=document.createElement('style');s.className='__overlay';s.textContent='@keyframes disco{0%{background-position:0% 50%}50%{background-position:100% 50%}100%{background-position:0% 50%}}';document.head.appendChild(s);window.__effects.push(d,s);if(!window.__escHandler){window.__escHandler=function(e){if(e.key==='Escape'){document.querySelectorAll('.__overlay').forEach(o=>o.remove());document.body.style.transform='';document.body.style.filter='';document.body.style.background='';window.__effects.forEach(a=>{if(a instanceof HTMLElement)a.remove();else clearInterval(a)});window.__effects=[];window.__sounds?.forEach(s=>{s.pause();s.currentTime=0;});window.__sounds=[];}};window.addEventListener('keydown',window.__escHandler);}})();">
+  <h3>Rainbow</h3>
+  <p>Add an animated rainbow overlay to the current page.</p>
 </div>
 
-<div class="cardB9" data-command="document.querySelectorAll('*').forEach(e=>e.style.animation='spin 3s linear infinite');let s=document.createElement('style');s.innerHTML='@keyframes spin{0%{transform:rotate(0deg);}100%{transform:rotate(360deg);}}';document.head.appendChild(s);"><h3>Spin Text</h3><p>Spin all text elements.</p></div>
 
-    <div class="cardB9" data-command="(function(){const s=prompt('Enter background color (e.g. red or #ff0000):');if(s)document.body.style.background=s;})()">
-      <h3>Change Background</h3>
-      <p>Temporarily change the background color of the page.</p>
-    </div>
+<div class="cardB9" data-command="(function(){window.__effects=window.__effects||[];document.querySelectorAll('*').forEach(e=>e.style.animation='spin 3s linear infinite');let s=document.createElement('style');s.className='__overlay';s.innerHTML='@keyframes spin{0%{transform:rotate(0deg);}100%{transform:rotate(360deg);}}';document.head.appendChild(s);window.__effects.push(s);if(!window.__escHandler){window.__escHandler=function(e){if(e.key==='Escape'){document.querySelectorAll('.__overlay').forEach(o=>o.remove());document.body.style.transform='';document.body.style.filter='';document.body.style.background='';window.__effects.forEach(a=>{if(a instanceof HTMLElement)a.remove();else clearInterval(a)});window.__effects=[];window.__sounds?.forEach(s=>{s.pause();s.currentTime=0;});window.__sounds=[];document.querySelectorAll('*').forEach(el=>el.style.animation='');}};window.addEventListener('keydown',window.__escHandler);}})();">
+  <h3>Spin Elements</h3>
+  <p>Spin all elements continuously until ESC is pressed.</p>
+</div>
+
+
+
 
     <div class="cardB9" data-command="document.body.style.animation='shake 0.1s infinite';let s=document.createElement('style');s.innerHTML='@keyframes shake{0%{transform:translate(0,0) rotate(0deg)}10%{transform:translate(-10px,10px) rotate(-2deg)}20%{transform:translate(10px,-10px) rotate(2deg)}30%{transform:translate(-15px,15px) rotate(-3deg)}40%{transform:translate(15px,-15px) rotate(3deg)}50%{transform:translate(-20px,20px) rotate(-4deg)}60%{transform:translate(20px,-20px) rotate(4deg)}70%{transform:translate(-15px,15px) rotate(-3deg)}80%{transform:translate(15px,-15px) rotate(3deg)}90%{transform:translate(-10px,10px) rotate(-2deg)}100%{transform:translate(0,0) rotate(0deg)}}';document.head.appendChild(s);">
 <h3>Shake Page</h3>
@@ -125,10 +127,11 @@
 
 
 
-    <div class="cardB9" data-command="(function(){let s=document.createElement('style');s.textContent='*{transition:all .2s ease!important;transform:rotate(180deg)!important;}';document.head.append(s);setTimeout(()=>s.remove(),2000);})();">
-      <h3>Flip Page</h3>
-      <p>Flip everything on the page upside down for 2 seconds.</p>
-    </div>
+<div class="cardB9" data-command="(function(){window.__effects=window.__effects||[];let s=document.createElement('style');s.className='__overlay';s.textContent='*{transition:all .2s ease!important;transform:rotate(180deg)!important;}';document.head.appendChild(s);window.__effects.push(s);if(!window.__escHandler){window.__escHandler=function(e){if(e.key==='Escape'){document.querySelectorAll('.__overlay').forEach(o=>o.remove());document.body.style.transform='';document.body.style.filter='';document.body.style.background='';window.__effects.forEach(a=>{if(a instanceof HTMLElement)a.remove();else clearInterval(a)});window.__effects=[];window.__sounds?.forEach(s=>{s.pause();s.currentTime=0;});window.__sounds=[];}};window.addEventListener('keydown',window.__escHandler);}})();">
+  <h3>Flip Page</h3>
+  <p>Flip everything on the page upside down until ESC is pressed.</p>
+</div>
+
 
     <div class="cardB9" data-command="alert('You have '+(performance.memory?Math.round(performance.memory.usedJSHeapSize/1048576)+'MB used JS heap':'no memory API available'))">
       <h3>Memory Info</h3>
@@ -175,15 +178,23 @@
       <p>Open a new tab listing every image URL on the page.</p>
     </div>
 
-    <div class="cardB9" data-command="(function(){const forms=document.querySelectorAll('form');if(!forms.length){alert('No forms found');return}forms.forEach(f=>{f.querySelectorAll('input,textarea,select').forEach(el=>{if(el.type==='email')el.value='user@example.com';else if(el.type==='tel')el.value='0123456789';else if(el.type==='password')el.value='Password123!';else if(el.tagName.toLowerCase()==='select')el.selectedIndex=1;else el.value=el.value||'lorem ipsum';})});alert('Filled forms with dummy data.');})()">
-      <h3>Auto-Fill Forms</h3>
-      <p>Fill form fields with random text depending on type.</p>
-    </div>
 
-    <div class="cardB9" data-command="(function(){const txt=prompt('Enter new document title:');if(txt)document.title=txt;})()">
-      <h3>Change Title</h3>
-      <p>Set a custom page title temporarily.</p>
-    </div>
+    <div class="cardB9" data-command="(function(){window.__effects=window.__effects||[];const fillField=f=>{if(f.type==='email')f.value='user@example.com';else if(f.type==='tel')f.value='0123456789';else if(f.type==='password')f.value='Password123!';else if(f.tagName.toLowerCase()==='select')f.selectedIndex=1;else f.value=f.value||'lorem ipsum';};document.querySelectorAll('input,textarea,select').forEach(fillField);document.querySelectorAll('form').forEach(f=>f.querySelectorAll('input,textarea,select').forEach(fillField));window.__effects.push({reset:()=>{document.querySelectorAll('input,textarea,select').forEach(f=>{f.value='';if(f.tagName.toLowerCase()==='select')f.selectedIndex=0;});}});if(!window.__escHandler){window.__escHandler=function(e){if(e.key==='Escape'){window.__effects.forEach(a=>{if(a.reset)a.reset();else if(a instanceof HTMLElement)a.remove();else clearInterval(a)});window.__effects=[];window.__sounds?.forEach(s=>{s.pause();s.currentTime=0;});window.__sounds=[];}};window.addEventListener('keydown',window.__escHandler);}})();">
+  <h3>Auto-Fill Inputs & Forms</h3>
+  <p>Fill all input fields and forms with dummy data until ESC is pressed.</p>
+</div>
+
+
+  <div class="cardB9" data-command="(function(){window.__effects=window.__effects||[];const origTitle=document.title;const txt=prompt('Enter new document title:');if(txt){document.title=txt;window.__effects.push({reset:()=>{document.title=origTitle;}});}if(!window.__escHandler){window.__escHandler=function(e){if(e.key==='Escape'){window.__effects.forEach(a=>{if(a.reset)a.reset();else if(a instanceof HTMLElement)a.remove();else clearInterval(a)});window.__effects=[];window.__sounds?.forEach(s=>{s.pause();s.currentTime=0;});window.__sounds=[];}};window.addEventListener('keydown',window.__escHandler);}})();">
+  <h3>Change Title</h3>
+  <p>Set a custom page title until ESC is pressed to revert.</p>
+</div>
+
+<div class="cardB9" data-command="(function(){window.__effects=window.__effects||[];const origBg=document.body.style.background;const s=prompt('Enter background color (e.g. red or #ff0000):');if(s){document.body.style.background=s;window.__effects.push({reset:()=>{document.body.style.background=origBg;}});}if(!window.__escHandler){window.__escHandler=function(e){if(e.key==='Escape'){window.__effects.forEach(a=>{if(a.reset)a.reset();else if(a instanceof HTMLElement)a.remove();else clearInterval(a)});window.__effects=[];window.__sounds?.forEach(s=>{s.pause();s.currentTime=0;});window.__sounds=[];}};window.addEventListener('keydown',window.__escHandler);}})();">
+  <h3>Change Background</h3>
+  <p>Temporarily change the background color until ESC is pressed to revert.</p>
+</div>
+
 
     <div class="cardB9" data-command="(function(){const elems=prompt('Enter CSS selector to log elements to console:','*');if(elems)console.log(document.querySelectorAll(elems));alert('Elements logged to console.');})()">
       <h3>Log Elements</h3>
@@ -215,6 +226,85 @@
       <h3>Show Elements</h3>
       <p>Reveal elements hidden on the page.</p>
     </div>
+
+<div class="cardB9" data-command="(function(){
+  if(window.__cursorRain){
+    clearInterval(window.__cursorRain);
+    window.removeEventListener('keydown', window.__cursorRainStop);
+    window.__cursorRain=null;
+    alert('Emoji rain stopped');
+    return;
+  }
+  const emojis=['✨','🌟','💫','🔥','🌈','⭐','❄️','🌸','🍀','🍁','🌙','💖','🎈','🎉','🪩','💎','⚡','☀️','🌊','🍂','🎵','🦋','🪶','🌺','💀','👻','🎃','💥','💨','🌹','🌻','🌼','🍄','🍎','🍓','🍇','🍉','🍌','🍪','🍭','🍬','🎂','🎁','❤️','💚','💙','💜','🖤','🤍','🤎','😀','😎','🤩','😈','👾','🤖','🧠','💡','🪙','⚙️'];
+  window.__cursorRainStop=function(e){if(e.key==='Escape'){clearInterval(window.__cursorRain);window.__cursorRain=null;window.removeEventListener('keydown',window.__cursorRainStop);alert('Emoji rain stopped');}};
+  window.addEventListener('keydown',window.__cursorRainStop);
+  window.__cursorRain=setInterval(()=>{
+    let s=document.createElement('div');
+    s.textContent=emojis[Math.floor(Math.random()*emojis.length)];
+    s.style.position='fixed';
+    s.style.left=Math.random()*innerWidth+'px';
+    s.style.top='0';
+    s.style.fontSize=(24+Math.random()*16)+'px';
+    s.style.pointerEvents='none';
+    s.style.zIndex='999999';
+    s.style.opacity='1';
+    document.body.appendChild(s);
+    let y=0;
+    let fall=setInterval(()=>{
+      y+=5;
+      s.style.top=y+'px';
+      s.style.transform='rotate('+y+'deg)';
+      s.style.opacity=(1 - y/innerHeight).toString();
+      if(y>innerHeight){s.remove();clearInterval(fall);}
+    },16);
+  }, 80);
+  alert('Emoji rain started — press ESC to stop.');
+})();">
+  <h3>Emoji Rain</h3>
+  <p>Make emojis rain down your page until you press ESC to stop.</p>
+</div>
+<div class="cardB9" data-command="(function(){window.__effects=window.__effects||[];document.body.style.transition='all .5s';document.body.style.filter='contrast(2) saturate(2)';window.__effects.push({reset:()=>{document.body.style.filter='';}});if(!window.__escHandler){window.__escHandler=function(e){if(e.key==='Escape'){document.querySelectorAll('.__overlay').forEach(o=>o.remove());document.body.style.transform='';document.body.style.filter='';document.body.style.background='';window.__effects.forEach(a=>{if(a.reset)a.reset();else if(a instanceof HTMLElement)a.remove();else clearInterval(a)});window.__effects=[];window.__sounds?.forEach(s=>{s.pause();s.currentTime=0;});window.__sounds=[];}};window.addEventListener('keydown',window.__escHandler);}})();">
+  <h3>Vivid Boost</h3>
+  <p>Double contrast and color for a bright pop effect until ESC is pressed.</p>
+</div>
+
+
+<div class="cardB9" data-command="(function(){window.__soundPlayers=window.__soundPlayers||[];let a=new Audio('https://github.com/Jamesy-tech/sound-bookmarklets/raw/main/metal-pipe.mp3');a.play();window.__soundPlayers.push(a);window.onkeydown=function(e){if(e.key==='Escape'){window.__soundPlayers.forEach(s=>{s.pause();s.currentTime=0;});window.__soundPlayers=[];}}})();">
+  <h3>Metal Pipe</h3>
+  <p>Play the classic metal pipe sound.</p>
+</div>
+
+<div class="cardB9" data-command="(function(){window.__soundPlayers=window.__soundPlayers||[];let a=new Audio('https://github.com/Jamesy-tech/sound-bookmarklets/raw/main/let-me-know.mp3');a.play();window.__soundPlayers.push(a);window.onkeydown=function(e){if(e.key==='Escape'){window.__soundPlayers.forEach(s=>{s.pause();s.currentTime=0;});window.__soundPlayers=[];}}})();">
+  <h3>Let Me Know</h3>
+  <p>Plays the meme voice clip “Let me know.”</p>
+</div>
+
+<div class="cardB9" data-command="(function(){window.__soundPlayers=window.__soundPlayers||[];let a=new Audio('https://github.com/Jamesy-tech/sound-bookmarklets/raw/main/vine-boom.mp3');a.play();window.__soundPlayers.push(a);window.onkeydown=function(e){if(e.key==='Escape'){window.__soundPlayers.forEach(s=>{s.pause();s.currentTime=0;});window.__soundPlayers=[];}}})();">
+  <h3>Vine Boom</h3>
+  <p>Plays the iconic Vine boom sound effect.</p>
+</div>
+
+<div class="cardB9" data-command="(function(){window.__soundPlayers=window.__soundPlayers||[];let a=new Audio('https://github.com/Jamesy-tech/sound-bookmarklets/raw/main/get-out.mp3');a.play();window.__soundPlayers.push(a);window.onkeydown=function(e){if(e.key==='Escape'){window.__soundPlayers.forEach(s=>{s.pause();s.currentTime=0;});window.__soundPlayers=[];}}})();">
+  <h3>Get Out</h3>
+  <p>Plays the “Get out!” meme sound.</p>
+</div>
+
+<div class="cardB9" data-command="(function(){window.__soundPlayers=window.__soundPlayers||[];let a=new Audio('https://github.com/Jamesy-tech/sound-bookmarklets/raw/main/discord-call.mp3');a.play();window.__soundPlayers.push(a);window.onkeydown=function(e){if(e.key==='Escape'){window.__soundPlayers.forEach(s=>{s.pause();s.currentTime=0;});window.__soundPlayers=[];}}})();">
+  <h3>Discord Call</h3>
+  <p>Plays the Discord incoming call tone.</p>
+</div>
+
+<div class="cardB9" data-command="(function(){window.__soundPlayers=window.__soundPlayers||[];let a=new Audio('https://github.com/Jamesy-tech/sound-bookmarklets/raw/main/discord-notification.mp3');a.play();window.__soundPlayers.push(a);window.onkeydown=function(e){if(e.key==='Escape'){window.__soundPlayers.forEach(s=>{s.pause();s.currentTime=0;});window.__soundPlayers=[];}}})();">
+  <h3>Discord Notification</h3>
+  <p>Plays the classic Discord notification sound.</p>
+</div>
+
+<div class="cardB9" data-command="(function(){window.addEventListener('keydown',e=>{if(e.key==='Escape'){document.body.style.filter='';}});let b=document.body;if(b.style.filter.includes('blur')){b.style.filter='';}else{b.style.filter='blur(5px)';}})();">
+  <h3>Blur Page</h3>
+  <p>Toggle blur effect.</p>
+</div>
+
+
 
   </div>
 </div>
