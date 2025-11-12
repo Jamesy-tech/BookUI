@@ -271,32 +271,32 @@
 
 <div class="cardB9" data-command="(function(){window.__soundPlayers=window.__soundPlayers||[];let a=new Audio('https://github.com/Jamesy-tech/sound-bookmarklets/raw/main/metal-pipe.mp3');a.play();window.__soundPlayers.push(a);window.onkeydown=function(e){if(e.key==='Escape'){window.__soundPlayers.forEach(s=>{s.pause();s.currentTime=0;});window.__soundPlayers=[];}}})();">
   <h3>Metal Pipe</h3>
-  <p>Play the classic metal pipe sound.</p>
+  <p>Play sound 'metal-pipe'</p>
 </div>
 
 <div class="cardB9" data-command="(function(){window.__soundPlayers=window.__soundPlayers||[];let a=new Audio('https://github.com/Jamesy-tech/sound-bookmarklets/raw/main/let-me-know.mp3');a.play();window.__soundPlayers.push(a);window.onkeydown=function(e){if(e.key==='Escape'){window.__soundPlayers.forEach(s=>{s.pause();s.currentTime=0;});window.__soundPlayers=[];}}})();">
   <h3>Let Me Know</h3>
-  <p>Plays the meme voice clip “Let me know.”</p>
+  <p>Play sound 'vine-boom'.</p>
 </div>
 
 <div class="cardB9" data-command="(function(){window.__soundPlayers=window.__soundPlayers||[];let a=new Audio('https://github.com/Jamesy-tech/sound-bookmarklets/raw/main/vine-boom.mp3');a.play();window.__soundPlayers.push(a);window.onkeydown=function(e){if(e.key==='Escape'){window.__soundPlayers.forEach(s=>{s.pause();s.currentTime=0;});window.__soundPlayers=[];}}})();">
   <h3>Vine Boom</h3>
-  <p>Plays the iconic Vine boom sound effect.</p>
+  <p>Play sound 'vine-boom'.</p>
 </div>
 
 <div class="cardB9" data-command="(function(){window.__soundPlayers=window.__soundPlayers||[];let a=new Audio('https://github.com/Jamesy-tech/sound-bookmarklets/raw/main/get-out.mp3');a.play();window.__soundPlayers.push(a);window.onkeydown=function(e){if(e.key==='Escape'){window.__soundPlayers.forEach(s=>{s.pause();s.currentTime=0;});window.__soundPlayers=[];}}})();">
   <h3>Get Out</h3>
-  <p>Plays the “Get out!” meme sound.</p>
+  <p>Play sound 'get-out'.</p>
 </div>
 
 <div class="cardB9" data-command="(function(){window.__soundPlayers=window.__soundPlayers||[];let a=new Audio('https://github.com/Jamesy-tech/sound-bookmarklets/raw/main/discord-call.mp3');a.play();window.__soundPlayers.push(a);window.onkeydown=function(e){if(e.key==='Escape'){window.__soundPlayers.forEach(s=>{s.pause();s.currentTime=0;});window.__soundPlayers=[];}}})();">
   <h3>Discord Call</h3>
-  <p>Plays the Discord incoming call tone.</p>
+  <p>Play sound 'discord-call'.</p>
 </div>
 
 <div class="cardB9" data-command="(function(){window.__soundPlayers=window.__soundPlayers||[];let a=new Audio('https://github.com/Jamesy-tech/sound-bookmarklets/raw/main/discord-notification.mp3');a.play();window.__soundPlayers.push(a);window.onkeydown=function(e){if(e.key==='Escape'){window.__soundPlayers.forEach(s=>{s.pause();s.currentTime=0;});window.__soundPlayers=[];}}})();">
   <h3>Discord Notification</h3>
-  <p>Plays the classic Discord notification sound.</p>
+  <p>Play sound 'discord-notification'.</p>
 </div>
 
 <div class="cardB9" data-command="(function(){window.addEventListener('keydown',e=>{if(e.key==='Escape'){document.body.style.filter='';}});let b=document.body;if(b.style.filter.includes('blur')){b.style.filter='';}else{b.style.filter='blur(5px)';}})();">
@@ -304,7 +304,10 @@
   <p>Toggle blur effect.</p>
 </div>
 
-
+<div class="cardB9" data-command="(function(){window.__effects=window.__effects||[];document.body.style.setProperty('cursor','none','important');let u=prompt('Image URL','https://raw.githubusercontent.com/Jamesy-tech/BookUI/main/pixel-cursor.png');let c=document.createElement('img');c.src=u;c.style.cssText='position:fixed;pointer-events:none;z-index:9999;width:32px;height:32px;transform:translate(-50%,-50%) rotate(0deg);transition:transform 0.05s linear';document.body.appendChild(c);window.__effects.push(c);let pos={x:window.innerWidth/2,y:window.innerHeight/2},target={x:window.innerWidth/2,y:window.innerHeight/2},lastPos={x:pos.x,y:pos.y},idleTimeout,lastAngle=0,idle=true;function move(e){target.x=e.clientX;target.y=e.clientY;idle=false;if(idleTimeout)clearTimeout(idleTimeout);idleTimeout=setTimeout(function(){idle=true;},200);}function animate(){pos.x+=(target.x-pos.x)*0.2;pos.y+=(target.y-pos.y)*0.2;let dx=pos.x-lastPos.x,dy=pos.y-lastPos.y;if(dx||dy)lastAngle=Math.atan2(-dy,-dx)*180/Math.PI;c.style.transform='translate(-50%,-50%) rotate('+(idle?lastAngle:lastAngle)+'deg)';c.style.left=pos.x+'px';c.style.top=pos.y+'px';lastPos.x=pos.x;lastPos.y=pos.y;requestAnimationFrame(animate);}window.addEventListener('mousemove',move);requestAnimationFrame(animate);window.__effects.push({reset:()=>{window.removeEventListener('mousemove',move);c.remove();document.body.style.cursor='';}});if(!window.__escHandler){window.__escHandler=function(e){if(e.key==='Escape'){window.__effects.forEach(a=>{if(a.reset)a.reset();else if(a instanceof HTMLElement)a.remove();else clearInterval(a)});window.__effects=[];window.__sounds?.forEach(s=>{s.pause();s.currentTime=0;});window.__sounds=[];}};window.addEventListener('keydown',window.__escHandler);}})();">
+  <h3>Custom Cursor</h3>
+  <p>Change the cursor on the current page.</p>
+</div>
 
   </div>
 </div>
