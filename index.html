@@ -86,6 +86,11 @@
       <p>Add a border to the current page you are on.</p>
     </div>
 
+         <div class="cardB9" data-command="const f = prompt('Padding: ', '24px'); document.body.style.padding = f;">
+      <h3>Page Padding</h3>
+      <p>Change the &lt;body&gt;'s padding for the current page you are on.</p>
+    </div>
+
     <div class="cardB9" data-command="document.execCommand('redo');">
       <h3>Redo</h3>
       <p>Reapply the action you just undid to continue editing.</p>
@@ -326,6 +331,20 @@
 <div class="cardB9" data-command="(function(){window.__effects=window.__effects||[];document.body.style.setProperty('cursor','none','important');let u=prompt('Image URL','https://raw.githubusercontent.com/Jamesy-tech/BookUI/main/pixel-cursor.png');let c=document.createElement('img');c.src=u;c.style.cssText='position:fixed;pointer-events:none;z-index:9999;width:32px;height:32px;transform:translate(-50%,-50%) rotate(0deg);transition:transform 0.05s linear';document.body.appendChild(c);window.__effects.push(c);let pos={x:window.innerWidth/2,y:window.innerHeight/2},target={x:window.innerWidth/2,y:window.innerHeight/2},lastPos={x:pos.x,y:pos.y},idleTimeout,lastAngle=0,idle=true;function move(e){target.x=e.clientX;target.y=e.clientY;idle=false;if(idleTimeout)clearTimeout(idleTimeout);idleTimeout=setTimeout(function(){idle=true;},200);}function animate(){pos.x+=(target.x-pos.x)*0.2;pos.y+=(target.y-pos.y)*0.2;let dx=pos.x-lastPos.x,dy=pos.y-lastPos.y;if(dx||dy)lastAngle=Math.atan2(-dy,-dx)*180/Math.PI;c.style.transform='translate(-50%,-50%) rotate('+(idle?lastAngle:lastAngle)+'deg)';c.style.left=pos.x+'px';c.style.top=pos.y+'px';lastPos.x=pos.x;lastPos.y=pos.y;requestAnimationFrame(animate);}window.addEventListener('mousemove',move);requestAnimationFrame(animate);window.__effects.push({reset:()=>{window.removeEventListener('mousemove',move);c.remove();document.body.style.cursor='';}});if(!window.__escHandler){window.__escHandler=function(e){if(e.key==='Escape'){window.__effects.forEach(a=>{if(a.reset)a.reset();else if(a instanceof HTMLElement)a.remove();else clearInterval(a)});window.__effects=[];window.__sounds?.forEach(s=>{s.pause();s.currentTime=0;});window.__sounds=[];}};window.addEventListener('keydown',window.__escHandler);}})();">
   <h3>Custom Cursor</h3>
   <p>Change the cursor on the current page.</p>
+</div>
+
+  </div>
+</div>
+
+<div class="inputContainerF1">
+  <input class="commandInputT5" type="text" placeholder="Execute a command...">
+</div>
+
+<script src="script.js"></script>
+
+</body>
+</html>
+Change the cursor on the current page.</p>
 </div>
 
   </div>
