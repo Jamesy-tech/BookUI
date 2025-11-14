@@ -2,9 +2,9 @@ const input = document.querySelector('.commandInputT5');
 
 const data = {
   name: "BookUI+",
-  version: "V2.2"
+  version: "V2.3"
 };
-document.title = `${data.name} ${data.version}`;
+// document.title = `${data.name} ${data.version}`;
 document.getElementById("nameElementR4").textContent = `${data.name} ${data.version}`;
 
 var originalColor = input.style.borderColor
