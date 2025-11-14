@@ -2,7 +2,7 @@ const input = document.querySelector('.commandInputT5');
 
 const data = {
   name: "BookUI+",
-  version: "V2.0"
+  version: "V2.1"
 };
 document.title = `${data.name} ${data.version}`;
 document.getElementById("nameElementR4").textContent = `${data.name} ${data.version}`;
