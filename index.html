@@ -81,6 +81,50 @@
       <p>Revert your last change and restore the previous state.</p>
     </div>
 
+
+    <div class="cardB9" data-command="document.execCommand('redo');">
+      <h3>Redo</h3>
+      <p>Reapply the action you just undid to continue editing.</p>
+    </div>
+
+   
+        <div class="cardB9" data-command='javascript:(function(){  function getRandomColor() {    var letters = "0123456789ABCDEF";    var color = "#";    for (var i = 0; i < 6; i++) {      color += letters[Math.floor(Math.random() * 16)];    }    return color;  }  function getContrastingColor(color) {    var hex = color.slice(1);    var r = parseInt(hex.substr(0, 2), 16);    var g = parseInt(hex.substr(2, 2), 16);    var b = parseInt(hex.substr(4, 2), 16);    var yiq = (r * 299 + g * 587 + b * 114) / 1000;    return yiq >= 128 ? "#000000" : "#FFFFFF";  }  function applyRandomStyle(element) {    var randomColor = getRandomColor();    element.style.backgroundColor = randomColor;    element.style.color = getContrastingColor(randomColor);  }  var elements = document.getElementsByTagName("*");  for (var i = 0; i < elements.length; i++) {    applyRandomStyle(elements[i]);  }})();'>
+      <h3>Layout Highlighter</h3>
+      <p>Reapply the action you just undid to continue editing.</p>
+    </div>
+
+       <div class="cardB9" data-command=' javascript:(function() { var lang = prompt("Enter language code to translate to:", "en"); var translationUrl = "https://translate.google.com/translate?sl=auto&tl=" + lang + "&u=" + encodeURIComponent(window.location.href); window.open(translationUrl, "_blank");})();'>
+      <h3>Translate Page</h3>
+      <p>Translate the current page you are on to a different language using Google Translate.</p>
+    </div>
+
+     <div class="cardB9" data-command="javascript:(function(){function syntaxHighlight(json){json=JSON.stringify(json,undefined,4);json=json.replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');return json.replace(/(&quot;(\\u[a-zA-Z0-9]{4}|\\\\[^u]|[^\\\\&quot;])*&quot;(\s*:)?|\b(true|false|null)\b|-?\d+(?:\.\d*)?(?:[eE][+-]?\d+)?)/g,function(match){var cls='color: black;';if(/^&quot;/.test(match)){if(/:$/.test(match)){cls='color: green;';}else{cls='color: darkorange;';}}else if(/true|false/.test(match)){cls='color: red;';}else if(/null|-?\d+(?:\.\d*)?(?:[eE][+-]?\d+)?/.test(match)){cls='color: purple;';}return '&lt;span style=&quot;'+cls+'&quot;&gt;'+match+'&lt;/span&gt;';});}var contentType=document.contentType;if(contentType==='application/json'){var json=JSON.parse(document.body.innerText);var highlighted=syntaxHighlight(json);document.body.innerHTML='&lt;pre&gt;'+highlighted+'&lt;/pre&gt;';document.body.style.fontFamily='Arial, sans-serif';document.body.style.fontSize='15px';}else{alert('This page does not contain JSON.');}})();">
+  <h3>JSON Formatter</h3>
+  <p>Auto-formats and highlights JSON on any page.</p>
+</div>
+
+<div class="cardB9" data-command="javascript:(function(){var c=document.createElement('div');c.setAttribute('style','position:fixed;top:10px;right:10px;z-index:9999;background:white;border-radius:10px;padding:10px;display:flex;align-items:center;font-family:Verdana,sans-serif !important;');var i=document.createElement('input');i.type='color';i.style.width='30px';i.style.height='30px';i.style.marginRight='10px';i.style.fontFamily='Verdana, sans-serif';var b=document.createElement('button');b.textContent='Copy';b.setAttribute('style','padding:5px 10px;margin-right:10px;background:#4CAF50;color:white;border:none;border-radius:5px;cursor:pointer;font-family:Verdana,sans-serif !important;');var x=document.createElement('button');x.textContent='Close';x.setAttribute('style','padding:5px 10px;background:#f44336;color:white;border:none;border-radius:5px;cursor:pointer;font-family:Verdana,sans-serif !important;');b.addEventListener('click',function(){var v=i.value;var t=document.createElement('input');t.value=v;document.body.appendChild(t);t.select();document.execCommand('copy');document.body.removeChild(t);alert('Color copied to clipboard: '+v);});x.addEventListener('click',function(){c.remove();});c.appendChild(i);c.appendChild(b);c.appendChild(x);document.body.appendChild(c);})();">
+  <h3>Color Picker</h3>
+  <p>Pick and copy any color.</p>
+</div>
+
+<div class="cardB9" data-command="javascript:window.location='https://developers.google.com/speed/pagespeed/insights/?url='+encodeURIComponent(window.location);">
+  <h3>PageSpeed Insights</h3>
+  <p>Analyze the current page's speed and performance.</p>
+</div>
+
+      <div class="cardB9" data-command="javascript:(function(){function generatePassword(length){var charset='abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789_-+={}|:&quot;?#$*';var password='';for(var i=0;i<length;i++){var randomIndex=Math.floor(Math.random()*charset.length);password+=charset.charAt(randomIndex);}return password;}var passwordLength=prompt('Enter password length:','8');if(!passwordLength)return;var generatedPassword=generatePassword(passwordLength);prompt('Generated Password:',generatedPassword);})();">
+  <h3>Password Generator</h3>
+  <p>Generate a password of any length to use anywhere.</p>
+</div>
+
+
+    <div class="cardB9" data-command='javascript:(function() { var url = encodeURIComponent(window.location.href); var qrCodeUrl = "https://api.qrserver.com/v1/create-qr-code/?data=" + url; window.open(qrCodeUrl, "_blank");})();'>
+      <h3>Generate QR Code</h3>
+      <p>Generate a QR code for the current page you are on.</p>
+    </div>
+
+
         <div class="cardB9" data-command="const f = prompt('Border: ', 'solid dodgerblue 5px'); document.body.style.border = f;">
       <h3>Page Border</h3>
       <p>Add a border to the current page you are on.</p>
@@ -94,11 +138,6 @@
      <div class="cardB9" data-command="const f = prompt('Margin: ', '24px'); document.body.style.margin = f;">
       <h3>Page Margin</h3>
       <p>Change the &lt;body&gt;'s margin for the current page you are on.</p>
-    </div>
-
-    <div class="cardB9" data-command="document.execCommand('redo');">
-      <h3>Redo</h3>
-      <p>Reapply the action you just undid to continue editing.</p>
     </div>
 
     <div class="cardB9" data-command="(function(){const t=prompt('Clicks per second? (Max 200)','10');if(!t)return;const c=Math.min(200,Math.max(0,Number(t)));if(!c||isNaN(c)){alert('Invalid number');return}const i=1000/c;if(window.__autoclicker&&window.__autoclicker.running){window.__autoclicker.running=false;return}window.__autoclicker={running:true,lastX:0,lastY:0,target:document.elementFromPoint(window.innerWidth/2,window.innerHeight/2)};function m(e){window.__autoclicker.lastX=e.clientX;window.__autoclicker.lastY=e.clientY;window.__autoclicker.target=e.target}function k(e){if(e.key==='Escape'){window.__autoclicker.running=false}}window.addEventListener('mousemove',m);window.addEventListener('keydown',k);let l=performance.now(),a=0;function tick(n){a+=n-l;l=n;while(a>=i&&window.__autoclicker.running){try{const el=window.__autoclicker.target||document.elementFromPoint(window.__autoclicker.lastX||window.innerWidth/2,window.__autoclicker.lastY||window.innerHeight/2);if(el&&typeof el.click==='function')el.click()}catch{}a-=i}if(window.__autoclicker.running)requestAnimationFrame(tick);else{window.removeEventListener('mousemove',m);window.removeEventListener('keydown',k);delete window.__autoclicker;alert('Auto-clicker stopped')}}requestAnimationFrame(tick);alert('Auto-clicker started — move mouse to pick target element. Run again or press ESC to stop.')})()">
@@ -349,4 +388,3 @@
 
 </body>
 </html>
-
