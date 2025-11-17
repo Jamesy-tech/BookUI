@@ -2,10 +2,19 @@ const input = document.querySelector('.commandInputT5');
 
 const data = {
   name: "BookUI+",
-  version: "V2.5"
+  version: "V2.6"
 };
 
 document.getElementById("nameElementR4").textContent = `${data.name} ${data.version}`;
+
+async function copy(text) {
+  try {
+    await navigator.clipboard.writeText(text);
+    console.log('Copied to clipboard:', text);
+  } catch (err) {
+    console.error('Failed to copy:', err);
+  }
+}
 
 var customCommands = {
   "ttrs-hacks": () => alert(`ttrs-hacks
@@ -15,6 +24,7 @@ get-answer.js: ttrs-hacks_get-answer`),
     fetch("https://raw.githubusercontent.com/Jamesy-tech/ttrs-hacks/main/get-answer.js")
       .then(res => res.text())
       .then(code => {
+        copy(code);
         document.querySelector('.commandInputT5').value = code;
       })
       .catch(err => console.error(err));
@@ -27,6 +37,7 @@ cheats-gui.js: blooket-hacks_cheats-gui`),
     fetch("https://raw.githubusercontent.com/Jamesy-tech/blooket-hacks/main/bookmarklet.js")
       .then(res => res.text())
       .then(code => {
+        copy(code);
         document.querySelector('.commandInputT5').value = code;
       })
       .catch(err => console.error(err));
