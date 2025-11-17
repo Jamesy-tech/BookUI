@@ -85,6 +85,7 @@ document.querySelectorAll('.cardB9').forEach(card => {
   card.addEventListener('click', () => {
     input.value = card.getAttribute('data-command');
     input.focus();
+    copy(card.getAttribute('data-command'))
   });
 });
 
