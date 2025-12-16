@@ -16,6 +16,14 @@ async function copy(text) {
   }
 }
 
+if (window.location.href.includes("jamesy-tech.github.io/BookUI")) {
+  console.log("URL contains 'BookUI'!")
+  window.location.href = "https://sites.google.com/view/get-bookui"
+} else {
+  console.log("URL does not contain 'BookUI'")
+  input.focus();
+}
+
 var customCommands = {
   "ttrs-hacks": () => alert(`ttrs-hacks
 get-answer.js: ttrs-hacks_get-answer`),
@@ -111,8 +119,6 @@ input.addEventListener('keydown', e => {
     }
   }
 });
-
-input.focus();
 
 function switchTheme(theme) {
   if (theme === "loadTheme") {
