@@ -73,7 +73,7 @@ body.theme-morning-glow {
     height: 100%;
     background-color: var(--background-color);
     color: var(--text-color);
-    font-family: 'Inter', !important;
+    font-family: 'Mulish', !important;
     text-decoration: none;
 }
 
@@ -88,7 +88,7 @@ body.theme-morning-glow {
 }
 
 .brandQ3 {
-    font-family: 'Inter' !important;
+    font-family: 'Mulish' !important;
     font-size: 1.4rem !important;
     font-weight: 700;
     color: var(--primary-color);
@@ -114,7 +114,7 @@ body.theme-morning-glow {
     font-weight: 500;
     transition: 0.2s ease;
     cursor: pointer;
-    font-family: 'Inter' !important;
+    font-family: 'Mulish' !important;
 }
 
 .linkV1:hover {
@@ -153,7 +153,7 @@ body.theme-morning-glow {
     display: block;
     padding: 10px 16px;
     cursor:pointer;
-    font-family: 'Inter' !important;
+    font-family: 'Mulish' !important;
     text-decoration: none !important;
     color: var(--muted-text);
 }
@@ -200,7 +200,7 @@ body.theme-morning-glow {
     transition: transform 0.2s, background-color 0.2s;
     cursor: pointer;
     height: auto;
-    font-family: 'Inter' !important;
+    font-family: 'Mulish' !important;
 }
 
 .cardB9:hover {
@@ -241,5 +241,3 @@ body.theme-morning-glow {
 .commandInputT5::placeholder {
     color: var(--text-color);
 }
-
-/* BookUI */
