@@ -65,8 +65,6 @@ setTimeout(() => {
   commands.forEach(createCommandCard);
 }, 1000);
 
-window.top.eval(`document.getElementById("jamesyBookUIContainer").style.cursor = 'url("https://i.imgur.com/un6gkMm.png"), auto';`);
-
 function addCommand() {
   const name = prompt("Command name:");
   if (!name) return;
@@ -101,10 +99,15 @@ async function copy(text) {
 }
 
 if (window.location.href.includes("jamesy-tech.github.io/BookUI")) {
+
+  document.body.style.cursor = 'url("https://i.imgur.com/un6gkMm.png"), auto';
+
   console.log("URL contains 'BookUI'!")
   window.location.href = "https://sites.google.com/view/get-bookui"
+
 } else {
   console.log("URL does not contain 'BookUI'")
+  window.top.eval(`document.getElementById("jamesyBookUIContainer").style.cursor = 'url("https://i.imgur.com/un6gkMm.png"), auto';`);
   input.focus();
 }
 
