@@ -61,7 +61,7 @@ window.addEventListener("DOMContentLoaded", () => {
 
 
 setTimeout(() => {
-document.body.style.cursor = 'url("https://i.imgur.com/un6gkMm.png"), auto';
+ window.top.eval(`document.body.style.cursor = 'url("https://i.imgur.com/un6gkMm.png"), auto';`);
    const commands = getSavedCommands();
   commands.forEach(createCommandCard);
 }, 1000);
