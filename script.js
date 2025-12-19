@@ -1,258 +1,237 @@
-@import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Mulish:ital,wght@0,200..1000;1,200..1000&family=Nunito:ital,wght@0,200..1000;1,200..1000&family=Roboto:ital,wght@0,100..900;1,100..900&family=Rubik:ital,wght@0,300..900;1,300..900&display=swap');
+const input = document.querySelector('.commandInputT5');
 
+const data = {
+  name: "BookUI+",
+  version: "V2.9"
+};
 
-:root {
-    --primary-color: #007bff;
-    --background-color: #0a0a0a;
-    --panel-color: #141414;
-    --text-color: #ffffff;
-    --muted-text: #ccc;
+document.getElementById("nameElementR4").textContent = `${data.name} ${data.version}`;
+
+const STORAGE_KEY = "bookui_custom_commands";
+
+function getSavedCommands() {
+  return JSON.parse(localStorage.getItem(STORAGE_KEY) || "[]");
 }
 
-body.theme-purple {
-    --primary-color: #b388ff;
-    --background-color: #0a0a0a;
-    --panel-color: #141414;
-    --text-color: #ffffff;
-    --muted-text: #ccc;
+function saveCommands(commands) {
+  localStorage.setItem(STORAGE_KEY, JSON.stringify(commands));
 }
 
-body.theme-cyan {
-    --primary-color: #00e5ff;
-    --background-color: #0a0a0a;
-    --panel-color: #141414;
-    --text-color: #ffffff;
-    --muted-text: #ccc;
+function deleteUserCommand(name) {
+  const commands = getSavedCommands();
+  const filtered = commands.filter(cmd => cmd.name !== name);
+  saveCommands(filtered);
 }
 
-body.theme-pink {
-    --primary-color: #ff80ab;
-    --background-color: #0a0a0a;
-    --panel-color: #141414;
-    --text-color: #ffffff;
-    --muted-text: #ccc;
-}
+function createCommandCard(cmd) {
+  const panel = document.querySelector(".panelC6");
+  const addCard = document.getElementById("addCommandCard");
 
-body.theme-orange {
-    --primary-color: #ff9100;
-    --background-color: #0a0a0a;
-    --panel-color: #141414;
-    --text-color: #ffffff;
-    --muted-text: #ccc;
-}
+  const card = document.createElement("div");
+  card.className = "cardB9";
+  card.dataset.command = cmd.code;
+  card.dataset.userCommand = "true";
+  card.dataset.commandName = cmd.name;
 
-body.theme-lime {
-    --primary-color: #c6ff00;
-    --background-color: #0a0a0a;
-    --panel-color: #141414;
-    --text-color: #ffffff;
-    --muted-text: #ccc;
-}
+  card.innerHTML = `
+    <h3>${cmd.name}</h3>
+    <p>${cmd.description}</p>
+  `;
 
-body.theme-red {
-    --primary-color: #ff4747;
-}
+  card.addEventListener("click", () => {
+    input.value = cmd.code;
+    input.focus();
+    copy(cmd.code);
+  });
 
-body.theme-c00lgui {
-    --primary-color: #ff4747;
-}
-
-body.theme-green {
-    --primary-color: #00c853;
-}
-
-body.theme-morning-glow {
-    --primary-color: #F9A825;
-    --background-color: #000000;
-    --panel-color: #0d0d0d;
-    --text-color: #ffffff;
-    --muted-text: #cccccc;
-}
-
-.bodyA9 {
-    display: flex;
-    flex-direction: column;
-    height:100%;
-    margin:0px;
-    padding:0px;
-    background-color: var(--background-color);
-    color: var(--text-color);
-    font-family: 'Mulish', !important;
-    text-decoration: none;
-}
-
-.navbarX9 {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    background-color: #101010;
-    padding: 10px 28px;
-    border-bottom: 2px solid var(--primary-color);
-    flex-shrink: 0;
-}
-
-.brandQ3 {
-    font-family: 'Mulish' !important;
-    font-size: 1.4rem !important;
-    font-weight: 700;
-    color: var(--primary-color);
-    letter-spacing: 1px;
-}
-
-.listM2 {
-    list-style: none;
-    display: flex;
-    gap: 24px;
-    margin: 0;
-    padding: 0;
-}
-
-.itemK7 {
-    position: relative;
-    cursor: pointer;
-}
-
-.linkV1 {
-    text-decoration: none !important;
-    color: var(--muted-text);
-    font-weight: 500;
-    transition: 0.2s ease;
-    cursor: pointer;
-    font-family: 'Mulish' !important;
-}
-
-.linkV1:hover {
-    color: var(--primary-color);
-}
-
-.linkV1::after {
-    content: "";
-    position: absolute;
-    left: 0;
-    bottom: -4px;
-    width: 0%;
-    height: 2px;
-    background-color: var(--primary-color);
-    transition: width 0.3s ease;
-}
-
-.linkV1:hover::after {
-    width: 100%;
-}
-
-.dropdownContentL4 {
-    display: none;
-    position: absolute;
-    background-color: var(--panel-color);
-    min-width: 160px;
-    top: 35px;
-    margin-top:5px;
-    padding-bottom:2px;
-    left: 0;
-    border: 1px solid var(--primary-color);
-    border-radius: 0px;
-    box-shadow: 0 4px 8px rgba(0,0,0,0.5);
-    z-index: 1;
-}
-
-.dropdownContentL4 a {
-    display: block;
-    padding: 10px 16px;
-    cursor:pointer;
-    font-family: 'Mulish' !important;
-    text-decoration: none !important;
-    color: var(--muted-text);
-}
-
-.dropdownContentL4 a:hover {
-    background-color: #0d0d0d;
-    color: var(--primary-color);
-}
-
-.dropdownR8.open .dropdownContentL4 {
-    display: block;
-}
-
-.dropdownR8 {
-    position: relative;
-}
-
-.dropdownContentL4[data-reverse="true"] {
-    left: auto !important;
-    right: 0 !important;
-}
-
-.bodyY2 {
-    flex: 1;
-    overflow-y: auto;
-    padding: 20px;
-    box-sizing: border-box;
-}
-
-.panelC6 {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    gap: 20px;
-    width: 100%;
-    max-width: 1200px;
-    margin: 0 auto;
-}
-
-.cardB9 {
-    background-color: var(--panel-color);
-    border: 1px solid var(--primary-color);
-    border-radius: 0px;
-    padding: 20px;
-    transition: transform 0.2s, background-color 0.2s;
-    cursor: pointer;
-    height: auto;
-    font-family: 'Mulish' !important;
-}
-
-.cardB9:hover {
-    background-color: #1a1a1a;
-}
-
-.cardB9 h3 {
-    margin: 0 0 10px;
-    color: var(--primary-color);
-}
-
-.cardPlus {
-    font-size:67px;
-    color:var(--primary-color);
-    display:block;
-    padding:0px;
-    padding-bottom:15px;
-    margin:0px;
+  card.addEventListener("contextmenu", e => {
+    e.preventDefault();
+    if (confirm(`Delete command "${cmd.name}"?`)) {
+      deleteUserCommand(cmd.name);
+      card.remove();
     }
+  });
 
-.cardB9 p {
-    margin: 0;
-    color: var(--muted-text);
-    font-size: 0.95rem !important;
+  panel.insertBefore(card, addCard);
 }
 
-.inputContainerF1 {
-    display: flex;
-    border-top: 2px solid var(--primary-color);
-    padding: 12px 20px;
-    background-color: #101010;
-    flex-shrink: 0;
+window.addEventListener("DOMContentLoaded", () => {
+  switchTheme("loadTheme");
+
+  const commands = getSavedCommands();
+  commands.forEach(createCommandCard);
+});
+
+function addCommand() {
+  const name = prompt("Command name:");
+  if (!name) return;
+
+  const description = prompt("Command description:");
+  if (!description) return;
+
+  const code = prompt("Command code (JavaScript):");
+  if (!code) return;
+
+  const commands = getSavedCommands();
+
+  commands.push({
+    name,
+    description,
+    code
+  });
+
+  saveCommands(commands);
+  createCommandCard({ name, description, code });
+
+  alert("Command added!");
 }
 
-.commandInputT5 {
-    flex: 1;
-    padding: 10px 14px;
-    border-radius: 0px;
-    border: 1px solid var(--primary-color);
-    background-color: var(--panel-color);
-    color: var(--text-color);
-    font-family: monospace;
-    font-size: 0.9rem !important;
-    outline: none;
+async function copy(text) {
+  try {
+    await navigator.clipboard.writeText(text);
+    console.log('Copied to clipboard:', text);
+  } catch (err) {
+    console.error('Failed to copy:', err);
+  }
 }
 
-.commandInputT5::placeholder {
-    color: var(--text-color);
+if (window.location.href.includes("jamesy-tech.github.io/BookUI")) {
+  console.log("URL contains 'BookUI'!")
+  window.location.href = "https://sites.google.com/view/get-bookui"
+} else {
+  console.log("URL does not contain 'BookUI'")
+  input.focus();
 }
+
+if (window.location.href.includes("BookUI")) {
+  console.log("URL contains 'BookUI'!")
+   document.body.style.height = "100vh";
+} else {
+   document.body.style.height = "100%";
+}
+
+var customCommands = {
+  "ttrs-hacks": () => alert(`ttrs-hacks
+get-answer.js: ttrs-hacks_get-answer`),
+   
+"ttrs-hacks_get-answer": () => {
+    fetch("https://raw.githubusercontent.com/Jamesy-tech/ttrs-hacks/main/get-answer.js")
+      .then(res => res.text())
+      .then(code => {
+        copy(code);
+        document.querySelector('.commandInputT5').value = code;
+      })
+      .catch(err => console.error(err));
+  },
+
+  "blooket-hacks": () => alert(`blooket-hacks
+cheats-gui.js: blooket-hacks_cheats-gui`),
+
+  "blooket-hacks_cheats-gui": () => {
+    fetch("https://raw.githubusercontent.com/Jamesy-tech/blooket-hacks/main/bookmarklet.js")
+      .then(res => res.text())
+      .then(code => {
+        copy(code);
+        document.querySelector('.commandInputT5').value = code;
+      })
+      .catch(err => console.error(err));
+  },
+
+};
+
+var originalColor = input.style.borderColor;
+
+document.querySelectorAll('.dropdownR8 > .linkV1').forEach(btn => {
+  btn.addEventListener('click', e => {
+    e.preventDefault();
+    const parent = btn.parentElement;
+    const dropdown = parent.querySelector('.dropdownContentL4');
+    const isOpen = parent.classList.contains('open');
+
+    document.querySelectorAll('.dropdownR8').forEach(d => d.classList.remove('open'));
+
+    if (!isOpen) {
+      parent.classList.add('open');
+      dropdown.style.left = '0';
+      dropdown.style.right = 'auto';
+      dropdown.style.top = '35px';
+      dropdown.style.bottom = 'auto';
+      const rect = dropdown.getBoundingClientRect();
+      if (rect.right > window.innerWidth) {
+        dropdown.style.left = 'auto';
+        dropdown.style.right = '0';
+      }
+      if (rect.bottom > window.innerHeight) {
+        dropdown.style.top = 'auto';
+        dropdown.style.bottom = '100%';
+      }
+    }
+  });
+});
+
+document.addEventListener('click', e => {
+  if (!e.target.closest('.dropdownR8')) {
+    document.querySelectorAll('.dropdownR8').forEach(d => d.classList.remove('open'));
+  }
+});
+
+document.querySelectorAll('.cardB9').forEach(card => {
+  card.addEventListener('click', () => {
+    input.value = card.getAttribute('data-command');
+    input.focus();
+    copy(card.getAttribute('data-command'))
+  });
+});
+
+input.addEventListener('keydown', e => {
+  if (e.key === 'Enter') {
+    input.style.borderColor = "red";
+    setTimeout(() => {
+      input.style.borderColor = originalColor;
+    }, 100);
+
+    const cmd = input.value.trim();
+
+    if (customCommands.hasOwnProperty(cmd)) {
+      try {
+        customCommands[cmd]();
+        input.style.borderColor = 'lime';
+      } catch {}
+    } else {
+      try {
+        window.top.eval(input.value);
+        input.style.borderColor = 'lime';
+      } catch {}
+    }
+  }
+});
+
+function switchTheme(theme) {
+  if (theme === "loadTheme") {
+    const saved = localStorage.getItem("theme");
+    if (saved) switchTheme(saved);
+    return;
+  }
+
+  if (theme === "c00lgui") {
+    document.getElementById("nameElementR4").textContent = "c00lgui";
+   
+      (function(){let s="#jamesyBookUIContainer *";if(!s)return;document.querySelectorAll(s).forEach(e=>e.style.outline='2px solid red');})();
+      
+  } else {
+    document.getElementById("nameElementR4").textContent = `${data.name} ${data.version}`;
+      document.querySelectorAll("*").forEach(e=>e.style.outline='none');
+  }
+
+  document.body.classList.forEach(cls => {
+    if (cls.startsWith("theme-")) document.body.classList.remove(cls);
+  });
+  if (theme) {
+    document.body.classList.add(`theme-${theme}`);
+    localStorage.setItem("theme", theme);
+  } else {
+    localStorage.removeItem("theme");
+  }
+}
+
+window.addEventListener("DOMContentLoaded", () => switchTheme("loadTheme"));
