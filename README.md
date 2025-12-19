@@ -1,4 +1,4 @@
-# BookUI+ V1.2
+# BookUI Plus
 
 BookUI+ is a bookmarklet that opens a command panel inside your browser.  
 You can run code in it with or without knowing JavaScript. It’s made to be simple to use and quick to set up.
