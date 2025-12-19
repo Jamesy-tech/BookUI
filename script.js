@@ -2,7 +2,7 @@ const input = document.querySelector('.commandInputT5');
 
 const data = {
   name: "BookUI+",
-  version: "V2.7"
+  version: "V2.9"
 };
 
 document.getElementById("nameElementR4").textContent = `${data.name} ${data.version}`;
@@ -25,6 +25,7 @@ function deleteUserCommand(name) {
 
 function createCommandCard(cmd) {
   const panel = document.querySelector(".panelC6");
+  const addCard = document.getElementById("addCommandCard");
 
   const card = document.createElement("div");
   card.className = "cardB9";
@@ -45,15 +46,13 @@ function createCommandCard(cmd) {
 
   card.addEventListener("contextmenu", e => {
     e.preventDefault();
-
-    const ok = confirm(`Delete command "${cmd.name}"?`);
-    if (!ok) return;
-
-    deleteUserCommand(cmd.name);
-    card.remove();
+    if (confirm(`Delete command "${cmd.name}"?`)) {
+      deleteUserCommand(cmd.name);
+      card.remove();
+    }
   });
 
-  panel.appendChild(card);
+  panel.insertBefore(card, addCard);
 }
 
 window.addEventListener("DOMContentLoaded", () => {
