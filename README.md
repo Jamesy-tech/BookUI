@@ -7,7 +7,9 @@ You can run code in it with or without knowing JavaScript. It’s made to be sim
 • Opens a command-style panel on any page  
 • Lets you run JavaScript instantly  
 • Works for both beginners and coders  
-• No extensions or installs needed  
+• No extensions or installs needed
+
+*Please note BookUI does not work on ALL websites due to security reasons, try Google or Jamesy Creator. BookUI should work on most websites. *
 
 ## How to Get It
 
