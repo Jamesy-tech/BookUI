@@ -69,6 +69,10 @@ body.theme-morning-glow {
     --muted-text: #cccccc;
 }
 
+* {
+cursor: url("https://raw.githubusercontent.com/Jamesy-tech/BookUI/main/cursor.png"), auto !important;
+}
+
 .bodyA9 {
     display: flex;
 cursor: url("https://raw.githubusercontent.com/Jamesy-tech/BookUI/main/cursor.png"), auto !important;
