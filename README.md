@@ -11,7 +11,7 @@ You can run code in it with or without knowing JavaScript. It’s made to be sim
 
 ## How to Get It
 
-1. Go to the page where the bookmarklet is shared and download **bookmarklet.html**.  
+1. Go to the page where the bookmarklet is shared and download **bookmarklet.html**. <a href="bookmarklet.html">Click here to access it</a>  
 2. In Chrome, open the Bookmarks Manager by typing this into the address bar:  
    `chrome://bookmarks`  
 3. Click the three dots in the top-right corner, then choose **Import Bookmarks**.  
