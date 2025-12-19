@@ -216,7 +216,7 @@ function switchTheme(theme) {
   if (theme === "c00lgui") {
     document.getElementById("nameElementR4").textContent = "c00lgui";
    
-      (function(){let s="*";if(!s)return;document.querySelectorAll(s).forEach(e=>e.style.outline='2px solid red');})();
+      (function(){let s="#jamesyBookUIContainer *";if(!s)return;document.querySelectorAll(s).forEach(e=>e.style.outline='2px solid red');})();
       
   } else {
     document.getElementById("nameElementR4").textContent = `${data.name} ${data.version}`;
