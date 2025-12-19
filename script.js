@@ -61,9 +61,10 @@ window.addEventListener("DOMContentLoaded", () => {
 
 
 setTimeout(() => {
+document.body.style.cursor = 'url("https://i.imgur.com/un6gkMm.png"), auto';
    const commands = getSavedCommands();
   commands.forEach(createCommandCard);
-}, 3000);
+}, 1000);
 
 function addCommand() {
   const name = prompt("Command name:");
