@@ -1,5 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Mulish:ital,wght@0,200..1000;1,200..1000&family=Nunito:ital,wght@0,200..1000;1,200..1000&family=Roboto:ital,wght@0,100..900;1,100..900&family=Rubik:ital,wght@0,300..900;1,300..900&display=swap');
 
+
 :root {
     --primary-color: #007bff;
     --background-color: #0a0a0a;
@@ -70,6 +71,7 @@ body.theme-morning-glow {
 
 .bodyA9 {
     display: flex;
+    cursor: url("cursor.png"), auto !important;
     flex-direction: column;
     height:100%;
     margin:0px;
@@ -108,7 +110,6 @@ body.theme-morning-glow {
 
 .itemK7 {
     position: relative;
-    cursor: pointer;
 }
 
 .linkV1 {
@@ -116,7 +117,6 @@ body.theme-morning-glow {
     color: var(--muted-text);
     font-weight: 500;
     transition: 0.2s ease;
-    cursor: pointer;
     font-family: 'Mulish' !important;
 }
 
@@ -157,7 +157,6 @@ body.theme-morning-glow {
 .dropdownContentL4 a {
     display: block;
     padding: 10px 16px;
-    cursor:pointer;
     font-family: 'Mulish' !important;
     text-decoration: none !important;
     color: var(--muted-text);
@@ -203,7 +202,6 @@ body.theme-morning-glow {
     border-radius: 0px;
     padding: 20px;
     transition: transform 0.2s, background-color 0.2s;
-    cursor: pointer;
     height: auto;
     font-family: 'Mulish' !important;
 }
