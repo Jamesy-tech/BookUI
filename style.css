@@ -69,13 +69,9 @@ body.theme-morning-glow {
     --muted-text: #cccccc;
 }
 
-* {
-cursor: url("https://raw.githubusercontent.com/Jamesy-tech/BookUI/main/cursor.png"), auto !important;
-}
-
 .bodyA9 {
     display: flex;
-cursor: url("https://raw.githubusercontent.com/Jamesy-tech/BookUI/main/cursor.png"), auto !important;
+cursor: url("https://i.imgur.com/un6gkMm.png"), auto !important;
     flex-direction: column;
     height:100%;
     margin:0px;
@@ -208,7 +204,6 @@ cursor: url("https://raw.githubusercontent.com/Jamesy-tech/BookUI/main/cursor.pn
     transition: transform 0.2s, background-color 0.2s;
     height: auto;
     font-family: 'Mulish' !important;
-cursor: url("https://raw.githubusercontent.com/Jamesy-tech/BookUI/main/cursor.png"), auto !important;
 }
 
 .cardB9:hover {
