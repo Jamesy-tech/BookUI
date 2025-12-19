@@ -57,10 +57,13 @@ function createCommandCard(cmd) {
 
 window.addEventListener("DOMContentLoaded", () => {
   switchTheme("loadTheme");
-
-  const commands = getSavedCommands();
-  commands.forEach(createCommandCard);
 });
+
+
+setTimeout(() => {
+   const commands = getSavedCommands();
+  commands.forEach(createCommandCard);
+}, 3000);
 
 function addCommand() {
   const name = prompt("Command name:");
