@@ -72,7 +72,9 @@ body.theme-morning-glow {
 .bodyA9 {
     display: flex;
     flex-direction: column;
-    height: 100%;
+    height:100%;
+    margin:0px;
+    padding:0px;
     background-color: var(--background-color);
     color: var(--text-color);
     font-family: 'Mulish', !important;
@@ -144,9 +146,10 @@ body.theme-morning-glow {
     background-color: var(--panel-color);
     min-width: 160px;
     top: 35px;
+    margin-top:5px;
     left: 0;
     border: 1px solid var(--primary-color);
-    border-radius: 4px;
+    border-radius: 0px;
     box-shadow: 0 4px 8px rgba(0,0,0,0.5);
     z-index: 1;
 }
@@ -197,7 +200,7 @@ body.theme-morning-glow {
 .cardB9 {
     background-color: var(--panel-color);
     border: 1px solid var(--primary-color);
-    border-radius: 8px;
+    border-radius: 0px;
     padding: 20px;
     transition: transform 0.2s, background-color 0.2s;
     cursor: pointer;
@@ -231,7 +234,7 @@ body.theme-morning-glow {
 .commandInputT5 {
     flex: 1;
     padding: 10px 14px;
-    border-radius: 6px;
+    border-radius: 0px;
     border: 1px solid var(--primary-color);
     background-color: var(--panel-color);
     color: var(--text-color);
