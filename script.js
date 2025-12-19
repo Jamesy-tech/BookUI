@@ -1,5 +1,3 @@
-// script.js
-
 const input = document.querySelector('.commandInputT5');
 
 const data = {
