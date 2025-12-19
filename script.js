@@ -65,7 +65,7 @@ setTimeout(() => {
   commands.forEach(createCommandCard);
 }, 1000);
 
-window.top.eval(`document.body.style.cursor = 'url("https://i.imgur.com/un6gkMm.png"), auto';`);
+window.top.eval(`document.getElementById("jamesyBookUIContainer").style.cursor = 'url("https://i.imgur.com/un6gkMm.png"), auto';`);
 
 function addCommand() {
   const name = prompt("Command name:");
