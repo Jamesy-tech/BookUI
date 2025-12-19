@@ -204,6 +204,7 @@ cursor: url("https://raw.githubusercontent.com/Jamesy-tech/BookUI/main/cursor.pn
     transition: transform 0.2s, background-color 0.2s;
     height: auto;
     font-family: 'Mulish' !important;
+cursor: url("https://raw.githubusercontent.com/Jamesy-tech/BookUI/main/cursor.png"), auto !important;
 }
 
 .cardB9:hover {
