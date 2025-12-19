@@ -2,10 +2,90 @@ const input = document.querySelector('.commandInputT5');
 
 const data = {
   name: "BookUI+",
-  version: "V2.6"
+  version: "V2.7"
 };
 
 document.getElementById("nameElementR4").textContent = `${data.name} ${data.version}`;
+
+const STORAGE_KEY = "bookui_custom_commands";
+
+function getSavedCommands() {
+  return JSON.parse(localStorage.getItem(STORAGE_KEY) || "[]");
+}
+
+function saveCommands(commands) {
+  localStorage.setItem(STORAGE_KEY, JSON.stringify(commands));
+}
+
+function deleteUserCommand(name) {
+  const commands = getSavedCommands();
+  const filtered = commands.filter(cmd => cmd.name !== name);
+  saveCommands(filtered);
+}
+
+function createCommandCard(cmd) {
+  const panel = document.querySelector(".panelC6");
+
+  const card = document.createElement("div");
+  card.className = "cardB9";
+  card.dataset.command = cmd.code;
+  card.dataset.userCommand = "true";
+  card.dataset.commandName = cmd.name;
+
+  card.innerHTML = `
+    <h3>${cmd.name}</h3>
+    <p>${cmd.description}</p>
+  `;
+
+  card.addEventListener("click", () => {
+    input.value = cmd.code;
+    input.focus();
+    copy(cmd.code);
+  });
+
+  card.addEventListener("contextmenu", e => {
+    e.preventDefault();
+
+    const ok = confirm(`Delete command "${cmd.name}"?`);
+    if (!ok) return;
+
+    deleteUserCommand(cmd.name);
+    card.remove();
+  });
+
+  panel.appendChild(card);
+}
+
+window.addEventListener("DOMContentLoaded", () => {
+  switchTheme("loadTheme");
+
+  const commands = getSavedCommands();
+  commands.forEach(createCommandCard);
+});
+
+function addCommand() {
+  const name = prompt("Command name:");
+  if (!name) return;
+
+  const description = prompt("Command description:");
+  if (!description) return;
+
+  const code = prompt("Command code (JavaScript):");
+  if (!code) return;
+
+  const commands = getSavedCommands();
+
+  commands.push({
+    name,
+    description,
+    code
+  });
+
+  saveCommands(commands);
+  createCommandCard({ name, description, code });
+
+  alert("Command added!");
+}
 
 async function copy(text) {
   try {
@@ -22,6 +102,13 @@ if (window.location.href.includes("jamesy-tech.github.io/BookUI")) {
 } else {
   console.log("URL does not contain 'BookUI'")
   input.focus();
+}
+
+if (window.location.href.includes("BookUI")) {
+  console.log("URL contains 'BookUI'!")
+   document.body.style.height = "100vh";
+} else {
+   document.body.style.height = "100%";
 }
 
 var customCommands = {
@@ -129,8 +216,12 @@ function switchTheme(theme) {
 
   if (theme === "c00lgui") {
     document.getElementById("nameElementR4").textContent = "c00lgui";
+   
+      (function(){let s="*";if(!s)return;document.querySelectorAll(s).forEach(e=>e.style.outline='2px solid red');})();
+      
   } else {
     document.getElementById("nameElementR4").textContent = `${data.name} ${data.version}`;
+      document.querySelectorAll("*").forEach(e=>e.style.outline='none');
   }
 
   document.body.classList.forEach(cls => {
