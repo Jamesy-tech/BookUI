@@ -1,9 +1,13 @@
+console.log("0");
+
 const input = document.querySelector('.commandInputT5');
 
 const data = {
   name: "BookUI+",
   version: "V3.4"
 };
+
+console.log('1');
 
 document.getElementById("nameElementR4").textContent = `${data.name} ${data.version}`;
 
@@ -55,15 +59,20 @@ function createCommandCard(cmd) {
   panel.insertBefore(card, addCard);
 }
 
+console.log('2');
+
 window.addEventListener("DOMContentLoaded", () => {
   switchTheme("loadTheme");
 });
 
+console.log('2.5');
 
 setTimeout(() => {
    const commands = getSavedCommands();
   commands.forEach(createCommandCard);
 }, 1000);
+
+console.log('2.6');
 
 function addCommand() {
   const name = prompt("Command name:");
@@ -89,6 +98,8 @@ function addCommand() {
   alert("Command added!");
 }
 
+console.log('2.7');
+
 async function copy(text) {
   try {
     await navigator.clipboard.writeText(text);
@@ -97,6 +108,10 @@ async function copy(text) {
     console.error('Failed to copy:', err);
   }
 }
+
+console.log('2.8');
+
+setTimeout(() => {
 
 if (window.location.href.includes("jamesy-tech.github.io/BookUI")) {
 
@@ -111,12 +126,18 @@ if (window.location.href.includes("jamesy-tech.github.io/BookUI")) {
   input.focus();
 }
 
+}, 100);
+
+console.log('2.85');
+
 if (window.location.href.includes("BookUI")) {
   console.log("URL contains 'BookUI'!")
    document.body.style.height = "100vh";
 } else {
    document.body.style.height = "100%";
 }
+
+console.log('2.9');
 
 var customCommands = {
   "ttrs-hacks": () => alert(`ttrs-hacks
@@ -146,6 +167,8 @@ cheats-gui.js: blooket-hacks_cheats-gui`),
   },
 
 };
+
+console.log('3');
 
 var originalColor = input.style.borderColor;
 
@@ -214,6 +237,8 @@ input.addEventListener('keydown', e => {
   }
 });
 
+console.log('4');
+
 function switchTheme(theme) {
   if (theme === "loadTheme") {
     const saved = localStorage.getItem("theme");
@@ -243,3 +268,5 @@ function switchTheme(theme) {
 }
 
 window.addEventListener("DOMContentLoaded", () => switchTheme("loadTheme"));
+
+console.log('5');
