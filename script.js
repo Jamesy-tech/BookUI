@@ -7,6 +7,8 @@ const data = {
   version: "V3.4"
 };
 
+const cursor_url = "https://raw.githubusercontent.com/Jamesy-tech/BookUI/main/cursor.png";
+
 console.log('1');
 
 document.getElementById("nameElementR4").textContent = `${data.name} ${data.version}`;
@@ -115,14 +117,14 @@ setTimeout(() => {
 
 if (window.location.href.includes("jamesy-tech.github.io/BookUI")) {
 
-  document.body.style.cursor = 'url("https://raw.githubusercontent.com/Jamesy-tech/BookUI/main/cursor.png"), auto';
+  document.body.style.cursor = 'url(${cursor_url}), auto';
 
   console.log("URL contains 'BookUI'!")
   window.location.href = "https://sites.google.com/view/get-bookui"
 
 } else {
   console.log("URL does not contain 'BookUI'")
-  window.top.eval(`document.getElementById("jamesyBookUIContainer").style.cursor = 'url("https://i.imgur.com/un6gkMm.png"), auto';`);
+  window.top.eval(`document.getElementById("jamesyBookUIContainer").style.cursor = 'url(${cursor_url}), auto';`);
   input.focus();
 }
 
