@@ -100,7 +100,7 @@ async function copy(text) {
 
 if (window.location.href.includes("jamesy-tech.github.io/BookUI")) {
 
-  document.body.style.cursor = 'url("https://i.imgur.com/un6gkMm.png"), auto';
+  document.body.style.cursor = 'url("https://raw.githubusercontent.com/Jamesy-tech/BookUI/main/cursor.png"), auto';
 
   console.log("URL contains 'BookUI'!")
   window.location.href = "https://sites.google.com/view/get-bookui"
