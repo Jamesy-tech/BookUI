@@ -4,7 +4,7 @@ const input = document.querySelector('.commandInputT5');
 
 const data = {
   name: "BookUI+",
-  version: "V3.6"
+  version: "V3.7"
 };
 
 const cursor_url = "https://raw.githubusercontent.com/Jamesy-tech/BookUI/main/cursor.png";
