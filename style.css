@@ -51,10 +51,18 @@ body.theme-lime {
 
 body.theme-red {
     --primary-color: #ff4747;
+     --background-color: #000000;
+    --panel-color: #0d0d0d;
+    --text-color: #ffffff;
+    --muted-text: #cccccc;
 }
 
 body.theme-c00lgui {
     --primary-color: #ff4747;
+     --background-color: #000000;
+    --panel-color: #0d0d0d;
+    --text-color: #ffffff;
+    --muted-text: #cccccc;
 }
 
 body.theme-green {
