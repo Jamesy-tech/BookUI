@@ -59,6 +59,10 @@ body.theme-c00lgui {
 
 body.theme-green {
     --primary-color: #00c853;
+        --background-color: #000000;
+    --panel-color: #0d0d0d;
+    --text-color: #ffffff;
+    --muted-text: #cccccc;
 }
 
 body.theme-morning-glow {
