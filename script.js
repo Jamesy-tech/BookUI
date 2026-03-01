@@ -123,7 +123,7 @@ if (window.location.href.includes("jamesy-tech.github.io/BookUI")) {
 
   console.log("URL contains 'BookUI'!")
 
- var choice = confirm("Redirecting to BookUI+ download page.");
+ var choice = confirm("Redirecting to BookUI+ installation page.");
 
 if (choice) {
     window.location.href = "https://sites.google.com/view/get-bookui";
