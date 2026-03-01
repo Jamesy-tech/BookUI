@@ -6,7 +6,7 @@ const input = document.querySelector('.commandInputT5');
 
 const data = {
   name: "BookUI+",
-  version: "V4.0"
+  version: "V4.1"
 };
 
 function getConsoleLibraryCode() {
