@@ -6,7 +6,7 @@ const input = document.querySelector('.commandInputT5');
 
 const data = {
   name: "BookUI+",
-  version: "V3.9"
+  version: "V4.0"
 };
 
 function getConsoleLibraryCode() {
@@ -14,13 +14,13 @@ function getConsoleLibraryCode() {
   var code = "javascript:(function(){" +
   "const library = {" +
     "\"edit\": \"document.body.contentEditable = document.body.contentEditable !== 'true';\"," +
-    "\"change-font\": \"document.body.style.fontFamily = prompt('Font name:', 'Arial');\"," +
-    "\"change-color\": \"document.body.style.color = prompt('Text color:', 'red');\"," +
+  //  "\"change-font\": \"document.body.style.fontFamily = prompt('Font name:', 'Arial');\"," +
+   // "\"change-color\": \"document.body.style.color = prompt('Text color:', 'red');\"," +
     "\"bg-color\": \"document.body.style.background = prompt('Background color:', 'lightblue');\"," +
     "\"reset\": \"document.body.removeAttribute('style'); document.body.contentEditable = false;\"" +
   "};" +
 
-  "const menu = 'Console Library V0.1\\n' + Object.keys(library).join('\\n');" +
+  "const menu = 'Console Library V0.2\\n' + Object.keys(library).join('\\n');" +
   "const cmd = prompt(menu);" +
 
   "if (!cmd || !library[cmd]) { alert('Unknown command.'); return; }" +
