@@ -70,6 +70,12 @@
       <p>Temporary edit the current page you are on.</p>
     </div>
 
+<div class="cardB9" data-command='getConsoleLibraryCode() // Execute this to get the code, then put it in a bookmark/bookmarklet!'>
+  <h3>Console Library</h3>
+  <p>Try putting this code into a bookmark/bookmarklet!</p>
+</div>
+
+
     <div class="cardB9" data-command='(function(){const keys=Object.keys(localStorage);const action=prompt("Choose action: view / set / remove / clear","view");if(action==="view"){let choice=prompt("Choose a key:\n"+keys.join("\n"));if(choice&&localStorage.getItem(choice)!==null){alert(choice+" = "+localStorage.getItem(choice));}else{alert("Key not found.");}}else if(action==="set"){let choice=prompt("Choose existing key or type new:\n"+keys.join("\n"));if(choice){let value=prompt("Value for "+choice+"?",localStorage.getItem(choice)||"");localStorage.setItem(choice,value);alert("Saved "+choice+"="+value);}}else if(action==="remove"){let choice=prompt("Choose key to remove:\n"+keys.join("\n"));if(choice&&localStorage.getItem(choice)!==null){localStorage.removeItem(choice);alert("Removed "+choice);}else{alert("Key not found.");}}else if(action==="clear"){if(confirm("Clear ALL localStorage?")){localStorage.clear();alert("All cleared");}}else{alert("Unknown action.");}})()'>
       <h3>LocalStorage</h3>
       <p>Edit, view, remove or clear the LocalStorage of the current page you are on.</p>
@@ -400,10 +406,10 @@
 </div>
 
 
-<div class="cardB9" data-command='javascript:(function(){var js=document.body.appendChild(document.createElement("script"));js.onerror=function(){alert("Sorry, the script could not be loaded.")};js.src="https://rawgit.com/Krazete/bookmarklets/master/tri.js"})();'>
+<!-- <div class="cardB9" data-command='javascript:(function(){var js=document.body.appendChild(document.createElement("script"));js.onerror=function(){alert("Sorry, the script could not be loaded.")};js.src="https://rawgit.com/Krazete/bookmarklets/master/tri.js"})();'>
   <h3>3D Webpage</h3>
   <p>Make the current page into a 3D form.</p>
-</div>
+</div> -->
       
          <div class="cardB9" id="addCommandCard" onclick="addCommand()"><center><h1 class="cardPlus">+</h1></center></div>
 
@@ -418,4 +424,3 @@
 
 </body>
 </html>
-
