@@ -1,4 +1,3 @@
-
 console.log("0");
 
 // script.js
@@ -338,5 +337,3 @@ function switchTheme(theme) {
 window.addEventListener("DOMContentLoaded", () => switchTheme("loadTheme"));
 
 console.log('5');
-
-// end
