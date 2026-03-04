@@ -9,6 +9,8 @@ const data = {
   version: "V0.0" 
 };
 
+document.getElementById("getBookUIBtn").style.display = "none";
+
 async function updateVersionFromGithub() {
   try {
     const repo = "Jamesy-tech/BookUI";
@@ -177,11 +179,13 @@ if (window.location.href.includes("jamesy-tech.github.io/BookUI")) {
 
   console.log("URL contains 'BookUI'!")
 
- var choice = confirm("Redirecting to BookUI+ installation page.");
+  document.getElementById("getBookUIBtn").style.display = "";
 
-if (choice) {
-    window.location.href = "https://sites.google.com/view/get-bookui";
-}
+// var choice = confirm("Redirecting to BookUI+ installation page.");
+
+//if (choice) {
+//    window.location.href = "https://sites.google.com/view/get-bookui";
+//}
 
 } else {
   console.log("URL does not contain 'BookUI'")
