@@ -6,7 +6,7 @@ const input = document.querySelector('.commandInputT5');
 
 const data = {
   name: "BookUI+",
-  version: "V4.1" 
+  version: "V0.0" 
 };
 
 async function updateVersionFromGithub() {
