@@ -337,3 +337,4 @@ function switchTheme(theme) {
 window.addEventListener("DOMContentLoaded", () => switchTheme("loadTheme"));
 
 console.log('5');
+
