@@ -75,7 +75,7 @@
 <div class="bodyY2">
   <div class="panelC6">
 
-    <div class="cardB9" data-command="document.designMode = 'on';">
+    <div class="cardB9" data-command="javascript:(function(){document.designMode='on';})();">
       <h3>Edit</h3>
       <p>Temporary edit the current page you are on.</p>
     </div>
@@ -86,33 +86,33 @@
 </div> -->
 
 
-    <div class="cardB9" data-command='(function(){const keys=Object.keys(localStorage);const action=prompt("Choose action: view / set / remove / clear","view");if(action==="view"){let choice=prompt("Choose a key:\n"+keys.join("\n"));if(choice&&localStorage.getItem(choice)!==null){alert(choice+" = "+localStorage.getItem(choice));}else{alert("Key not found.");}}else if(action==="set"){let choice=prompt("Choose existing key or type new:\n"+keys.join("\n"));if(choice){let value=prompt("Value for "+choice+"?",localStorage.getItem(choice)||"");localStorage.setItem(choice,value);alert("Saved "+choice+"="+value);}}else if(action==="remove"){let choice=prompt("Choose key to remove:\n"+keys.join("\n"));if(choice&&localStorage.getItem(choice)!==null){localStorage.removeItem(choice);alert("Removed "+choice);}else{alert("Key not found.");}}else if(action==="clear"){if(confirm("Clear ALL localStorage?")){localStorage.clear();alert("All cleared");}}else{alert("Unknown action.");}})()'>
+    <div class="cardB9" data-command='javascript: (function(){const keys=Object.keys(localStorage);const action=prompt("Choose action: view / set / remove / clear","view");if(action==="view"){let choice=prompt("Choose a key:\n"+keys.join("\n"));if(choice&&localStorage.getItem(choice)!==null){alert(choice+" = "+localStorage.getItem(choice));}else{alert("Key not found.");}}else if(action==="set"){let choice=prompt("Choose existing key or type new:\n"+keys.join("\n"));if(choice){let value=prompt("Value for "+choice+"?",localStorage.getItem(choice)||"");localStorage.setItem(choice,value);alert("Saved "+choice+"="+value);}}else if(action==="remove"){let choice=prompt("Choose key to remove:\n"+keys.join("\n"));if(choice&&localStorage.getItem(choice)!==null){localStorage.removeItem(choice);alert("Removed "+choice);}else{alert("Key not found.");}}else if(action==="clear"){if(confirm("Clear ALL localStorage?")){localStorage.clear();alert("All cleared");}}else{alert("Unknown action.");}})()'>
       <h3>LocalStorage</h3>
       <p>Edit, view, remove or clear the LocalStorage of the current page you are on.</p>
     </div>
 
-    <div class="cardB9" data-command="print()">
+    <div class="cardB9" data-command="javascript: print()">
       <h3>Print</h3>
       <p>Print the current page you are on.</p>
     </div>
 
-    <div class="cardB9" data-command="alert(document.cookie)">
+    <div class="cardB9" data-command="javascript: alert(document.cookie)">
       <h3>Cookies</h3>
       <p>View the cookies of the current page you are on.</p>
     </div>
 
-    <div class="cardB9" data-command="alert(document.body.innerText.split(/\s+/).length);">
+    <div class="cardB9" data-command="javascript: alert(document.body.innerText.split(/\s+/).length);">
       <h3>Word Count</h3>
       <p>Show the amount of words that are on the current page.</p>
     </div>
 
-    <div class="cardB9" data-command="document.execCommand('undo');">
+  <div class="cardB9" data-command="javascript: document.execCommand('undo');">
       <h3>Undo</h3>
       <p>Revert your last change and restore the previous state.</p>
     </div>
 
 
-    <div class="cardB9" data-command="document.execCommand('redo');">
+    <div class="cardB9" data-command="javascript: document.execCommand('redo');">
       <h3>Redo</h3>
       <p>Reapply the action you just undid to continue editing.</p>
     </div>
@@ -155,48 +155,48 @@
     </div>
 
 
-        <div class="cardB9" data-command="const f = prompt('Border: ', 'solid dodgerblue 5px'); document.body.style.border = f;">
+        <div class="cardB9" data-command="javascript: const f = prompt('Border: ', 'solid dodgerblue 5px'); document.body.style.border = f;">
       <h3>Page Border</h3>
       <p>Add a border to the current page you are on.</p>
     </div>
 
-         <div class="cardB9" data-command="const f = prompt('Padding: ', '24px'); document.body.style.padding = f;">
+         <div class="cardB9" data-command="javascript:(function(){const f=prompt('Padding:','24px');if(f)document.body.style.padding=f;})();">
       <h3>Page Padding</h3>
       <p>Change the &lt;body&gt;'s padding for the current page you are on.</p>
     </div>
 
-     <div class="cardB9" data-command="const f = prompt('Margin: ', '24px'); document.body.style.margin = f;">
+     <div class="cardB9" data-command="javascript:(function(){const f=prompt('Margin:','24px');if(f)document.body.style.margin=f;})();">
       <h3>Page Margin</h3>
       <p>Change the &lt;body&gt;'s margin for the current page you are on.</p>
     </div>
 
-    <div class="cardB9" data-command="(function(){const t=prompt('Clicks per second? (Max 200)','10');if(!t)return;const c=Math.min(200,Math.max(0,Number(t)));if(!c||isNaN(c)){alert('Invalid number');return}const i=1000/c;if(window.__autoclicker&&window.__autoclicker.running){window.__autoclicker.running=false;return}window.__autoclicker={running:true,lastX:0,lastY:0,target:document.elementFromPoint(window.innerWidth/2,window.innerHeight/2)};function m(e){window.__autoclicker.lastX=e.clientX;window.__autoclicker.lastY=e.clientY;window.__autoclicker.target=e.target}function k(e){if(e.key==='Escape'){window.__autoclicker.running=false}}window.addEventListener('mousemove',m);window.addEventListener('keydown',k);let l=performance.now(),a=0;function tick(n){a+=n-l;l=n;while(a>=i&&window.__autoclicker.running){try{const el=window.__autoclicker.target||document.elementFromPoint(window.__autoclicker.lastX||window.innerWidth/2,window.__autoclicker.lastY||window.innerHeight/2);if(el&&typeof el.click==='function')el.click()}catch{}a-=i}if(window.__autoclicker.running)requestAnimationFrame(tick);else{window.removeEventListener('mousemove',m);window.removeEventListener('keydown',k);delete window.__autoclicker;alert('Auto-clicker stopped')}}requestAnimationFrame(tick);alert('Auto-clicker started — move mouse to pick target element. Run again or press ESC to stop.')})()">
+    <div class="cardB9" data-command="javascript:(function(){const t=prompt('Clicks per second? (Max 200)','10');if(!t)return;const c=Math.min(200,Math.max(0,Number(t)));if(!c||isNaN(c)){alert('Invalid number');return}const i=1000/c;if(window.__autoclicker&&window.__autoclicker.running){window.__autoclicker.running=false;return}window.__autoclicker={running:true,lastX:0,lastY:0,target:document.elementFromPoint(window.innerWidth/2,window.innerHeight/2)};function m(e){window.__autoclicker.lastX=e.clientX;window.__autoclicker.lastY=e.clientY;window.__autoclicker.target=e.target}function k(e){if(e.key==='Escape'){window.__autoclicker.running=false}}window.addEventListener('mousemove',m);window.addEventListener('keydown',k);let l=performance.now(),a=0;function tick(n){a+=n-l;l=n;while(a>=i&&window.__autoclicker.running){try{const el=window.__autoclicker.target||document.elementFromPoint(window.__autoclicker.lastX||window.innerWidth/2,window.__autoclicker.lastY||window.innerHeight/2);if(el&&typeof el.click==='function')el.click()}catch{}a-=i}if(window.__autoclicker.running)requestAnimationFrame(tick);else{window.removeEventListener('mousemove',m);window.removeEventListener('keydown',k);delete window.__autoclicker;alert('Auto-clicker stopped')}}requestAnimationFrame(tick);alert('Auto-clicker started — move mouse to pick target element. Run again or press ESC to stop.')})()">
       <h3>Auto-Clicker</h3>
       <p>Click repeatedly at set CPS. Press ESC to stop.</p>
     </div>
 
-    <div class="cardB9" data-command="navigator.clipboard.writeText(window.location.href).then(()=>alert('Page URL copied!'))">
+    <div class="cardB9" data-command="javascript: navigator.clipboard.writeText(window.location.href).then(()=>alert('Page URL copied!'))">
       <h3>Copy URL</h3>
       <p>Copy the current page URL to your clipboard.</p>
     </div>
 
-    <div class="cardB9" data-command="alert('Viewport size: '+window.innerWidth+'×'+window.innerHeight)">
+    <div class="cardB9" data-command="javascript: alert('Viewport size: '+window.innerWidth+'×'+window.innerHeight)">
       <h3>Viewport Size</h3>
       <p>Display the current browser window size.</p>
     </div>
 
-    <div class="cardB9" data-command="(function(){const s=prompt('Enter text to search:');if(s)window.find(s);})()">
+    <div class="cardB9" data-command="javascript: (function(){const s=prompt('Enter text to search:');if(s)window.find(s);})()">
       <h3>Find Text</h3>
       <p>Search for text on the current page manually.</p>
     </div>
 
-<div class="cardB9" data-command="(function(){window.__effects=window.__effects||[];let d=document.createElement('div');d.className='__overlay';d.style.cssText='position:fixed;top:0;left:0;width:100vw;height:100vh;pointer-events:none;z-index:9999;background:linear-gradient(270deg,rgba(255,0,0,0.5),rgba(255,165,0,0.5),rgba(255,255,0,0.5),rgba(0,128,0,0.5),rgba(0,0,255,0.5),rgba(75,0,130,0.5),rgba(238,130,238,0.5));background-size:1400% 1400%;animation:disco 10s linear infinite';document.body.appendChild(d);let s=document.createElement('style');s.className='__overlay';s.textContent='@keyframes disco{0%{background-position:0% 50%}50%{background-position:100% 50%}100%{background-position:0% 50%}}';document.head.appendChild(s);window.__effects.push(d,s);if(!window.__escHandler){window.__escHandler=function(e){if(e.key==='Escape'){document.querySelectorAll('.__overlay').forEach(o=>o.remove());document.body.style.transform='';document.body.style.filter='';document.body.style.background='';window.__effects.forEach(a=>{if(a instanceof HTMLElement)a.remove();else clearInterval(a)});window.__effects=[];window.__sounds?.forEach(s=>{s.pause();s.currentTime=0;});window.__sounds=[];}};window.addEventListener('keydown',window.__escHandler);}})();">
+<div class="cardB9" data-command="javascript: (function(){window.__effects=window.__effects||[];let d=document.createElement('div');d.className='__overlay';d.style.cssText='position:fixed;top:0;left:0;width:100vw;height:100vh;pointer-events:none;z-index:9999;background:linear-gradient(270deg,rgba(255,0,0,0.5),rgba(255,165,0,0.5),rgba(255,255,0,0.5),rgba(0,128,0,0.5),rgba(0,0,255,0.5),rgba(75,0,130,0.5),rgba(238,130,238,0.5));background-size:1400% 1400%;animation:disco 10s linear infinite';document.body.appendChild(d);let s=document.createElement('style');s.className='__overlay';s.textContent='@keyframes disco{0%{background-position:0% 50%}50%{background-position:100% 50%}100%{background-position:0% 50%}}';document.head.appendChild(s);window.__effects.push(d,s);if(!window.__escHandler){window.__escHandler=function(e){if(e.key==='Escape'){document.querySelectorAll('.__overlay').forEach(o=>o.remove());document.body.style.transform='';document.body.style.filter='';document.body.style.background='';window.__effects.forEach(a=>{if(a instanceof HTMLElement)a.remove();else clearInterval(a)});window.__effects=[];window.__sounds?.forEach(s=>{s.pause();s.currentTime=0;});window.__sounds=[];}};window.addEventListener('keydown',window.__escHandler);}})();">
   <h3>Rainbow</h3>
   <p>Add an animated rainbow overlay to the current page.</p>
 </div>
 
 
-<div class="cardB9" data-command="(function(){window.__effects=window.__effects||[];document.querySelectorAll('*').forEach(e=>e.style.animation='spin 3s linear infinite');let s=document.createElement('style');s.className='__overlay';s.innerHTML='@keyframes spin{0%{transform:rotate(0deg);}100%{transform:rotate(360deg);}}';document.head.appendChild(s);window.__effects.push(s);if(!window.__escHandler){window.__escHandler=function(e){if(e.key==='Escape'){document.querySelectorAll('.__overlay').forEach(o=>o.remove());document.body.style.transform='';document.body.style.filter='';document.body.style.background='';window.__effects.forEach(a=>{if(a instanceof HTMLElement)a.remove();else clearInterval(a)});window.__effects=[];window.__sounds?.forEach(s=>{s.pause();s.currentTime=0;});window.__sounds=[];document.querySelectorAll('*').forEach(el=>el.style.animation='');}};window.addEventListener('keydown',window.__escHandler);}})();">
+<div class="cardB9" data-command="javascript: (function(){window.__effects=window.__effects||[];document.querySelectorAll('*').forEach(e=>e.style.animation='spin 3s linear infinite');let s=document.createElement('style');s.className='__overlay';s.innerHTML='@keyframes spin{0%{transform:rotate(0deg);}100%{transform:rotate(360deg);}}';document.head.appendChild(s);window.__effects.push(s);if(!window.__escHandler){window.__escHandler=function(e){if(e.key==='Escape'){document.querySelectorAll('.__overlay').forEach(o=>o.remove());document.body.style.transform='';document.body.style.filter='';document.body.style.background='';window.__effects.forEach(a=>{if(a instanceof HTMLElement)a.remove();else clearInterval(a)});window.__effects=[];window.__sounds?.forEach(s=>{s.pause();s.currentTime=0;});window.__sounds=[];document.querySelectorAll('*').forEach(el=>el.style.animation='');}};window.addEventListener('keydown',window.__escHandler);}})();">
   <h3>Spin Elements</h3>
   <p>Spin all elements continuously until ESC is pressed.</p>
 </div>
