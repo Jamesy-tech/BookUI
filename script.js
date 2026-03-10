@@ -2,6 +2,8 @@ console.log("0");
 
 // script.js
 
+console.log("BookUI+ internal JS executed & booted;")
+
 const input = document.querySelector('.commandInputT5');
 
 const data = {
