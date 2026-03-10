@@ -126,6 +126,10 @@
       <p>Reapply the action you just undid to continue editing.</p>
     </div>
 
+       <div class="cardB9" data-command="javascript:(function(){alert('All defined functions have been logged to the console!\n(CTRL/CMD + SHIFT + J)');console.log('--- Defined Functions ---');Object.keys(window).forEach(key=>{try{if(typeof window[key]==='function'&&!/native code/.test(window[key].toString())){console.log(key,window[key]);}}catch(e){}});console.log('------------------------');})();">
+      <h3>Reveal Functions</h3>
+      <p>Log all of the defined functions on the page to the console.</p>
+    </div>
    
         <div class="cardB9" data-command='javascript:(function(){  function getRandomColor() {    var letters = "0123456789ABCDEF";    var color = "#";    for (var i = 0; i < 6; i++) {      color += letters[Math.floor(Math.random() * 16)];    }    return color;  }  function getContrastingColor(color) {    var hex = color.slice(1);    var r = parseInt(hex.substr(0, 2), 16);    var g = parseInt(hex.substr(2, 2), 16);    var b = parseInt(hex.substr(4, 2), 16);    var yiq = (r * 299 + g * 587 + b * 114) / 1000;    return yiq >= 128 ? "#000000" : "#FFFFFF";  }  function applyRandomStyle(element) {    var randomColor = getRandomColor();    element.style.backgroundColor = randomColor;    element.style.color = getContrastingColor(randomColor);  }  var elements = document.getElementsByTagName("*");  for (var i = 0; i < elements.length; i++) {    applyRandomStyle(elements[i]);  }})();'>
       <h3>Layout Highlighter</h3>
