@@ -210,10 +210,21 @@ console.log('2.9');
 
 var customCommands = {
   "ttrs-hacks": () => alert(`ttrs-hacks
-get-answer.js: ttrs-hacks_get-answer`),
+get-answer.js: ttrs-hacks_get-answer
+get-answer-2.js: ttrs-hacks_get-answer-2`),
    
 "ttrs-hacks_get-answer": () => {
     fetch("https://raw.githubusercontent.com/Jamesy-tech/ttrs-hacks/main/get-answer.js")
+      .then(res => res.text())
+      .then(code => {
+        copy(code);
+        document.querySelector('.commandInputT5').value = code;
+      })
+      .catch(err => console.error(err));
+  },
+
+  "ttrs-hacks_get-answer-2": () => {
+    fetch("https://raw.githubusercontent.com/Jamesy-tech/ttrs-hacks/main/get-answer-2.js")
       .then(res => res.text())
       .then(code => {
         copy(code);
