@@ -30,3 +30,5 @@ You can type code in it or use the buttons to perform actions. Try having a bit 
 • Learn how code affects pages directly  
 
 BookUI+ — a simple bookmarklet that helps you run and test code right from your browser.
+
+Made by JamesyDeveloper (@Jamesy-tech on GitHub)
