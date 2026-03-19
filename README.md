@@ -1,4 +1,4 @@
-# BookUI Plus
+# BookUI+ Command Panel
 
 https://jamesy-tech.github.io/BookUI
 
