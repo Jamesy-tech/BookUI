@@ -80,6 +80,11 @@
       <p>Temporary edit the current page you are on.</p>
     </div>
 
+     <div class="cardB9" data-command="javascript:(function(){alert('Hello, world!')})();">
+      <h3>Alert</h3>
+      <p>Open a dialog window with a message on it.</p>
+    </div>
+
   <div class="cardB9" data-command="javascript:(function(){if(window.__spellOffObs){window.__spellOffObs.disconnect();window.__spellOffObs=null;}else{const f=()=>document.querySelectorAll('*').forEach(e=>(e.spellcheck=false,e.setAttribute&&e.setAttribute('spellcheck','false')));f();window.__spellOffObs=new MutationObserver(f);window.__spellOffObs.observe(document.documentElement,{childList:true,subtree:true});}})();">
   <h3>Spellcheck</h3>
   <p>Useful for removing the red line under words when editing the page.</p>
