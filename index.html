@@ -437,6 +437,11 @@
   <p>Play sound 'what-da-dog-doin.mp3'.</p>
 </div>
 
+<div class="cardB9" data-command="javascript: (function(){window.__soundPlayers=window.__soundPlayers||[];let a=new Audio('https://github.com/Jamesy-tech/sound-bookmarklets/raw/main/ishowspeed-screaming.mp3');a.play();window.__soundPlayers.push(a);window.onkeydown=function(e){if(e.key==='Escape'){window.__soundPlayers.forEach(s=>{s.pause();s.currentTime=0;});window.__soundPlayers=[];}}})();">
+  <h3>[Sound] IShowSpeed Screaming</h3>
+  <p>Play sound 'ishowspeed-screaming.mp3'.</p>
+</div>
+
 <div class="cardB9" data-command="javascript: (function(){window.addEventListener('keydown',e=>{if(e.key==='Escape'){document.body.style.filter='';}});let b=document.body;if(b.style.filter.includes('blur')){b.style.filter='';}else{b.style.filter='blur(5px)';}})();">
   <h3>Blur Page</h3>
   <p>Toggle blur effect.</p>
