@@ -447,6 +447,46 @@
   <p>Toggle blur effect.</p>
 </div>
 
+<div class="cardB9" data-command="javascript:(()=>{let els=[...document.querySelectorAll('a,button,[onclick]')];els.forEach(e=>e.style.outline='2px solid red');document.addEventListener('keydown',e=>{if(e.key==='Escape')els.forEach(e=>e.style.outline='')})})();">
+  <h3>Highlight Clickable Elements</h3>
+  <p>Highlight all clickable elements on the current page.</p>
+</div>
+
+<div class="cardB9" data-command="javascript:(()=>{let f=e=>e.target.remove();document.addEventListener('click',f);document.addEventListener('keydown',e=>{if(e.key==='Escape')document.removeEventListener('click',f)})})();">
+  <h3>Delete Anything You Click</h3>
+  <p>Deletes every element you click on the current page.</p>
+</div>
+
+<div class="cardB9" data-command="javascript:(()=>{let f=e=>e.target.parentNode.appendChild(e.target.cloneNode(true));document.addEventListener('click',f);document.addEventListener('keydown',e=>{if(e.key==='Escape')document.removeEventListener('click',f)})})();">
+  <h3>Duplicate Anything You Click</h3>
+  <p>Duplicates every element you click on the current page.</p>
+</div>
+
+<div class="cardB9" data-command="javascript:(()=>{let c=document.createElement('canvas');c.style='position:fixed;top:0;left:0;z-index:9999';document.body.appendChild(c);let x=c.getContext('2d');c.width=innerWidth;c.height=innerHeight;let d=Array(~~(c.width/10)).fill(1),i=setInterval(()=>{x.fillStyle='rgba(0,0,0,0.05)';x.fillRect(0,0,c.width,c.height);x.fillStyle='#0F0';x.font='10px monospace';d.forEach((y,j)=>{let t='01'[Math.random()*2|0];x.fillText(t,j*10,y*10);d[j]=(y*10>c.height&&Math.random()>0.975)?0:y+1})},33);document.addEventListener('keydown',e=>{if(e.key==='Escape'){clearInterval(i);c.remove()}})})();">
+  <h3>Matrix Rain</h3>
+  <p>Create an animated binary rain effect on the current page.</p>
+</div>
+
+<div class="cardB9" data-command="javascript:(()=>{document.querySelectorAll('link,style').forEach(e=>e.remove());document.addEventListener('keydown',e=>{if(e.key==='Escape')alert('CSS removed')})})();">
+  <h3>Disable CSS</h3>
+  <p>Remove all styling on the current page.</p>
+</div>
+
+<div class="cardB9" data-command="javascript:(()=>{let s=0,f=()=>{s++;document.title='Score: '+s};document.addEventListener('click',f);document.addEventListener('keydown',e=>{if(e.key==='Escape')document.removeEventListener('click',f)})})();">
+  <h3>Click Game</h3>
+  <p>The page's title displays how many times you've clicked on the page.</p>
+</div>
+
+<div class="cardB9" data-command="javascript:(function(){document.querySelectorAll('*').forEach(el=>{el.onmousedown=e=>{e.preventDefault();e.stopPropagation();let rect=el.getBoundingClientRect();let sX=e.clientX-rect.left,sY=e.clientY-rect.top;el.style.position='fixed';el.style.zIndex='1000';el.style.left=rect.left+'px';el.style.top=rect.top+'px';el.style.width=rect.width+'px';document.onmousemove=m=>{el.style.left=(m.clientX-sX)+'px';el.style.top=(m.clientY-sY)+'px'};document.onmouseup=()=>{document.onmousemove=null;document.onmouseup=null}}})})();">
+  <h3>Draggable Elements</h3>
+  <p>Drag every element on the page to wherever you want!</p>
+</div>
+
+<div class="cardB9" data-command="javascript:(()=>{let els=[...document.querySelectorAll('body *')],vx=[],vy=[],colors=['#f00','#0f0','#00f','#ff0','#0ff','#f0f','#fff'],z=9999;els.forEach((el,i)=>{el.style.position='relative';vx[i]=(Math.random()*10-5);vy[i]=(Math.random()*10-5);el.style.transition='transform 0.05s';});let i=setInterval(()=>{els.forEach((el,j)=>{let t=el.style.transform.match(/translate\(([-\d.]+)px,([-\d.]+)px\)/);let x=t?parseFloat(t[1]):0,y=t?parseFloat(t[2]):0;x+=vx[j];y+=vy[j];if(y>window.innerHeight-50||y<-50)vy[j]*=-1;if(x>window.innerWidth-50||x<-50)vx[j]*=-1;el.style.transform=`translate(${x}px,${y}px)`;el.style.color=colors[Math.floor(Math.random()*colors.length)];el.style.zIndex=++z;});},50);document.addEventListener('click',e=>{let r=50;vx.forEach((v,j)=>{if(els[j].getBoundingClientRect().x<e.clientX+r&&els[j].getBoundingClientRect().x>e.clientX-r&&els[j].getBoundingClientRect().y<e.clientY+r&&els[j].getBoundingClientRect().y>e.clientY-r){vx[j]=(Math.random()*20-10);vy[j]=(Math.random()*20-10);}});});document.addEventListener('keydown',e=>{if(e.key==='Escape'){clearInterval(i);els.forEach(el=>{el.style.transform='';el.style.color='';el.style.zIndex=''});}})})();">
+  <h3>A W E S O M E</h3>
+  <p>Your page will have a dance party when you run this...</p>
+</div>
+
 <div class="cardB9" data-command="const url = prompt('Image URL', 'https://raw.githubusercontent.com/Jamesy-tech/BookUI/main/pixel-cursor-downsized.png');
   document.body.style.setProperty('cursor', 'url(' + url + '), auto', 'important');
 ">
@@ -465,6 +505,10 @@
   <p>Open a plain white blank page.</p>
 </div>
 
+<div class="cardB9" data-command="javascript: // command">
+  <h3>Example Command</h3>
+  <p>Description text...</p>
+</div>
 
 <!-- <div class="cardB9" data-command='javascript:(function(){var js=document.body.appendChild(document.createElement("script"));js.onerror=function(){alert("Sorry, the script could not be loaded.")};js.src="https://rawgit.com/Krazete/bookmarklets/master/tri.js"})();'>
   <h3>3D Webpage</h3>
