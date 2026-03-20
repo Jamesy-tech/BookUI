@@ -17,6 +17,14 @@ body.theme-purple {
     --muted-text: #ccc;
 }
 
+body.theme-white {
+    --primary-color: #ffffff;
+    --background-color: #0a0a0a;
+    --panel-color: #141414;
+    --text-color: #ffffff;
+    --muted-text: #ccc;
+}
+
 body.theme-nebula {
     --primary-color: #b388ff;
     --background-color: #0a0510;
