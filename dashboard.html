@@ -14,7 +14,6 @@
 
 <style>
 
-    
 * {
     margin: 0;
     padding: 0;
@@ -163,7 +162,7 @@ body {
 <div class="sidebar">
     <h2 id="version-text">BookUI+ V0.0</h2>
     <div class="nav-item active" onclick="switchPage('home')">Home</div>
-    <div class="nav-item" onclick="window.location.href = 'https://jamesy-tech.github.io/BookUI';">Command Panel</div>
+    <div class="nav-item" onclick="switchPage('command_panel')">Command Panel</div>
     <div class="nav-item" onclick="switchPage('themes')">Themes</div>
      <div class="nav-item" onclick="switchPage('suggestions')">Suggestions</div>
     <div class="nav-item" onclick="switchPage('logs')">Logs</div>
@@ -174,10 +173,10 @@ body {
        <div class="title" id="page-title">Loading...</div>
         <div class="actions">
             <a href="https://github.com/Jamesy-tech/BookUI/blob/main/README.md">Install</a>
-            <a href="index.html">Command Panel</a>
+            <a onclick="switchPage('command_panel')">Command Panel</a>
             <a onclick="switchPage('themes');">Theme</a>
-            <a href="https://github.com/Jamesy-tech">Credits</a>
-            <a href="https://github.com/Jamesy-tech/BookUI/blob/main/README.md">Help</a>
+            <a onclick="switchPage('credits')">Credits</a>
+            <a onclick="switchPage('help')">Help</a>
         </div>
     </div>
 
@@ -220,6 +219,30 @@ console.warn = (...args) => {
     addLog("warn", args);
 };
 
+function sendSuggestion() {
+    const webhookURL = "https://discord.com/api/webhooks/1485004082400723158/gOPS9xFPMi94kthwyjjL_CItKqo54_BY2eV-v4yoWcbsmvEX-Wz1FppTza88_P9DjOLH";
+
+    const suggestion = prompt("What would you like us to add?");
+    if (!suggestion) return;
+
+    const email = prompt("Enter your email (optional):") || "Not provided";
+
+    const confirmSend = confirm("Submit suggestion?");
+    if (!confirmSend) return;
+
+    const message = {
+        content: "**Command Suggestion**\n*from BookUI+ Dashboard*\nSuggestion: " + suggestion + "\nEmail: " + email
+    };
+
+    fetch(webhookURL, {
+        method: "POST",
+        headers: {
+            "Content-Type": "application/json"
+        },
+        body: JSON.stringify(message)
+    });
+}
+
 const pages = {
 
     home: [
@@ -237,20 +260,26 @@ const pages = {
 
         { 
             title: "Help/Documentation", 
-            desc: "Read the instructions & information for BookUI.",
-            command: () => window.location.href = "https://github.com/Jamesy-tech/BookUI/blob/main/README.md"
+            desc: "Read the information & instructions for BookUI.",
+            command: () => switchPage('help')
         },
 
           { 
             title: "Command Panel", 
             desc: "Open the BookUI+ Command Panel.",
-            command: () => window.location.href = "index.html"
+            command: () => switchPage('command_panel')
         },
 
         { 
             title: "Themes", 
             desc: "Change the theme for BookUI.",
             command: () => switchPage("themes")
+        },
+
+        { 
+            title: "Suggestions", 
+            desc: "Suggest new commands & updates.",
+            command: () => switchPage("suggestions")
         },
 
         { 
@@ -271,6 +300,16 @@ const pages = {
             command: () => window.location.href = "https://discord.com/invite/WRFdwXn2Wp"
         },
       
+    ],
+
+         command_panel: [
+
+        {
+            title: "Open Command Panel", 
+            desc: "Open the BookUI+ command panel.",
+            command: () => window.top.location.href = "index.html"
+        },
+
     ],
 
  themes: [
@@ -345,14 +384,53 @@ const pages = {
 
      suggestions: [
 
-         {
-            title: "Coming soon", 
-            desc: "We're still working on adding this feature!",
+        {
+            title: "Create suggestion", 
+            desc: "What would you like us to add?",
+            command: () => sendSuggestion()
         },
 
     ],
 
-    logs: []
+    logs: [],
+
+       credits: [
+
+        {
+            title: "GitHub", 
+            desc: "View Jamesy-tech's profile on GitHub.",
+            command: () => window.top.location.href = "https://github.com/Jamesy-tech"
+        },
+
+        {
+            title: "YouTube", 
+            desc: "View JamesyDeveloper's profile on YouTube.",
+            command: () => window.top.location.href = "https://youtube.com/@JamesyDeveloper"
+        },
+
+        {
+            title: "Roblox", 
+            desc: "View JamesyDeveloper's profile on Roblox.",
+            command: () => window.top.location.href = "https://www.roblox.com/users/4624140937/profile"
+        },
+
+        { 
+            title: "Join the Discord Server", 
+            desc: "Join the official BookUI+ Discord server!",
+            command: () => window.location.href = "https://discord.com/invite/WRFdwXn2Wp"
+        },
+
+    ],
+
+       help: [
+
+        { 
+            title: "Help/Documentation", 
+            desc: "Read the information & instructions for BookUI.",
+            command: () => window.location.href = "https://github.com/Jamesy-tech/BookUI/blob/main/README.md"
+        },
+
+    ],
 
 };
 
