@@ -264,6 +264,12 @@ const pages = {
             command: () => switchPage('help')
         },
 
+                { 
+            title: "GitHub Repository", 
+            desc: "View BookUI's GitHub repository.",
+            command: () => window.location.href = "https://github.com/Jamesy-tech/BookUI"
+        },
+
           { 
             title: "Command Panel", 
             desc: "Open the BookUI+ Command Panel.",
@@ -290,8 +296,14 @@ const pages = {
 
         { 
             title: "Credits", 
-            desc: "View Jamesy-tech's profile on GitHub.",
-            command: () => window.location.href = 'https://github.com/Jamesy-tech'
+            desc: "Open the credits page.",
+            command: () => switchPage('credits')
+        },
+
+        { 
+            title: "BookUI+ Release Trailer", 
+            desc: "Watch BookUI's release trailer.",
+            command: () => window.location.href = "https://www.youtube.com/watch?v=wAYTmT_OqN8"
         },
 
         { 
