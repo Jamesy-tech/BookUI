@@ -6,9 +6,9 @@ BookUI+ is a bookmarklet that opens a command panel inside your browser.
 You can run code in it with or without knowing JavaScript. It’s made to be simple to use and quick to set up.
 
 ## Features
-• Opens a command-style panel on any page  
-• Lets you run JavaScript instantly  
-• Works for both beginners and coders  
+• Opens a command-style panel on any page
+• Lets you run JavaScript instantly
+• Works for both beginners and coders
 • No extensions or installs needed
 
 __Please note BookUI does not work on ALL websites due to security reasons, try it on Google Search, Jamesy Creator, or your favourite News website. BookUI should work on most websites.__
