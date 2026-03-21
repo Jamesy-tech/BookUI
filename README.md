@@ -33,4 +33,6 @@ You can type code in it or use the buttons to perform actions. Try having a bit 
 
 BookUI+ — a simple bookmarklet that helps you run and test code right from your browser.
 
+Join the official Discord server: <a href="https://discord.com/invite/WRFdwXn2Wp">Click here to join</a>
+
 Made by JamesyDeveloper (@Jamesy-tech on GitHub)
