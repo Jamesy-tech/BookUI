@@ -181,7 +181,7 @@ if (window.location.href.includes("jamesy-tech.github.io/BookUI")) {
 
   console.log("URL contains 'BookUI'!")
 
-   document.getElementById("dashboardBtn").style.display = "none";
+ //  document.getElementById("dashboardBtn").style.display = "none";
 
  document.getElementById("getBookUIBtn").style.display = "";
 
