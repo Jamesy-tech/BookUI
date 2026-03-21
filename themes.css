@@ -1,0 +1,114 @@
+
+:root {
+    --primary-color: #007bff;
+    --background-color: #0a0a0a;
+    --panel-color: #141414;
+    --text-color: #ffffff;
+    --muted-text: #ccc;
+
+    /* dashboard themes */
+
+    --bg-color: #0a0a0a;
+    --border-color: #1f1f1f;
+
+}
+
+body.theme-purple {
+    --primary-color: #b388ff;
+    --background-color: #0a0a0a;
+    --panel-color: #141414;
+    --text-color: #ffffff;
+    --muted-text: #ccc;
+}
+
+body.theme-white {
+    --primary-color: #ffffff;
+    --background-color: #0a0a0a;
+    --panel-color: #141414;
+    --text-color: #ffffff;
+    --muted-text: #ccc;
+}
+
+body.theme-nebula {
+    --primary-color: #b388ff;
+    --background-color: #0a0510;
+    --panel-color: #1a1225;
+    --text-color: #00ffaa;
+    --muted-text: #00ffaa;
+    --accent-color: #00cc88;
+}
+
+body.theme-cyan {
+    --primary-color: #00e5ff;
+    --background-color: #0a0a0a;
+    --panel-color: #141414;
+    --text-color: #ffffff;
+    --muted-text: #ccc;
+}
+
+body.theme-pink {
+    --primary-color: #ff80ab;
+    --background-color: #0a0a0a;
+    --panel-color: #141414;
+    --text-color: #ffffff;
+    --muted-text: #ccc;
+}
+
+body.theme-orange {
+    --primary-color: #ff9100;
+    --background-color: #0a0a0a;
+    --panel-color: #141414;
+    --text-color: #ffffff;
+    --muted-text: #ccc;
+}
+
+body.theme-lime {
+    --primary-color: #c6ff00;
+    --background-color: #0a0a0a;
+    --panel-color: #141414;
+    --text-color: #ffffff;
+    --muted-text: #ccc;
+}
+
+body.theme-red {
+    --primary-color: #ff4747;
+     --background-color: #000000;
+    --panel-color: #0d0d0d;
+    --text-color: #ffffff;
+    --muted-text: #cccccc;
+}
+
+body.theme-green {
+    --primary-color: #00c853;
+        --background-color: #000000;
+    --panel-color: #0d0d0d;
+    --text-color: #ffffff;
+    --muted-text: #cccccc;
+}
+
+body.theme-rainbow {
+    --primary-color: #ff0000;
+    --background-color: #000000;
+    --panel-color: #0d0d0d;
+    --text-color: #ffffff;
+    --muted-text: #cccccc;
+
+    animation: rainbowFade 5s linear infinite;
+}
+
+@keyframes rainbowFade {
+    0%   { --primary-color: #ff0000; } /* red */
+    20%  { --primary-color: #ffff00; } /* yellow */
+    40%  { --primary-color: #00ff00; } /* green */
+    60%  { --primary-color: #00ffff; } /* cyan */
+    80%  { --primary-color: #0000ff; } /* blue */
+    100% { --primary-color: #ff0000; } /* back to red */
+}
+
+body.theme-morning-glow {
+    --primary-color: #F9A825;
+    --background-color: #000000;
+    --panel-color: #0d0d0d;
+    --text-color: #ffffff;
+    --muted-text: #cccccc;
+}
