@@ -1,6 +1,9 @@
 @import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Mulish:ital,wght@0,200..1000;1,200..1000&family=Nunito:ital,wght@0,200..1000;1,200..1000&family=Roboto:ital,wght@0,100..900;1,100..900&family=Rubik:ital,wght@0,300..900;1,300..900&display=swap');
 
 
+
+/* start of themes (SYNC WITH THEMES.CSS) */
+
 :root {
     --primary-color: #007bff;
     --background-color: #0a0a0a;
@@ -114,6 +117,12 @@ body.theme-morning-glow {
     --text-color: #ffffff;
     --muted-text: #cccccc;
 }
+
+/* end of themes */
+
+
+
+
 
 .bodyA9 {
     display: flex;
