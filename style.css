@@ -1,317 +1,465 @@
-@import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Mulish:ital,wght@0,200..1000;1,200..1000&family=Nunito:ital,wght@0,200..1000;1,200..1000&family=Roboto:ital,wght@0,100..900;1,100..900&family=Rubik:ital,wght@0,300..900;1,300..900&display=swap');
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>BookUI+ Dashboard</title>
 
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Google+Sans+Flex:opsz,wght@6..144,1..1000&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Mulish:ital,wght@0,200..1000;1,200..1000&family=Nunito:ital,wght@0,200..1000;1,200..1000&family=Roboto:ital,wght@0,100..900;1,100..900&family=Rubik:ital,wght@0,300..900;1,300..900&display=swap" rel="stylesheet">
 
+<link rel="stylesheet" href="themes.css">
 
-/* start of themes (SYNC WITH THEMES.CSS) */
+<link rel="icon" href="icon.png">
 
-:root {
-    --primary-color: #007bff;
-    --background-color: #0a0a0a;
-    --panel-color: #141414;
-    --text-color: #ffffff;
-    --muted-text: #ccc;
+<style>
 
-    /* dashboard themes */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Mulish", sans-serif;
+}
 
-    --bg-color: #0a0a0a;
-    --border-color: #1f1f1f;
+body {
+
+    background: var(--bg-color);
+    color: var(--text-color);
+    display: flex;
+    height: 100vh;
+    overflow: hidden;
 
 }
 
-body.theme-purple {
-    --primary-color: #b388ff;
-    --background-color: #0a0a0a;
-    --panel-color: #141414;
-    --text-color: #ffffff;
-    --muted-text: #ccc;
+* {
+    cursor: url("https://raw.githubusercontent.com/Jamesy-tech/BookUI/main/cursor.png"), auto !important;
 }
 
-body.theme-white {
-    --primary-color: #ffffff;
-    --background-color: #0a0a0a;
-    --panel-color: #141414;
-    --text-color: #ffffff;
-    --muted-text: #ccc;
-}
-
-body.theme-nebula {
-    --primary-color: #b388ff;
-    --background-color: #0a0510;
-    --panel-color: #1a1225;
-    --text-color: #00ffaa;
-    --muted-text: #00ffaa;
-    --accent-color: #00cc88;
-}
-
-body.theme-cyan {
-    --primary-color: #00e5ff;
-    --background-color: #0a0a0a;
-    --panel-color: #141414;
-    --text-color: #ffffff;
-    --muted-text: #ccc;
-}
-
-body.theme-pink {
-    --primary-color: #ff80ab;
-    --background-color: #0a0a0a;
-    --panel-color: #141414;
-    --text-color: #ffffff;
-    --muted-text: #ccc;
-}
-
-body.theme-orange {
-    --primary-color: #ff9100;
-    --background-color: #0a0a0a;
-    --panel-color: #141414;
-    --text-color: #ffffff;
-    --muted-text: #ccc;
-}
-
-body.theme-lime {
-    --primary-color: #c6ff00;
-    --background-color: #0a0a0a;
-    --panel-color: #141414;
-    --text-color: #ffffff;
-    --muted-text: #ccc;
-}
-
-body.theme-red {
-    --primary-color: #ff4747;
-     --background-color: #000000;
-    --panel-color: #0d0d0d;
-    --text-color: #ffffff;
-    --muted-text: #cccccc;
-}
-
-body.theme-green {
-    --primary-color: #00c853;
-        --background-color: #000000;
-    --panel-color: #0d0d0d;
-    --text-color: #ffffff;
-    --muted-text: #cccccc;
-}
-
-body.theme-rainbow {
-    --primary-color: #ff0000;
-    --background-color: #000000;
-    --panel-color: #0d0d0d;
-    --text-color: #ffffff;
-    --muted-text: #cccccc;
-
-    animation: rainbowFade 5s linear infinite;
-}
-
-@keyframes rainbowFade {
-    0%   { --primary-color: #ff0000; } /* red */
-    20%  { --primary-color: #ffff00; } /* yellow */
-    40%  { --primary-color: #00ff00; } /* green */
-    60%  { --primary-color: #00ffff; } /* cyan */
-    80%  { --primary-color: #0000ff; } /* blue */
-    100% { --primary-color: #ff0000; } /* back to red */
-}
-
-body.theme-morning-glow {
-    --primary-color: #F9A825;
-    --background-color: #000000;
-    --panel-color: #0d0d0d;
-    --text-color: #ffffff;
-    --muted-text: #cccccc;
-}
-
-/* end of themes */
-
-
-
-
-
-.bodyA9 {
+.sidebar {
+    width: 250px;
+    background: var(--panel-color);
+    border-right: 1px solid var(--border-color);
+    padding: 20px;
     display: flex;
     flex-direction: column;
-    height:100%;
-    margin:0px;
-    padding:0px;
-    cursor: url("https://raw.githubusercontent.com/Jamesy-tech/BookUI/main/cursor.png"), auto !important;
-    background-color: var(--background-color);
-    color: var(--text-color);
-    font-family: 'Mulish', !important;
-    text-decoration: none;
+    gap: 10px;
 }
 
-.navbarX9 {
+.sidebar h2 {
+    color: var(--primary-color);
+    font-size: 20px;
+    margin-bottom: 10px;
+}
+
+.nav-item {
+    padding: 10px;
+    border: 1px solid var(--border-color);
+    transition: 0.15s;
+    text-transform: capitalize;
+}
+
+.nav-item:hover, .nav-item.active {
+    border-color: var(--primary-color);
+    background: #ffffff05;
+}
+
+.main {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    overflow-y: auto;
+}
+
+.topbar {
+    height: 70px;
+    min-height: 70px;
+    background: var(--panel-color);
+    border-bottom: 1px solid var(--border-color);
     display: flex;
     align-items: center;
     justify-content: space-between;
-    background-color: #101010;
-    padding: 10px 28px;
-    border-bottom: 2px solid var(--primary-color);
-    flex-shrink: 0;
+    padding: 0 20px;
+    position: sticky;
+    top: 0;
+    z-index: 10;
+    padding-right:25px;
 }
 
-.brandQ3 {
-    font-family: 'Mulish' !important;
-    font-size: 1.4rem !important;
-    font-weight: 700;
+.topbar .title {
     color: var(--primary-color);
-    letter-spacing: 1px;
+    font-size: 20px;
+    font-weight: bold;
 }
 
-.listM2 {
-    list-style: none;
+.topbar .actions {
     display: flex;
-    gap: 24px;
-    margin: 0;
-    padding: 0;
-}
-
-.itemK7 {
-    position: relative;
-}
-
-.linkV1 {
-    text-decoration: none !important;
-    color: var(--muted-text);
-    font-weight: 500;
-    transition: 0.2s ease;
-    font-family: 'Mulish' !important;
-}
-
-.linkV1:hover {
-    color: var(--primary-color);
-}
-
-.linkV1::after {
-    content: "";
-    position: absolute;
-    left: 0;
-    bottom: -4px;
-    width: 0%;
-    height: 2px;
-    background-color: var(--primary-color);
-    transition: width 0.3s ease;
-}
-
-.linkV1:hover::after {
-    width: 100%;
-}
-
-.dropdownContentL4 {
-    display: none;
-    position: absolute;
-    background-color: var(--panel-color);
-    min-width: 160px;
-    top: 35px;
-    margin-top:5px;
-    padding-bottom:2px;
-    left: 0;
-    border: 1px solid var(--primary-color);
-    border-radius: 0px;
-    box-shadow: 0 4px 8px rgba(0,0,0,0.5);
-    z-index: 1;
-}
-
-.dropdownContentL4 a {
-    display: block;
-    padding: 10px 16px;
-    font-family: 'Mulish' !important;
-    text-decoration: none !important;
-    color: var(--muted-text);
-}
-
-.dropdownContentL4 a:hover {
-    background-color: #0d0d0d;
-    color: var(--primary-color);
-}
-
-.dropdownR8.open .dropdownContentL4 {
-    display: block;
-}
-
-.dropdownR8 {
-    position: relative;
-}
-
-.dropdownContentL4[data-reverse="true"] {
-    left: auto !important;
-    right: 0 !important;
-}
-
-.bodyY2 {
-    flex: 1;
-    overflow-y: auto;
-    padding: 20px;
-    box-sizing: border-box;
-}
-
-body.theme-c00lgui {
-    --primary-color: #ff4747;
-     --background-color: #000000;
-    --panel-color: #0d0d0d;
-    --text-color: #ffffff;
-    --muted-text: #cccccc;
-}
-
-.panelC6 {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); 
     gap: 20px;
-    width: 100%;
-    margin: 0 auto;
 }
 
-.cardB9 {
-    background-color: var(--panel-color);
-    border: 1px solid var(--primary-color);
-    border-radius: 0px;
-    padding: 20px;
-    transition: transform 0.2s, background-color 0.2s;
-    height: auto;
-    font-family: 'Mulish' !important;
+.topbar .actions a {
+    color: white;
+    text-decoration: none;
+    transition: 0.15s;
+    font-size: 16px;
 }
 
-.cardB9:hover {
-    background-color: #1a1a1a;
-}
-
-.cardB9 h3 {
-    margin: 0 0 10px;
+.topbar .actions a:hover {
     color: var(--primary-color);
 }
 
-.cardPlus {
-    font-size:67px;
-    color:var(--primary-color);
-    display:block;
-    padding:0px;
-    padding-bottom:15px;
-    margin:0px;
+.content {
+    padding: 20px;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 20px;
+}
+
+.card {
+    background: var(--panel-color);
+    border: 1px solid var(--border-color);
+    padding: 20px;
+    transition: 0.2s ease;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.card:hover {
+    border-color: var(--primary-color);
+}
+
+.card h3 {
+    color: var(--primary-color);
+    font-size: 22px;
+}
+
+.card p {
+    color: var(--muted-color);
+    font-size: 16px;
+    line-height: 1.5;
+}
+
+.btn {
+    background: var(--primary-color);
+    color: white;
+    border: none;
+    padding: 8px 12px;
+    font-size: 12px;
+    margin-top: auto;
+    width: fit-content;
+}
+
+#version-text {
+    padding-left:2px;
+}
+
+</style>
+
+</head>
+
+<body>
+
+<div class="sidebar">
+    <h2 id="version-text">BookUI+ V0.0</h2>
+    <div class="nav-item active" onclick="switchPage('home')">Home</div>
+    <div class="nav-item" onclick="window.location.href = 'https://jamesy-tech.github.io/BookUI';">Command Panel</div>
+    <div class="nav-item" onclick="switchPage('themes')">Themes</div>
+     <div class="nav-item" onclick="switchPage('suggestions')">Suggestions</div>
+    <div class="nav-item" onclick="switchPage('logs')">Logs</div>
+</div>
+
+<div class="main">
+    <div class="topbar">
+       <div class="title" id="page-title">Loading...</div>
+        <div class="actions">
+            <a href="https://github.com/Jamesy-tech/BookUI/blob/main/README.md">Install</a>
+            <a href="index.html">Command Panel</a>
+            <a onclick="switchPage('themes');">Theme</a>
+            <a href="https://github.com/Jamesy-tech">Credits</a>
+            <a href="https://github.com/Jamesy-tech/BookUI/blob/main/README.md">Help</a>
+        </div>
+    </div>
+
+    <div class="content" id="main-content">
+        </div>
+</div>
+
+<script>
+
+    let currentPage = "home";
+
+    const logs = [];
+
+function addLog(type, args) {
+    const msg = args.map(a => 
+        typeof a === "object" ? JSON.stringify(a) : a
+    ).join(" ");
+
+    logs.push({ type, msg });
+
+    if (currentPage === "logs") renderLogs();
+}
+
+const originalLog = console.log;
+const originalError = console.error;
+const originalWarn = console.warn;
+
+console.log = (...args) => {
+    originalLog(...args);
+    addLog("log", args);
+};
+
+console.error = (...args) => {
+    originalError(...args);
+    addLog("error", args);
+};
+
+console.warn = (...args) => {
+    originalWarn(...args);
+    addLog("warn", args);
+};
+
+const pages = {
+
+    home: [
+        { 
+            title: "Install BookUI", 
+            desc: "Get started with BookUI by adding it to your bookmarks bar.",
+            command: () => window.location.href = "https://github.com/Jamesy-tech/BookUI/blob/main/README.md"
+        },
+
+        { 
+            title: "Bookmarklet Code", 
+            desc: "See the code for the bookmarklet on GitHub.",
+            command: () => window.location.href = "https://github.com/Jamesy-tech/BookUI/blob/main/bookmarklet-code.js"
+        },
+
+        { 
+            title: "Help/Documentation", 
+            desc: "Read the instructions & information for BookUI.",
+            command: () => window.location.href = "https://github.com/Jamesy-tech/BookUI/blob/main/README.md"
+        },
+
+          { 
+            title: "Command Panel", 
+            desc: "Open the BookUI+ Command Panel.",
+            command: () => window.location.href = "index.html"
+        },
+
+        { 
+            title: "Themes", 
+            desc: "Change the theme for BookUI.",
+            command: () => switchPage("themes")
+        },
+
+        { 
+            title: "Logs", 
+            desc: "View the JavaScript console.",
+            command: () => switchPage("logs")
+        },
+
+        { 
+            title: "Credits", 
+            desc: "View Jamesy-tech's profile on GitHub.",
+            command: () => window.location.href = 'https://github.com/Jamesy-tech'
+        },
+
+        { 
+            title: "Join the Discord Server", 
+            desc: "Join the official BookUI+ Discord server!",
+            command: () => window.location.href = "https://discord.com/invite/WRFdwXn2Wp"
+        },
+      
+    ],
+
+ themes: [
+
+         {
+            title: "Blue", 
+            desc: "Switch to the 'blue' theme.",
+            command: () => switchTheme("blue")
+        },
+
+         {
+            title: "Morning Glow", 
+            desc: "Switch to the 'morning-glow' theme.",
+            command: () => switchTheme("morning-glow")
+        },
+
+        { 
+            title: "Nebula", 
+            desc: "Switch to the 'nebula' theme.",
+            command: () => switchTheme("nebula")
+        },
+
+        { 
+            title: "Rainbow", 
+            desc: "Switch to the 'rainbow' theme.",
+            command: () => switchTheme("rainbow")
+        },
+
+        { 
+            title: "White", 
+            desc: "Switch to the 'white' theme.",
+            command: () => switchTheme("white")
+        },
+
+        { 
+            title: "Red", 
+            desc: "Switch to the 'red' theme.",
+            command: () => switchTheme("red")
+        },
+
+         { 
+            title: "Green", 
+            desc: "Switch to the 'green' theme.",
+            command: () => switchTheme("green")
+        },
+
+        { 
+            title: "Lime", 
+            desc: "Switch to the 'lime' theme.",
+            command: () => switchTheme("lime")
+        },
+
+         { 
+            title: "Pink", 
+            desc: "Switch to the 'pink' theme.",
+            command: () => switchTheme("pink")
+        },
+
+         { 
+            title: "Purple", 
+            desc: "Switch to the 'purple' theme.",
+            command: () => switchTheme("purple")
+        },
+
+        { 
+            title: "Cyan", 
+            desc: "Switch to the 'cyan' theme.",
+            command: () => switchTheme("cyan")
+        },
+     
+    ],
+
+     suggestions: [
+
+         {
+            title: "Coming soon", 
+            desc: "We're still working on adding this feature!",
+        },
+
+    ],
+
+    logs: []
+
+};
+
+function renderLogs() {
+    const container = document.getElementById('main-content');
+    container.innerHTML = '';
+
+    logs.slice().reverse().forEach(log => {
+        const div = document.createElement('div');
+        div.className = 'card';
+
+        div.innerHTML = `
+            <h3>${log.type.toUpperCase()}</h3>
+            <p>${log.msg}</p>
+        `;
+
+        container.appendChild(div);
+    });
+}
+
+function switchPage(pageKey) {
+
+     currentPage = pageKey;
+
+    document.getElementById('page-title').textContent = pageKey.charAt(0).toUpperCase() + pageKey.slice(1);
+    
+    document.querySelectorAll('.nav-item').forEach(item => {
+        item.classList.remove('active');
+        if(item.textContent.toLowerCase() === pageKey) item.classList.add('active');
+    });
+
+    const container = document.getElementById('main-content');
+    container.innerHTML = ''; 
+
+    if (pageKey === "logs") {
+    renderLogs();
+    return;
+}
+
+   pages[pageKey].forEach(card => {
+    const cardDiv = document.createElement('div');
+    cardDiv.className = 'card';
+
+    cardDiv.innerHTML = `
+        <h3>${card.title}</h3>
+        <p>${card.desc}</p>
+    `;
+
+    if (card.command) {
+        cardDiv.style.cursor = "pointer";
+
+        cardDiv.addEventListener("click", () => {
+            card.command();
+        });
     }
 
-.cardB9 p {
-    margin: 0;
-    color: var(--muted-text);
-    font-size: 0.95rem !important;
+    container.appendChild(cardDiv);
+});
 }
 
-.inputContainerF1 {
-    display: flex;
-    border-top: 2px solid var(--primary-color);
-    padding: 12px 20px;
-    background-color: #101010;
-    flex-shrink: 0;
+const data = { name: "BookUI+", version: "V0.0" };
+
+async function updateVersionFromGithub() {
+    try {
+        const repo = "Jamesy-tech/BookUI";
+        const response = await fetch(`https://api.github.com/repos/${repo}/commits?per_page=1`);
+        const linkHeader = response.headers.get('Link');
+        if (linkHeader) {
+            const match = linkHeader.match(/page=(\d+)>; rel="last"/);
+            if (match) {
+                const totalCommits = parseInt(match[1]);
+                data.version = `V${(totalCommits * 0.1).toFixed(1)}`;
+                document.getElementById("version-text").textContent = `${data.name} ${data.version}`;
+            }
+        }
+    } catch (err) {
+        console.error("Version fetch failed", err);
+    }
 }
 
-.commandInputT5 {
-    flex: 1;
-    padding: 10px 14px;
-    border-radius: 0px;
-    border: 1px solid var(--primary-color);
-    background-color: var(--panel-color);
-    color: var(--text-color);
-    font-family: monospace;
-    font-size: 0.9rem !important;
-    outline: none;
+updateVersionFromGithub();
+switchPage('home');
+
+function switchTheme(theme) {
+    
+  if (theme === "loadTheme") {
+    const saved = localStorage.getItem("theme");
+    if (saved) switchTheme(saved);
+    return;
+  }
+
+  document.body.classList.forEach(cls => {
+    if (cls.startsWith("theme-")) document.body.classList.remove(cls);
+  });
+  if (theme) {
+    document.body.classList.add(`theme-${theme}`);
+    localStorage.setItem("theme", theme);
+  } else {
+    localStorage.removeItem("theme");
+  }
 }
 
-.commandInputT5::placeholder {
-    color: var(--text-color);
-}
+window.onerror = function(message, source, lineno, colno, error) {
+    addLog("error", [message]);
+};
+
+window.addEventListener("DOMContentLoaded", () => switchTheme("loadTheme"));
+
+</script>
+</body>
+</html>
