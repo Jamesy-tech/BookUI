@@ -181,7 +181,9 @@ if (window.location.href.includes("jamesy-tech.github.io/BookUI")) {
 
   console.log("URL contains 'BookUI'!")
 
-  document.getElementById("getBookUIBtn").style.display = "";
+   document.getElementById("dashboardBtn").style.display = "";
+
+ document.getElementById("getBookUIBtn").style.display = "";
 
 // var choice = confirm("Redirecting to BookUI+ installation page.");
 
