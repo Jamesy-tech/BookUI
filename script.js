@@ -1,5 +1,7 @@
 console.log("0");
 
+// script.js
+
 console.log("BookUI+ internal JS executed & loaded;")
 
 const input = document.querySelector('.commandInputT5');
@@ -19,6 +21,8 @@ async function updateVersionFromGithub() {
     
     const linkHeader = response.headers.get('Link');
     if (linkHeader) {
+
+      console.log(linkHeader);
 
       const match = linkHeader.match(/page=(\d+)>; rel="last"/);
       if (match) {
