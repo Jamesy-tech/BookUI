@@ -15,30 +15,21 @@ document.getElementById("getBookUIBtn").style.display = "none";
 
 async function updateVersionFromGithub() {
   try {
-    const repo = "Jamesy-tech/BookUI";
+    const response = await fetch(
+      "https://raw.githubusercontent.com/Jamesy-tech/BookUI/main/version.json"
+    );
 
-    const response = await fetch(`https://api.github.com/repos/${repo}/commits?per_page=1`);
-    
-    const linkHeader = response.headers.get('Link');
-    if (linkHeader) {
+    const json = await response.json();
 
-      console.log(linkHeader);
+    data.version = `V${json.version}`;
 
-      const match = linkHeader.match(/page=(\d+)>; rel="last"/);
-      if (match) {
-        const totalCommits = parseInt(match[1]);
-
-        const formattedVersion = (totalCommits * 0.1).toFixed(1);
-        data.version = `V${formattedVersion}`;
-        
-        const nameElem = document.getElementById("nameElementR4");
-        if (nameElem) {
-          nameElem.textContent = `${data.name} ${data.version}`;
-        }
-      }
+    const nameElem = document.getElementById("nameElementR4");
+    if (nameElem) {
+      nameElem.textContent = `${data.name} ${data.version}`;
     }
+
   } catch (err) {
-    console.error("Failed to fetch version, keeping V4.1", err);
+    console.error("Failed to fetch version", err);
   }
 }
 
