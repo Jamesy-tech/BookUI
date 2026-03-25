@@ -164,6 +164,7 @@ body {
     <div class="nav-item active" onclick="switchPage('home')">Home</div>
     <div class="nav-item" onclick="switchPage('command_panel')">Command Panel</div>
     <div class="nav-item" onclick="switchPage('themes')">Themes</div>
+    <div class="nav-item" onclick="switchPage('scripts_verify')">Scripts</div>
      <div class="nav-item" onclick="switchPage('suggestions')">Suggestions</div>
     <div class="nav-item" onclick="switchPage('logs')">Logs</div>
 </div>
@@ -313,6 +314,12 @@ const pages = {
         },
 
         { 
+            title: "Scripts", 
+            desc: "Open the Script Library.",
+            command: () => switchPage('scripts_verify')
+        },
+
+        { 
             title: "BookUI+ Release Trailer", 
             desc: "Watch BookUI's release trailer.",
             command: () => window.location.href = "https://www.youtube.com/watch?v=wAYTmT_OqN8"
@@ -416,6 +423,24 @@ const pages = {
 
     ],
 
+         scripts: [
+
+        {
+            title: "ttrs-hacks", 
+            desc: "ttrs-hacks by Jamesy-tech on GitHub.",
+            command: () => window.location.href = "https://github.com/Jamesy-tech/ttrs-hacks"
+        },
+
+                {
+            title: "blooket-hacks", 
+            desc: "blooket-hacks by Jamesy-tech on GitHub.",
+            command: () => window.location.href = "https://github.com/Jamesy-tech/blooket-hacks"
+        },
+
+    ],
+
+    scripts_verify: [],
+
     logs: [],
 
        credits: [
@@ -475,6 +500,10 @@ function renderLogs() {
     });
 }
 
+function verifyScripts() {
+    window.location.href = "https://jamesy-tech.github.io/protect/index.html?from=scripts&redirect=https://jamesy-tech.github.io/BookUI/dashboard.html?page=scripts";
+}
+
 function switchPage(pageKey) {
 
      currentPage = pageKey;
@@ -489,9 +518,14 @@ function switchPage(pageKey) {
     const container = document.getElementById('main-content');
     container.innerHTML = ''; 
 
+    if (pageKey === "scripts_verify") {
+    verifyScripts();
+    }
+
     if (pageKey === "logs") {
     renderLogs();
     return;
+
 }
 
    pages[pageKey].forEach(card => {
@@ -564,6 +598,15 @@ window.onerror = function(message, source, lineno, colno, error) {
 };
 
 window.addEventListener("DOMContentLoaded", () => switchTheme("loadTheme"));
+
+(function () {
+  const params = new URLSearchParams(window.location.search);
+  const page = params.get("page");
+
+  if (page) {
+    switchPage(page);
+  }
+})();
 
 </script>
 </body>
