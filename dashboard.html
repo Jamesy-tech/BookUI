@@ -164,7 +164,7 @@ body {
     <div class="nav-item active" onclick="switchPage('home')">Home</div>
     <div class="nav-item" onclick="switchPage('command_panel')">Command Panel</div>
     <div class="nav-item" onclick="switchPage('themes')">Themes</div>
-    <div class="nav-item" onclick="switchPage('scripts_verify')">Scripts</div>
+    <div class="nav-item" onclick="switchPage('scripts_verify')">Jamscripts</div>
      <div class="nav-item" onclick="switchPage('suggestions')">Suggestions</div>
     <div class="nav-item" onclick="switchPage('logs')">Logs</div>
 </div>
@@ -423,7 +423,7 @@ const pages = {
 
     ],
 
-         scripts: [
+         jamscripts: [
 
         {
             title: "ttrs-hacks", 
@@ -501,7 +501,7 @@ function renderLogs() {
 }
 
 function verifyScripts() {
-    window.location.href = "https://jamesy-tech.github.io/protect/index.html?from=scripts&redirect=https://jamesy-tech.github.io/BookUI/dashboard.html?page=scripts";
+    window.location.href = "https://jamesy-tech.github.io/protect/index.html?from=scripts&redirect=https://jamesy-tech.github.io/BookUI/dashboard.html?page=jamscripts";
 }
 
 function switchPage(pageKey) {
