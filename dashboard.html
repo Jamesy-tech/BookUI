@@ -187,6 +187,10 @@ body {
 
 <script>
 
+    const params = new URLSearchParams(window.location.search);
+const importMode = params.get("import") === "true";
+const returnTo = params.get("return") || "https://jamesy-tech.github.io/text-editor";
+
     let currentPage = "home";
 
     const logs = [];
@@ -428,13 +432,27 @@ const pages = {
         {
             title: "ttrs-hacks", 
             desc: "ttrs-hacks by Jamesy-tech on GitHub.",
-            command: () => window.location.href = "https://github.com/Jamesy-tech/ttrs-hacks"
+            command: () => {
+    if (importMode) {
+        window.location.href =
+          `${returnTo}?import=https://raw.githubusercontent.com/Jamesy-tech/ttrs-hacks/main/auto.js`;
+    } else {
+        window.location.href = "https://github.com/Jamesy-tech/ttrs-hacks";
+    }
+}
         },
 
                 {
             title: "blooket-hacks", 
             desc: "blooket-hacks by Jamesy-tech on GitHub.",
-            command: () => window.location.href = "https://github.com/Jamesy-tech/blooket-hacks"
+            command: () => {
+    if (importMode) {
+        window.location.href =
+          `${returnTo}?import=https://raw.githubusercontent.com/Jamesy-tech/blooket-hacks/main/auto.js`;
+    } else {
+        window.location.href = "https://github.com/Jamesy-tech/blooket-hacks";
+    }
+}
         },
 
     ],
