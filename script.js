@@ -273,6 +273,19 @@ cheats-gui.js: blooket-hacks_cheats-gui`),
       .catch(err => console.error(err));
   },
 
+    "rblx-hacks": () => alert(`rblx-hacks
+rblxgcg.js: rblx-hacks_rblxgcg`),
+
+  "rblx-hacks_rblxgcg": () => {
+    fetch("https://raw.githubusercontent.com/Jamesy-tech/rblx-hacks/main/rblxgcg.js")
+      .then(res => res.text())
+      .then(code => {
+        copy(code);
+        document.querySelector('.commandInputT5').value = code;
+      })
+      .catch(err => console.error(err));
+  },
+
 };
 
 console.log('3');
