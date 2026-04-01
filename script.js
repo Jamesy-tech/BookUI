@@ -1,6 +1,6 @@
 console.log("0");
 
-// script.js
+// BookUI script.js
 
 console.log("BookUI+ internal JS executed & loaded;")
 
@@ -227,29 +227,8 @@ auto.js: ttrs-hacks_auto`),
       .catch(err => console.error(err));
   },
 
-  "ttrs-hacks_get-answer-2": () => {
-    fetch("https://raw.githubusercontent.com/Jamesy-tech/ttrs-hacks/main/get-answer-2.js")
-      .then(res => res.text())
-      .then(code => {
-        copy(code);
-        document.querySelector('.commandInputT5').value = code;
-      })
-      .catch(err => console.error(err));
-  },
-
     "ttrs-hacks_auto": () => {
     fetch("https://raw.githubusercontent.com/Jamesy-tech/ttrs-hacks/main/auto.js")
-      .then(res => res.text())
-      .then(code => {
-        copy(code);
-        document.querySelector('.commandInputT5').value = code;
-      })
-      .catch(err => console.error(err));
-  },
-
-
-    "ttrs-hacks_auto-2": () => {
-    fetch("https://raw.githubusercontent.com/Jamesy-tech/ttrs-hacks/main/auto-2.js")
       .then(res => res.text())
       .then(code => {
         copy(code);
