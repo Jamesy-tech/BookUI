@@ -120,6 +120,11 @@
   <p>Apply custom themes to the current page you're on!</p>
 </div>
 
+<div class="cardB9" data-command="javascript:(()=>{let flipped=false,s=document.createElement('style');s.id='flipStyle';s.innerHTML='body{transition:transform 0.6s ease;}';document.head.appendChild(s);function toggle(){document.body.style.transform=flipped?'scaleX(1)':'scaleX(-1)';flipped=!flipped;}document.addEventListener('keydown',e=>{if(e.key==='Escape')toggle();});toggle();})()">
+  <h3>Mirror Page</h3>
+  <p>Flip the page horizontally.</p>
+</div>
+
     <div class="cardB9" data-command="javascript: print()">
       <h3>Print</h3>
       <p>Print the current page you are on.</p>
