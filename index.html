@@ -54,6 +54,7 @@
         <a onclick="switchTheme('green')">Green</a>
         <a onclick="switchTheme('pink')">Pink</a>
          <a onclick="switchTheme('purple')">Purple</a>
+
     <!--    <a onclick="switchTheme('cyan')">Cyan</a> -->
       </div>
     </li>
@@ -113,6 +114,11 @@
       <h3>LocalStorage</h3>
       <p>Edit, view, remove or clear the LocalStorage of the current page you are on.</p>
     </div>
+
+<div class="cardB9" data-command="javascript:(function(){const themes={dark:'html, body { background: #2a2a2a !important; color: #e0e0e0 !important; } a { color: #bb86fc !important; }',light:'html, body { background: #ffffff !important; color: #000000 !important; } a { color: #1a0dab !important; }',pink:'html, body { background: #ffd6eb !important; color: #7a2f5c !important; } a { color: #ff66a3 !important; }',blue:'html, body { background: #ebf5ff !important; color: #003366 !important; } a { color: #3366ff !important; }',sunset:'html, body { background: #fff1d9 !important; color: #4b0000 !important; } a { color: #ff4d6d !important; }',ocean:'html, body { background: #e0f8ff !important; color: #003366 !important; } a { color: #0077cc !important; }',green:'html, body { background: #d6fcd6 !important; color: #003300 !important; } a { color: #2e7d32 !important; }',orange:'html, body { background: #fff3d9 !important; color: #4b2e00 !important; } a { color: #ff6600 !important; }',purple:'html, body { background: #ede0ff !important; color: #330033 !important; } a { color: #b266ff !important; }',gray:'html, body { background: #f8f8f8 !important; color: #1a1a1a !important; } a { color: #555555 !important; }',pink_gradient:'html, body { background: linear-gradient(135deg, #fff0f7, #ffd6eb) !important; color: #7a2f5c !important; } a { color: #ff66a3 !important; }',blue_gradient:'html, body { background: linear-gradient(135deg, #d6f0ff, #a8dfff) !important; color: #003366 !important; } a { color: #00bfff !important; }',sunset_gradient:'html, body { background: linear-gradient(120deg, #fff6eb, #fff1d9) !important; color: #4b0000 !important; } a { color: #ff4d6d !important; }',ocean_gradient:'html, body { background: linear-gradient(135deg, #e0f8ff, #ccefff) !important; color: #003366 !important; } a { color: #0077cc !important; }',green_gradient:'html, body { background: linear-gradient(135deg, #e6ffe6, #b2f0b2) !important; color: #003300 !important; } a { color: #2e7d32 !important; }',orange_gradient:'html, body { background: linear-gradient(135deg, #fff9e6, #ffe5b2) !important; color: #4b2e00 !important; } a { color: #ff6600 !important; }',purple_gradient:'html, body { background: linear-gradient(135deg, #f5e6ff, #dcc3ff) !important; color: #330033 !important; } a { color: #b266ff !important; }'};let choice=prompt('Enter a theme: dark, light, pink, blue, sunset, ocean, green, orange, purple, gray, pink_gradient, blue_gradient, sunset_gradient, ocean_gradient, green_gradient, orange_gradient, purple_gradient, custom');if(!choice)return;choice=choice.toLowerCase();let styleTag=document.getElementById('customThemeBookmarklet');if(!styleTag){styleTag=document.createElement('style');styleTag.id='customThemeBookmarklet';document.head.appendChild(styleTag);}if(themes[choice]){styleTag.innerHTML=themes[choice];}else if(choice==='custom'){const defaultCSS=`html, body {\n  background: #ffffff !important;\n  color: #000000 !important;\n}\na {\n  color: #0000ff !important;\n}`;const userCSS=prompt('Edit your custom CSS:',defaultCSS);if(userCSS)styleTag.innerHTML=userCSS;}else{alert('Theme not found!');}})();">
+  <h3>Themes</h3>
+  <p>Apply custom themes to the current page you're on!</p>
+</div>
 
     <div class="cardB9" data-command="javascript: print()">
       <h3>Print</h3>
