@@ -180,7 +180,7 @@ body {
             <a href="https://github.com/Jamesy-tech/BookUI/blob/main/README.md">Install</a>
             <a onclick="switchPage('command_panel')">Command Panel</a>
           <!--  <a onclick="switchPage('themes');">Theme</a> -->
-            <a onclick="alert('The donation functionality is still in the works; Please check back soon!')">Donate</a>
+            <a onclick="donate()">Donate</a>
             <a onclick="switchPage('credits')">Credits</a>
        <!--     <a onclick="switchPage('help')">Help</a> -->
         </div>
@@ -191,6 +191,10 @@ body {
 </div>
 
 <script>
+
+function donate() {
+    alert('The donation functionality is still in the works; Please check back soon!');
+}
 
     const params = new URLSearchParams(window.location.search);
 const importMode = params.get("import") === "true";
@@ -305,6 +309,12 @@ const pages = {
         },
 
         { 
+            title: "Scripts", 
+            desc: "Open the Script Library.",
+            command: () => switchPage('scripts_verify')
+        },
+
+        { 
             title: "Suggestions", 
             desc: "Suggest new commands & updates.",
             command: () => switchPage("suggestions")
@@ -322,10 +332,11 @@ const pages = {
             command: () => switchPage('credits')
         },
 
+
         { 
-            title: "Scripts", 
-            desc: "Open the Script Library.",
-            command: () => switchPage('scripts_verify')
+            title: "Donate",
+            desc: "Support me & my projects.",
+            command: () => donate()
         },
 
         { 
