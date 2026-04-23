@@ -325,15 +325,15 @@
   <p>Temporarily change the background color until ESC is pressed to revert.</p>
 </div>
 
-<div class="cardB9" data-command="let f=prompt('Font:');if(f){let s=document.createElement('style');s.innerHTML='* {font-family:\x22'+f+'\x22 !important;}';document.head.appendChild(s);}">
+<!-- <div class="cardB9" data-command="javlet f=prompt('Enter font name:');if(f){let s=document.createElement('style');s.innerHTML='*{font-family:'+f+' !important;}';document.head.appendChild(s);}">
   <h3>Change Font</h3>
   <p>Change the font for all elements on the page.</p>
-</div>
+</div> -->
 
-<div class="cardB9" data-command="javascript: let f=prompt('Font size:', '24px');if(f){let s=document.createElement('style');s.innerHTML='*{font-size:'+f+' !important;}';document.head.appendChild(s);}">
+<!-- <div class="cardB9" data-command="javascript: let f=prompt('Font size:', '24px');if(f){let s=document.createElement('style');s.innerHTML='*{font-size:'+f+' !important;}';document.head.appendChild(s);}">
 <h3>Change Font Size</h3>
 <p>Change the font for all elements on the page.</p>
-</div>
+</div> -->
 
 
     <div class="cardB9" data-command="javascript: (function(){const elems=prompt('Enter CSS selector to log elements to console:','*');if(elems)console.log(document.querySelectorAll(elems));alert('Elements logged to console.');})()">
