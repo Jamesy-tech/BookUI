@@ -2,12 +2,12 @@ console.log("0");
 
 // BookUI script.js
 
-console.log("BookUI+ internal JS executed & loaded;")
+console.log("BookUI internal JS executed & loaded;")
 
 const input = document.querySelector('.commandInputT5');
 
 const data = {
-  name: "BookUI+",
+  name: "BookUI",
   version: "V0.0" 
 };
 
@@ -187,7 +187,7 @@ if (window.location.href.includes("jamesy-tech.github.io/BookUI")) {
 
  document.getElementById("getBookUIBtn").style.display = "";
 
-// var choice = confirm("Redirecting to BookUI+ installation page.");
+// var choice = confirm("Redirecting to BookUI installation page.");
 
 //if (choice) {
 //    window.location.href = "https://sites.google.com/view/get-bookui";
