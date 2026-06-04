@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<title>BookUI+ Dashboard | Simple & Free Command Panel/Executor with Pre-Made Commands</title>
+<title>BookUI Dashboard | Simple & Free Command Panel/Executor with Pre-Made Commands</title>
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -168,7 +168,7 @@ body {
 <body>
 
 <div class="sidebar">
-    <h2 id="version-text">BookUI+ V0.0</h2>
+    <h2 id="version-text">BookUI V0.0</h2>
     <div class="nav-item active" onclick="switchPage('home')">Home</div>
     <div class="nav-item" onclick="window.top.location.href = 'https://jamesy-tech.github.io/BookUI/index.html';">Command Panel</div>
     <div class="nav-item" onclick="switchPage('themes')">Themes</div>
@@ -249,7 +249,7 @@ function sendSuggestion() {
     if (!confirmSend) return;
 
     const message = {
-        content: "**Command Suggestion**\n*from BookUI+ Dashboard*\nSuggestion: " + suggestion + "\nEmail: " + email
+        content: "**Command Suggestion**\n*from BookUI Dashboard*\nSuggestion: " + suggestion + "\nEmail: " + email
     };
 
     fetch(webhookURL, {
@@ -302,7 +302,7 @@ const pages = {
 
           { 
             title: "Command Panel", 
-            desc: "Open the BookUI+ Command Panel.",
+            desc: "Open the BookUI Command Panel.",
             command: () => switchPage('command_panel')
         },
 
@@ -344,14 +344,14 @@ const pages = {
         },
 
         { 
-            title: "BookUI+ Release Trailer", 
+            title: "BookUI Release Trailer", 
             desc: "Watch BookUI's release trailer.",
             command: () => window.location.href = "https://www.youtube.com/watch?v=wAYTmT_OqN8"
         },
 
         { 
             title: "Join the Discord Server", 
-            desc: "Join the official BookUI+ Discord server!",
+            desc: "Join the official BookUI Discord server!",
             command: () => window.location.href = "https://discord.com/invite/WRFdwXn2Wp"
         },
       
@@ -361,7 +361,7 @@ const pages = {
 
         {
             title: "Open Command Panel", 
-            desc: "Open the BookUI+ command panel.",
+            desc: "Open the BookUI command panel.",
             command: () => window.top.location.href = "index.html"
         },
 
@@ -503,7 +503,7 @@ const pages = {
 
         { 
             title: "Join the Discord Server", 
-            desc: "Join the official BookUI+ Discord server!",
+            desc: "Join the official BookUI Discord server!",
             command: () => window.location.href = "https://discord.com/invite/WRFdwXn2Wp"
         },
 
@@ -587,7 +587,7 @@ function switchPage(pageKey) {
 });
 }
 
-const data = { name: "BookUI+", version: "V0.0" };
+const data = { name: "BookUI", version: "V0.0" };
 
 async function updateVersionFromGithub() {
     try {
