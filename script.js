@@ -11,10 +11,6 @@ const data = {
   version: "V0.0" 
 };
 
-function stealthTab() {
- (function(){var url=prompt('Website URL');if(!url)return;if(!/^https?:\/\//i.test(url))url='https://'+url;var w=window.open('about:blank','_blank');if(w){w.document.write('<!DOCTYPE html><html><head><title>'+url+'</title><style>html,body,iframe{margin:0;padding:0;width:100%;height:100%;border:0;overflow:hidden;}</style></head><body><iframe src=&quot;'+url+'&quot;></iframe></body></html>');w.document.close();alert('Warning: Not all websites will work due to security restrictions.');}else{alert('Popup blocked.');}})();
-}
-
 document.getElementById("getBookUIBtn").style.display = "none";
 
 async function updateVersionFromGithub() {
