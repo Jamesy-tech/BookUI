@@ -214,10 +214,9 @@ console.log('2.9');
 
 var customCommands = {
   "ttrs-hacks": () => alert(`ttrs-hacks
-get-answer.js: ttrs-hacks_get-answer
 auto.js: ttrs-hacks_auto`),
    
-"ttrs-hacks_get-answer": () => {
+ /* "ttrs-hacks_get-answer": () => {
     fetch("https://raw.githubusercontent.com/Jamesy-tech/ttrs-hacks/main/get-answer.js")
       .then(res => res.text())
       .then(code => {
@@ -225,7 +224,7 @@ auto.js: ttrs-hacks_auto`),
         document.querySelector('.commandInputT5').value = code;
       })
       .catch(err => console.error(err));
-  },
+  }, */
 
     "ttrs-hacks_auto": () => {
     fetch("https://raw.githubusercontent.com/Jamesy-tech/ttrs-hacks/main/auto.js")
