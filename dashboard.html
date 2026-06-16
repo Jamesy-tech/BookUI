@@ -2,73 +2,106 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-
 <title>BookUI Dashboard | Simple & Free Command Panel for Websites</title>
-
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Google+Sans+Code:ital,wght,MONO@0,300..800,1;1,300..800,1&family=Google+Sans+Flex:opsz,wght@6..144,1..1000&family=Google+Sans:ital,opsz,wght@0,17..18,400..700;1,17..18,400..700&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Lexend:wght@100..900&family=Mulish:ital,wght@0,200..1000;1,200..1000&family=Nunito:ital,wght@0,200..1000;1,200..1000&family=Quicksand:wght@300..700&family=Roboto:ital,wght@0,100..900;1,100..900&family=Rubik:ital,wght@0,300..900;1,300..900&family=Stack+Sans+Text:wght@200..700&display=swap" rel="stylesheet">
-
+<link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Fira+Code:wght@300..700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Google+Sans+Code:ital,wght,MONO@0,300..800,1;1,300..800,1&family=Google+Sans+Flex:opsz,wght@6..144,1..1000&family=Google+Sans:ital,opsz,wght@0,17..18,400..700;1,17..18,400..700&family=Mulish:ital,wght@0,200..1000;1,200..1000&family=Nunito:ital,wght@0,200..1000;1,200..1000&family=Quicksand:wght@300..700&family=Roboto:ital,wght@0,100..900;1,100..900&family=Rubik:ital,wght@0,300..900;1,300..900&family=Stack+Sans+Text:wght@200..700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="themes.css">
-
 <link rel="icon" href="icon3.png">
-
 <style>
-
-    @import url('https://fonts.googleapis.com/css2?family=Google+Sans+Code:ital,wght@0,300..800;1,300..800&family=Google+Sans+Flex:opsz,wght@6..144,1..1000&family=Google+Sans:ital,opsz,wght@0,17..18,400..700;1,17..18,400..700&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Mulish:ital,wght@0,200..1000;1,200..1000&family=Nunito:ital,wght@0,200..1000;1,200..1000&family=Quicksand:wght@300..700&family=Roboto:ital,wght@0,100..900;1,100..900&family=Rubik:ital,wght@0,300..900;1,300..900&family=Stack+Sans+Text:wght@200..700&display=swap');
-
-    @import url('https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,200..800&family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Fira+Code:wght@300..700&family=Google+Sans+Flex:opsz,wght@6..144,1..1000&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Mona+Sans:ital,wght@0,200..900;1,200..900&family=Mulish:ital,wght@0,200..1000;1,200..1000&family=Noto+Sans:ital,wght@0,100..900;1,100..900&family=Nunito:ital,wght@0,200..1000;1,200..1000&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Pixelify+Sans:wght@400..700&family=Roboto:ital,wght@0,100..900;1,100..900&family=Rubik:ital,wght@0,300..900;1,300..900&family=Strichpunkt+Sans:wght@400..900&display=swap');
+:root {
+    --bg-color: #050505; 
+    --panel-color: #0d0d0d;
+    --border-color: #262626;
+    --primary-color: #3b82f6; 
+    --primary-hover: #2563eb;  
+    --text-color: #fafafa;
+    --muted-color: #a1a1aa;
+}
 
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: "Strichpunkt Sans", sans-serif;
+    font-family: "Inter", "Google Sans", sans-serif;
+    cursor: url("https://raw.githubusercontent.com/Jamesy-tech/BookUI/main/cursor.png"), auto !important;
 }
 
 body {
-
     background: var(--bg-color);
     color: var(--text-color);
     display: flex;
     height: 100vh;
     overflow: hidden;
-
+    line-height: 1.5;
 }
 
-* {
-    cursor: url("https://raw.githubusercontent.com/Jamesy-tech/BookUI/main/cursor.png"), auto !important;
+::-webkit-scrollbar {
+    width: 8px;
+}
+::-webkit-scrollbar-track {
+    background: var(--bg-color);
+}
+::-webkit-scrollbar-thumb {
+    background: #3f3f46;
+    border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+    background: #52525b;
 }
 
 .sidebar {
-    width: 250px;
+    width: 260px;
     background: var(--panel-color);
     border-right: 1px solid var(--border-color);
-    padding: 20px;
+    padding: 24px 20px;
     display: flex;
     flex-direction: column;
-    gap: 10px;
+    gap: 8px;
+    z-index: 20;
 }
 
 .sidebar h2 {
-    color: var(--primary-color);
-    font-size: 20px;
-    font-weight: 600;
-    margin-bottom: 10px;
+    color: #ffffff; 
+    font-size: 22px;
+    font-weight: 700;
+    margin-bottom: 16px;
+    letter-spacing: -0.5px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding-left: 6px; 
+}
+
+.sidebar h2::before {
+    content: '';
+    display: inline-block;
+    width: 24px;
+    height: 24px;
+    background: url('icon3.png') no-repeat center center;
+    background-size: contain;
 }
 
 .nav-item {
-    padding: 10px;
-    border: 1px solid var(--border-color);
-    transition: 0.15s;
+    padding: 12px 16px;
+    border-radius: 0px;
+    border: 1px solid transparent;
+    transition: border-color 0.15s ease, color 0.15s ease;
     text-transform: capitalize;
+    color: var(--muted-color);
+    font-weight: 500;
+    font-size: 14px;
 }
 
-.nav-item:hover, .nav-item.active {
+.nav-item:hover {
+    color: var(--text-color);
     border-color: var(--primary-color);
-    background: #ffffff05;
+}
+
+.nav-item.active {
+    color: var(--primary-color);
+    border-color: var(--primary-color);
 }
 
 .main {
@@ -76,39 +109,42 @@ body {
     display: flex;
     flex-direction: column;
     overflow-y: auto;
+    position: relative;
 }
 
 .topbar {
-    height: 70px;
-    min-height: 70px;
+    height: 75px;
+    min-height: 75px;
     background: var(--panel-color);
     border-bottom: 1px solid var(--border-color);
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 0 20px;
+    padding: 0 30px;
     position: sticky;
     top: 0;
     z-index: 10;
-    padding-right:25px;
 }
 
 .topbar .title {
-    color: var(--primary-color);
+    color: var(--text-color);
     font-size: 20px;
     font-weight: 600;
+    letter-spacing: -0.5px;
+    text-transform: capitalize
 }
 
 .topbar .actions {
     display: flex;
-    gap: 20px;
+    gap: 24px;
 }
 
 .topbar .actions a {
-    color: white;
+    color: var(--text-color);
     text-decoration: none;
-    transition: 0.15s;
-    font-size: 16px;
+    transition: color 0.15s ease;
+    font-size: 14px;
+    font-weight: 500;
 }
 
 .topbar .actions a:hover {
@@ -116,20 +152,63 @@ body {
 }
 
 .content {
-    padding: 20px;
+    padding: 30px;
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-    gap: 20px;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 24px;
+}
+
+.hero-banner {
+    grid-column: 1 / -1; 
+    background: var(--panel-color);
+  /*  border: 1px solid var(--primary-color);  */
+    border: 1px solid var(--border-color); 
+    border-radius: 0px;
+    padding: 32px 40px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 8px;
+}
+
+.hero-content h2 {
+    font-size: 28px;
+    font-weight: 700;
+    color: var(--text-color);
+    margin-bottom: 8px;
+}
+
+.hero-content p {
+    color: var(--muted-color);
+    font-size: 15px;
+    max-width: 500px;
+}
+
+.hero-btn {
+    background: #000000;
+    color: var(--text-color);
+    border: 1px solid var(--primary-color);
+    padding: 12px 24px;
+    border-radius: 0px;
+    font-size: 15px;
+    font-weight: 600;
+    transition: all 0.15s ease;
+}
+
+.hero-btn:hover {
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 1.75px var(--primary-color);
 }
 
 .card {
     background: var(--panel-color);
     border: 1px solid var(--border-color);
-    padding: 20px;
-    transition: 0.2s ease;
+    border-radius: 0px;
+    padding: 24px;
+    transition: border-color 0.15s ease;
     display: flex;
     flex-direction: column;
-    gap: 10px;
+    gap: 12px;
 }
 
 .card:hover {
@@ -138,34 +217,21 @@ body {
 
 .card h3 {
     color: var(--primary-color);
-    font-size: 22px;
+    font-size: 18px;
     font-weight: 600;
 }
 
 .card p {
     color: var(--muted-color);
-    font-size: 16px;
-    line-height: 1.5;
-}
-
-.btn {
-    background: var(--primary-color);
-    color: white;
-    border: none;
-    padding: 8px 12px;
-    font-size: 12px;
-    margin-top: auto;
-    width: fit-content;
+    font-size: 14px;
+    line-height: 1.6;
 }
 
 #version-text {
-    padding-left:2px;
+    padding-left: 2px;
 }
-
 </style>
-
 </head>
-
 <body>
 
 <div class="sidebar">
@@ -173,8 +239,8 @@ body {
     <div class="nav-item active" onclick="switchPage('home')">Home</div>
     <div class="nav-item" onclick="window.top.location.href = 'https://jamesy-tech.github.io/BookUI/index.html';">Command Panel</div>
     <div class="nav-item" onclick="switchPage('themes')">Themes</div>
-    <div class="nav-item" onclick="switchPage('scripts_verify')">Scripts [0214]</div>
-     <div class="nav-item" onclick="switchPage('suggestions')">Suggestions</div>
+    <div class="nav-item" onclick="switchPage('scripts_verify')">Scripts</div>
+    <div class="nav-item" onclick="switchPage('suggestions')">Suggestions</div>
     <div class="nav-item" onclick="switchPage('logs')">Logs</div>
 </div>
 
@@ -184,38 +250,30 @@ body {
         <div class="actions">
             <a href="https://github.com/Jamesy-tech/BookUI/blob/main/README.md">Add BookUI</a>
             <a onclick="window.top.location.href = 'https://jamesy-tech.github.io/BookUI/index.html';">Command Panel</a>
-          <!--  <a onclick="switchPage('themes');">Theme</a> -->
             <a onclick="donate()">Donate</a>
             <a onclick="switchPage('credits')">Credits</a>
-       <!--     <a onclick="switchPage('help')">Help</a> -->
         </div>
     </div>
-
-    <div class="content" id="main-content">
-        </div>
+    <div class="content" id="main-content"></div>
 </div>
 
 <script>
-
 function donate() {
     alert('The donation functionality is still in the works; Please check back later!');
 }
 
-    const params = new URLSearchParams(window.location.search);
+const params = new URLSearchParams(window.location.search);
 const importMode = params.get("import") === "true";
 const returnTo = params.get("return") || "https://jamesy-tech.github.io/text-editor";
 
-    let currentPage = "home";
-
-    const logs = [];
+let currentPage = "home";
+const logs = [];
 
 function addLog(type, args) {
     const msg = args.map(a => 
         typeof a === "object" ? JSON.stringify(a) : a
     ).join(" ");
-
     logs.push({ type, msg });
-
     if (currentPage === "logs") renderLogs();
 }
 
@@ -240,19 +298,14 @@ console.warn = (...args) => {
 
 function sendSuggestion() {
     const webhookURL = "https://discord.com/api/webhooks/1485004082400723158/gOPS9xFPMi94kthwyjjL_CItKqo54_BY2eV-v4yoWcbsmvEX-Wz1FppTza88_P9DjOLH";
-
     const suggestion = prompt("What would you like us to add?");
     if (!suggestion) return;
-
     const email = prompt("Enter your email (optional):") || "Not provided";
-
     const confirmSend = confirm("Submit suggestion?");
     if (!confirmSend) return;
-
     const message = {
         content: "**Command Suggestion**\n*from BookUI Dashboard*\nSuggestion: " + suggestion + "\nEmail: " + email
     };
-
     fetch(webhookURL, {
         method: "POST",
         headers: {
@@ -263,291 +316,167 @@ function sendSuggestion() {
 }
 
 const pages = {
-
     home: [
         { 
             title: "Add BookUI", 
             desc: "Get started with BookUI by adding it to your bookmarks bar.",
             command: () => window.location.href = "https://github.com/Jamesy-tech/BookUI/blob/main/README.md"
         },
-
         { 
             title: "Bookmarklet Code", 
             desc: "See the code for the bookmarklet on GitHub.",
             command: () => window.location.href = "https://github.com/Jamesy-tech/BookUI/blob/main/bookmarklet-code.js"
         },
-
         { 
             title: "Help/Documentation", 
             desc: "Read the information & instructions for BookUI.",
             command: () => switchPage('help')
         },
-
         { 
             title: "GitHub Repository", 
             desc: "View BookUI's GitHub repository.",
             command: () => window.location.href = "https://github.com/Jamesy-tech/BookUI"
         },
-
          { 
             title: "Bookmarklet", 
             desc: "Open the bookmarklet on GitHub.",
             command: () => window.location.href = "https://github.com/Jamesy-tech/BookUI/blob/main/bookmarklet.html"
         },
-
          { 
             title: "Bookmarklet Code", 
             desc: "Open the bookmarklet's code on GitHub.",
             command: () => window.location.href = "https://github.com/Jamesy-tech/BookUI/blob/main/bookmarklet-code.js"
         },
-
           { 
             title: "Command Panel", 
             desc: "Open the BookUI Command Panel.",
             command: () => switchPage('command_panel')
         },
-
         { 
             title: "Themes", 
             desc: "Change the theme for BookUI.",
             command: () => switchPage("themes")
         },
-
         { 
             title: "Scripts", 
-            desc: "Open the Script Library.",
+            desc: "Open the Script Library. [Code: 0214]",
             command: () => switchPage('scripts_verify')
         },
-
         { 
             title: "Suggestions", 
             desc: "Suggest new commands & updates.",
             command: () => switchPage("suggestions")
         },
-
         { 
             title: "Logs", 
             desc: "View the JavaScript console.",
             command: () => switchPage("logs")
         },
-
         { 
             title: "Credits", 
             desc: "Open the credits page.",
             command: () => switchPage('credits')
         },
-
-
         { 
             title: "Donate",
             desc: "Support me & my projects.",
             command: () => donate()
         },
-
         { 
             title: "BookUI Release Trailer", 
             desc: "Watch BookUI's release trailer.",
             command: () => window.location.href = "https://www.youtube.com/watch?v=wAYTmT_OqN8"
         },
-
-    /*   { 
-            title: "Join the Discord Server", 
-            desc: "Join the official BookUI Discord server!",
-            command: () => window.location.href = "https://discord.com/invite/WRFdwXn2Wp"
-        }, */
-      
     ],
-
-         command_panel: [
-
+    command_panel: [
         {
             title: "Open Command Panel", 
             desc: "Open the BookUI command panel.",
             command: () => window.top.location.href = "index.html"
         },
-
     ],
-
- themes: [
-
-         {
-            title: "Blue", 
-            desc: "Switch to the 'blue' theme.",
-            command: () => switchTheme("blue")
-        },
-
-         {
-            title: "Morning Glow", 
-            desc: "Switch to the 'morning-glow' theme.",
-            command: () => switchTheme("morning-glow")
-        },
-
-        { 
-            title: "Nebula", 
-            desc: "Switch to the 'nebula' theme.",
-            command: () => switchTheme("nebula")
-        },
-
-        { 
-            title: "Rainbow", 
-            desc: "Switch to the 'rainbow' theme.",
-            command: () => switchTheme("rainbow")
-        },
-
-        { 
-            title: "White", 
-            desc: "Switch to the 'white' theme.",
-            command: () => switchTheme("white")
-        },
-
-        { 
-            title: "Red", 
-            desc: "Switch to the 'red' theme.",
-            command: () => switchTheme("red")
-        },
-
-         { 
-            title: "Green", 
-            desc: "Switch to the 'green' theme.",
-            command: () => switchTheme("green")
-        },
-
-        { 
-            title: "Lime", 
-            desc: "Switch to the 'lime' theme.",
-            command: () => switchTheme("lime")
-        },
-
-         { 
-            title: "Pink", 
-            desc: "Switch to the 'pink' theme.",
-            command: () => switchTheme("pink")
-        },
-
-         { 
-            title: "Purple", 
-            desc: "Switch to the 'purple' theme.",
-            command: () => switchTheme("purple")
-        },
-
-        { 
-            title: "Cyan", 
-            desc: "Switch to the 'cyan' theme.",
-            command: () => switchTheme("cyan")
-        },
-     
+    themes: [
+        { title: "Blue", desc: "Switch to the 'blue' theme.", command: () => switchTheme("blue") },
+        { title: "Morning Glow", desc: "Switch to the 'morning-glow' theme.", command: () => switchTheme("morning-glow") },
+        { title: "Nebula", desc: "Switch to the 'nebula' theme.", command: () => switchTheme("nebula") },
+        { title: "Rainbow", desc: "Switch to the 'rainbow' theme.", command: () => switchTheme("rainbow") },
+        { title: "White", desc: "Switch to the 'white' theme.", command: () => switchTheme("white") },
+        { title: "Red", desc: "Switch to the 'red' theme.", command: () => switchTheme("red") },
+        { title: "Green", desc: "Switch to the 'green' theme.", command: () => switchTheme("green") },
+        { title: "Lime", desc: "Switch to the 'lime' theme.", command: () => switchTheme("lime") },
+        { title: "Pink", desc: "Switch to the 'pink' theme.", command: () => switchTheme("pink") },
+        { title: "Purple", desc: "Switch to the 'purple' theme.", command: () => switchTheme("purple") },
+        { title: "Cyan", desc: "Switch to the 'cyan' theme.", command: () => switchTheme("cyan") },
     ],
-
-     suggestions: [
-
+    suggestions: [
         {
             title: "Create suggestion", 
             desc: "What would you like us to add?",
             command: () => sendSuggestion()
         },
-
     ],
-
-         scripts: [
-
+    scripts: [
         {
             title: "ttrs-hacks", 
             desc: "ttrs-hacks by Jamesy-tech on GitHub.",
             command: () => {
-    if (importMode) {
-        window.location.href =
-          `${returnTo}?import=https://raw.githubusercontent.com/Jamesy-tech/ttrs-hacks/main/auto.js`;
-    } else {
-        window.location.href = "https://github.com/Jamesy-tech/ttrs-hacks";
-    }
-}
+                if (importMode) {
+                    window.location.href = `${returnTo}?import=https://raw.githubusercontent.com/Jamesy-tech/ttrs-hacks/main/auto.js`;
+                } else {
+                    window.location.href = "https://github.com/Jamesy-tech/ttrs-hacks";
+                }
+            }
         },
-
-                {
+        {
             title: "blooket-hacks", 
             desc: "blooket-hacks by Jamesy-tech on GitHub.",
             command: () => {
-    if (importMode) {
-        window.location.href =
-          `${returnTo}?import=https://raw.githubusercontent.com/Jamesy-tech/blooket-hacks/main/bookmarklet.js`;
-    } else {
-        window.location.href = "https://github.com/Jamesy-tech/blooket-hacks";
-    }
-}
+                if (importMode) {
+                    window.location.href = `${returnTo}?import=https://raw.githubusercontent.com/Jamesy-tech/blooket-hacks/main/bookmarklet.js`;
+                } else {
+                    window.location.href = "https://github.com/Jamesy-tech/blooket-hacks";
+                }
+            }
         },
-
-                        {
+        {
             title: "rblx-hacks", 
             desc: "rblx-hacks by Jamesy-tech on GitHub.",
             command: () => {
-    if (importMode) {
-        window.location.href =
-          `${returnTo}?import=https://raw.githubusercontent.com/Jamesy-tech/rblx-hacks/main/rblxgcg.js`;
-    } else {
-        window.location.href = "https://github.com/Jamesy-tech/rblx-hacks";
-    }
-}
+                if (importMode) {
+                    window.location.href = `${returnTo}?import=https://raw.githubusercontent.com/Jamesy-tech/rblx-hacks/main/rblxgcg.js`;
+                } else {
+                    window.location.href = "https://github.com/Jamesy-tech/rblx-hacks";
+                }
+            }
         },
-
     ],
-
     scripts_verify: [],
-
     logs: [],
-
-       credits: [
-
-        {
-            title: "GitHub", 
-            desc: "View Jamesy-tech's profile on GitHub.",
-            command: () => window.top.location.href = "https://github.com/Jamesy-tech"
-        },
-
-        {
-            title: "YouTube", 
-            desc: "View JamesyDeveloper's profile on YouTube.",
-            command: () => window.top.location.href = "https://youtube.com/@JamesyDeveloper"
-        },
-
-        {
-            title: "Roblox", 
-            desc: "View JamesyDeveloper's profile on Roblox.",
-            command: () => window.top.location.href = "https://www.roblox.com/users/4624140937/profile"
-        },
-
-        { 
-            title: "Join the Discord Server", 
-            desc: "Join the official BookUI Discord server!",
-            command: () => window.location.href = "https://discord.com/invite/WRFdwXn2Wp"
-        },
-
+    credits: [
+        { title: "GitHub", desc: "View Jamesy-tech's profile on GitHub.", command: () => window.top.location.href = "https://github.com/Jamesy-tech" },
+        { title: "YouTube", desc: "View JamesyDeveloper's profile on YouTube.", command: () => window.top.location.href = "https://youtube.com/@JamesyDeveloper" },
+        { title: "Roblox", desc: "View JamesyDeveloper's profile on Roblox.", command: () => window.top.location.href = "https://www.roblox.com/users/4624140937/profile" }
+       // { title: "Join the Discord Server", desc: "Join the official BookUI Discord server!", command: () => window.location.href = "https://discord.com/invite/WRFdwXn2Wp" },
     ],
-
-       help: [
-
+    help: [
         { 
             title: "Help/Documentation", 
             desc: "Read the information & instructions for BookUI.",
             command: () => window.location.href = "https://github.com/Jamesy-tech/BookUI/blob/main/README.md"
         },
-
     ],
-
 };
 
 function renderLogs() {
     const container = document.getElementById('main-content');
     container.innerHTML = '';
-
     logs.slice().reverse().forEach(log => {
         const div = document.createElement('div');
         div.className = 'card';
-
         div.innerHTML = `
             <h3>${log.type.toUpperCase()}</h3>
             <p>${log.msg}</p>
         `;
-
         container.appendChild(div);
     });
 }
@@ -557,48 +486,60 @@ function verifyScripts() {
 }
 
 function switchPage(pageKey) {
-
-     currentPage = pageKey;
-
-    document.getElementById('page-title').textContent = pageKey.charAt(0).toUpperCase() + pageKey.slice(1);
+    currentPage = pageKey;
+   // Change this line:
+document.getElementById('page-title').textContent = pageKey.replace('_', ' ');
     
     document.querySelectorAll('.nav-item').forEach(item => {
         item.classList.remove('active');
-        if(item.textContent.toLowerCase() === pageKey) item.classList.add('active');
+        const cleanText = item.textContent.toLowerCase().replace(/ \[\d+\]$/, '');
+        if(cleanText === pageKey.replace('_', ' ')) item.classList.add('active');
     });
 
     const container = document.getElementById('main-content');
     container.innerHTML = ''; 
 
     if (pageKey === "scripts_verify") {
-    verifyScripts();
+        verifyScripts();
     }
 
     if (pageKey === "logs") {
-    renderLogs();
-    return;
-
-}
-
-   pages[pageKey].forEach(card => {
-    const cardDiv = document.createElement('div');
-    cardDiv.className = 'card';
-
-    cardDiv.innerHTML = `
-        <h3>${card.title}</h3>
-        <p>${card.desc}</p>
-    `;
-
-    if (card.command) {
-        cardDiv.style.cursor = "pointer";
-
-        cardDiv.addEventListener("click", () => {
-            card.command();
-        });
+        renderLogs();
+        return;
     }
 
-    container.appendChild(cardDiv);
-});
+    if (pageKey === "home") {
+        const banner = document.createElement('div');
+        banner.className = 'hero-banner';
+        banner.innerHTML = `
+            <div class="hero-content">
+                <h2>Welcome to BookUI</h2>
+                <p>Advanced yet easy to use command panel/executor bookmarklet for websites. No coding knowledge needed.</p>
+            </div>
+            <div class="hero-action">
+                <button class="hero-btn" onclick="window.location.href='https://github.com/Jamesy-tech/BookUI/blob/main/README.md'">Get Started</button>
+            </div>
+        `;
+        container.appendChild(banner);
+    }
+
+    if(pages[pageKey]) {
+        pages[pageKey].forEach(card => {
+            const cardDiv = document.createElement('div');
+            cardDiv.className = 'card';
+            cardDiv.innerHTML = `
+                <h3>${card.title}</h3>
+                <p>${card.desc}</p>
+            `;
+            if (card.command) {
+                cardDiv.style.cursor = "pointer";
+                cardDiv.addEventListener("click", () => {
+                    card.command();
+                });
+            }
+            container.appendChild(cardDiv);
+        });
+    }
 }
 
 const data = { name: "BookUI", version: "V0.0" };
@@ -609,13 +550,11 @@ async function updateVersionFromGithub() {
         const response = await fetch(`https://api.github.com/repos/${repo}/commits?per_page=1`);
         const linkHeader = response.headers.get('Link');
         if (linkHeader) {
-            console.log(linkHeader);
             const match = linkHeader.match(/page=(\d+)>; rel="last"/);
             if (match) {
                 const totalCommits = parseInt(match[1]);
                 data.version = `V${(totalCommits * 0.1).toFixed(1)}`;
                 document.getElementById("version-text").textContent = `${data.name} ${data.version}`;
-                console.log(linkHeader);
             }
         }
     } catch (err) {
@@ -627,13 +566,11 @@ updateVersionFromGithub();
 switchPage('home');
 
 function switchTheme(theme) {
-    
   if (theme === "loadTheme") {
     const saved = localStorage.getItem("theme");
     if (saved) switchTheme(saved);
     return;
   }
-
   document.body.classList.forEach(cls => {
     if (cls.startsWith("theme-")) document.body.classList.remove(cls);
   });
@@ -654,12 +591,10 @@ window.addEventListener("DOMContentLoaded", () => switchTheme("loadTheme"));
 (function () {
   const params = new URLSearchParams(window.location.search);
   const page = params.get("page");
-
   if (page) {
     switchPage(page);
   }
 })();
-
 </script>
 </body>
 </html>
