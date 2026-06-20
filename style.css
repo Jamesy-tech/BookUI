@@ -185,6 +185,7 @@ body.theme-morning-glow {
     font-weight: 450;
     transition: 0.2s ease;
     font-family: 'Nunito' !important;
+    font-size:17px;
 }
 
 .linkV1:hover {
@@ -224,7 +225,7 @@ body.theme-morning-glow {
 .dropdownContentL4 a {
     display: block;
     padding: 10px 16px;
-    font-family: 'Noto Sans' !important;
+    font-family: 'Nunito' !important;
     text-decoration: none !important;
     color: var(--muted-text);
 }
@@ -328,5 +329,3 @@ body.theme-c00lgui {
 .commandInputT5::placeholder {
     color: var(--text-color);
 };
-
-/* end */
