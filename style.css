@@ -184,7 +184,7 @@ body.theme-morning-glow {
     color: var(--muted-text);
     font-weight: 450;
     transition: 0.2s ease;
-    font-family: 'Noto Sans' !important;
+    font-family: 'Nunito' !important;
 }
 
 .linkV1:hover {
