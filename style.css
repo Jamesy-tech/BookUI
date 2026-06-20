@@ -160,7 +160,7 @@ body.theme-morning-glow {
 }
 
 .brandQ3 {
-    font-family: 'Nunito Sans' !important;
+    font-family: 'Nunito' !important;
     font-size: 1.4rem !important;
     font-weight: 600;
     color: var(--primary-color);
@@ -277,7 +277,7 @@ body.theme-c00lgui {
     padding: 20px;
     transition: transform 0.2s, background-color 0.2s;
     height: auto;
-    font-family: 'Mulish' !important;
+    font-family: 'Nunito' !important;
 }
 
 .cardB9:hover {
