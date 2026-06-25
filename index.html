@@ -4,68 +4,52 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>BookUI | Simple & Free Command Panel for Websites</title>
-
 <meta name="description" content="BookUI is a free bookmarklet command panel with pre-made commands, tools, and scripts for websites. No coding knowledge needed, but it's even better if you can code 👀">
-
 <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded" rel="stylesheet">
-
 <link rel="stylesheet" href="style.css">
 <link rel="stylesheet" href="themes.css">
 <link rel="icon" href="icon3.png">
-
 <style>
-
-</style>
-
-<style>
-
 .sideNavX9 {
-    position: fixed !important;
-    top: 62px !important;
-    left: 8px !important;
-    border-radius:8px;
+    position: relative !important;
+    top: unset !important;
+    left: unset !important;
+    height: auto !important;
     width: 54px !important;
-    padding-top:4px;
-    height: calc(92vh - 70px) !important;
-    transition:0.3s;
+    flex-shrink: 0;
+    align-self: stretch;
+    border-radius: 8px;
+    margin: 8px;
+    transition: 0.3s;
 }
-
 .sideNavX9:hover {
     background: black !important;
     width: 235px !important;
 }
-
+.bodyY2 {
+    flex: 1;
+    overflow-y: auto;
+    padding: 20px;
+    box-sizing: border-box;
+    min-width: 0;
+}
 </style>
-
-<!--
-
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
- <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Mulish:ital,wght@0,200..1000;1,200..1000&family=Nunito:ital,wght@0,200..1000;1,200..1000&family=Roboto:ital,wght@0,100..900;1,100..900&family=Rubik:ital,wght@0,300..900;1,300..900&display=swap" rel="stylesheet">
--->
-
 </head>
 <body class="bodyA9">
 
 <nav class="navbarX9">
   <div class="brandQ3" id="nameElementR4">BookUI</div>
   <ul class="listM2">
-
     <li class="dropdownR8" id="getBookUIBtn">
       <a class="linkV1" onclick="window.location.href = 'https://github.com/Jamesy-tech/BookUI/blob/main/README.md';">Add BookUI</a>
     </li>
-
     <li class="dropdownR8">
       <a class="linkV1">New..</a>
       <div class="dropdownContentL4">
-          
         <a onclick="addCommand()">Command</a>
-
         <a onclick="(function(){var url=prompt('Website URL');if(!url)return;if(!/^https?:\/\//i.test(url))url='https://'+url;var w=window.open('about:blank','_blank');if(w){w.document.write('<!DOCTYPE html><html><head><title>'+url+'</title><style>html,body,iframe{margin:0;padding:0;width:100%;height:100%;border:0;overflow:hidden;}</style></head><body><iframe src=&quot;'+url+'&quot;></iframe></body></html>');w.document.close();alert('Warning: Not all websites will work due to security restrictions.');}else{alert('Popup blocked.');}})();">Stealth Tab</a>
-       
       </div>
     </li>
-
     <li class="dropdownR8">
       <a class="linkV1">Theme..</a>
       <div class="dropdownContentL4">
@@ -73,563 +57,452 @@
         <a onclick="switchTheme('morning-glow')">Morning Glow</a>
         <a onclick="switchTheme('nebula')">Nebula</a>
         <a onclick="switchTheme('rainbow')">Rainbow</a>
-         <a onclick="switchTheme('white')">White</a>
-     <!--   <a onclick="switchTheme('red')">Red</a> -->
-    <!--    <a onclick="switchTheme('c00lgui')">c00lgui</a> -->
-       <a onclick="switchTheme('lime')">Lime</a> 
-      <!--  <a onclick="switchTheme('green')">Green</a> -->
+        <a onclick="switchTheme('white')">White</a>
+        <a onclick="switchTheme('lime')">Lime</a>
         <a onclick="switchTheme('pink')">Pink</a>
-         <a onclick="switchTheme('purple')">Purple</a>
-
-    <!--    <a onclick="switchTheme('cyan')">Cyan</a> -->
+        <a onclick="switchTheme('purple')">Purple</a>
       </div>
     </li>
-
-  <!-- <li class="dropdownR8">
-      <a class="linkV1">Credits</a>
-      <div class="dropdownContentL4">
-        <a target="_blank" href="https://www.youtube.com/@jamesydeveloper">@JamesyDeveloper (YouTube)</a>
-        <a target="_blank" href="https://www.roblox.com/users/4624140937/profile">@JamesyDeveloper (Roblox)</a>
-        <a target="_blank" href="https://github.com/Jamesy-tech">@Jamesy-tech (GitHub)</a>
-         <a target="_blank" href="https://discord.gg/WRFdwXn2Wp">Join the Discord server</a>
-      </div>
-    </li> -->
-   <!-- <li class="dropdownR8">
-      <a class="linkV1">Help..</a>
-      <div class="dropdownContentL4">
-        <a href="https://github.com/Jamesy-tech/BookUI">GitHub Repository</a>
-        <a href="https://github.com/Jamesy-tech/BookUI/blob/main/README.md">Documentation</a>
-      </div>
-    </li> -->
-
-        <li class="dropdownR8">
+    <li class="dropdownR8">
       <a class="linkV1">Scripts..</a>
       <div class="dropdownContentL4">
         <a onclick="window.location.href = 'https://jamesy-tech.github.io/protect/index.html?from=scripts&redirect=https://jamesy-tech.github.io/BookUI/dashboard.html?page=scripts';">Open</a>
         <a>Code: 0214</a>
       </div>
     </li>
-
-     <!-- <li class="dropdownR8" id="dashboardBtn">
-      <a class="linkV1" onclick="alert('The donation functionality is still in the works; Please check back later!')">Donate</a>
-    </li> -->
-
-      <li class="dropdownR8" id="dashboardBtn">
+    <li class="dropdownR8" id="dashboardBtn">
       <a class="linkV1" onclick="window.top.location.href = 'https://jamesy-tech.github.io/BookUI/dashboard.html';">Dashboard</a>
     </li>
-    
   </ul>
 </nav>
 
+<div style="display:flex;flex:1;overflow:hidden;min-height:0;">
 
-  <div style="display:flex;flex:1;overflow:hidden;min-height:0;">
-
-  </div>
-<div class="sideNavX9">
+  <div class="sideNavX9">
     <a href="https://jamesy-tech.github.io/BookUI/dashboard.html" class="sideItemX9">
-        <span class="material-symbols-rounded">dashboard</span>
-        <span class="sideTextX9">Dashboard</span>
+      <span class="material-symbols-rounded">dashboard</span>
+      <span class="sideTextX9">Dashboard</span>
     </a>
-
     <a href="#" onclick="addCommand()" class="sideItemX9">
-        <span class="material-symbols-rounded">add_circle</span>
-        <span class="sideTextX9">New Command</span>
+      <span class="material-symbols-rounded">add_circle</span>
+      <span class="sideTextX9">New Command</span>
     </a>
-
-   <!--     <a href="#" class="sideItemX9">
-        <span class="material-symbols-rounded">palette</span>
-        <span class="sideTextX9">Themes</span>
-    </a> -->
- 
-        <a href="https://jamesy-tech.github.io/protect/index.html?from=scripts&redirect=https://jamesy-tech.github.io/BookUI/dashboard.html?page=scripts';" class="sideItemX9">
-        <span class="material-symbols-rounded">terminal</span>
-        <span class="sideTextX9">Scripts</span>
+    <a href="https://jamesy-tech.github.io/protect/index.html?from=scripts&redirect=https://jamesy-tech.github.io/BookUI/dashboard.html?page=scripts';" class="sideItemX9">
+      <span class="material-symbols-rounded">terminal</span>
+      <span class="sideTextX9">Scripts</span>
     </a>
-
     <a href="https://github.com/Jamesy-tech/BookUI" class="sideItemX9">
-        <span class="material-symbols-rounded">folder_code</span>
-        <span class="sideTextX9">GitHub Repository</span>
+      <span class="material-symbols-rounded">folder_code</span>
+      <span class="sideTextX9">GitHub Repository</span>
     </a>
-
-           <a href="https://jamesy-tech.github.io/BookUI/dashboard.html?page=suggestions" class="sideItemX9">
-        <span class="material-symbols-rounded">prompt_suggestion</span>
-        <span class="sideTextX9">Suggest feature</span>
+    <a href="https://jamesy-tech.github.io/BookUI/dashboard.html?page=suggestions" class="sideItemX9">
+      <span class="material-symbols-rounded">prompt_suggestion</span>
+      <span class="sideTextX9">Suggest feature</span>
     </a>
-
-
-        <a href="https://github.com/Jamesy-tech/BookUI/blob/main/README.md" class="sideItemX9">
-        <span class="material-symbols-rounded">help_center</span>
-        <span class="sideTextX9">Help</span>
+    <a href="https://github.com/Jamesy-tech/BookUI/blob/main/README.md" class="sideItemX9">
+      <span class="material-symbols-rounded">help_center</span>
+      <span class="sideTextX9">Help</span>
     </a>
+  </div>
 
-</div>
+  <div class="bodyY2">
+    <div class="panelC6">
 
-</div>
+      <div class="cardB9" data-command="javascript:(function(){document.designMode='on';})();">
+        <h3>Edit</h3>
+        <p>Temporary edit the current page you are on.</p>
+      </div>
 
-<div class="bodyY2">
-  <div class="panelC6">
+      <div class="cardB9" data-command="javascript:(function(){alert('Hello, world!')})();">
+        <h3>Alert</h3>
+        <p>Open a dialog window with a message on it.</p>
+      </div>
 
-    <div class="cardB9" data-command="javascript:(function(){document.designMode='on';})();">
-      <h3>Edit</h3>
-      <p>Temporary edit the current page you are on.</p>
-    </div>
+      <div class="cardB9" data-command="javascript:(function(){if(window.__spellOffObs){window.__spellOffObs.disconnect();window.__spellOffObs=null;}else{const f=()=>document.querySelectorAll('*').forEach(e=>(e.spellcheck=false,e.setAttribute&&e.setAttribute('spellcheck','false')));f();window.__spellOffObs=new MutationObserver(f);window.__spellOffObs.observe(document.documentElement,{childList:true,subtree:true});}})();">
+        <h3>Spellcheck</h3>
+        <p>Useful for removing the red line under words when editing the page.</p>
+      </div>
 
-     <div class="cardB9" data-command="javascript:(function(){alert('Hello, world!')})();">
-      <h3>Alert</h3>
-      <p>Open a dialog window with a message on it.</p>
-    </div>
+      <div class="cardB9" data-command="javascript:(()=>{if(window.__drawActive)return;window.__drawActive=true;let d=document,c=d.createElement('canvas'),ctx=c.getContext('2d');Object.assign(c.style,{position:'fixed',top:'0',left:'0',width:'100vw',height:'100vh',zIndex:'9998',pointerEvents:'auto',cursor:'crosshair'});c.width=innerWidth;c.height=innerHeight;d.body.appendChild(c);ctx.lineCap='round';let draw=false,x=0,y=0,color='#000',isEraser=false,penSize=6;let start=e=>{draw=true;let t=e.touches?e.touches[0]:e;x=t.clientX;y=t.clientY};let move=e=>{if(!draw)return;let t=e.touches?e.touches[0]:e,nx=t.clientX,ny=t.clientY;ctx.beginPath();ctx.moveTo(x,y);ctx.lineTo(nx,ny);ctx.lineWidth=penSize;ctx.strokeStyle=color;ctx.globalCompositeOperation=isEraser?'destination-out':'source-over';ctx.stroke();x=nx;y=ny};let end=()=>draw=false;c.addEventListener('mousedown',start);c.addEventListener('mousemove',move);c.addEventListener('mouseup',end);c.addEventListener('mouseleave',end);c.addEventListener('touchstart',start);c.addEventListener('touchmove',move);c.addEventListener('touchend',end);let t=d.createElement('div');Object.assign(t.style,{position:'fixed',top:'10px',left:'50%',transform:'translateX(-50%)',zIndex:'9999',background:'white',padding:'10px',borderRadius:'8px',boxShadow:'0 2px 8px rgba(0,0,0,0.2)',display:'flex',gap:'10px',alignItems:'center',fontFamily:'Raleway, sans-serif',fontWeight:'500'});t.innerHTML='<input type=&quot;color&quot;><input type=&quot;range&quot; min=&quot;1&quot; max=&quot;30&quot; value=&quot;6&quot;><button>Eraser</button><button>Clear</button><button>Exit</button>';d.body.appendChild(t);let picker=t.children[0],slider=t.children[1],eraserBtn=t.children[2],clearBtn=t.children[3],exitBtn=t.children[4];picker.oninput=e=>{color=e.target.value;if(!isEraser)ctx.strokeStyle=color};slider.oninput=e=>penSize=+e.target.value;eraserBtn.onclick=()=>{isEraser=!isEraser;eraserBtn.style.background=isEraser?'lightcoral':''};clearBtn.onclick=()=>ctx.clearRect(0,0,c.width,c.height);exitBtn.onclick=()=>{t.remove();c.style.pointerEvents='none';c.style.cursor='default';window.__drawActive=false;c.removeEventListener('mousedown',start);c.removeEventListener('mousemove',move);c.removeEventListener('mouseup',end);c.removeEventListener('mouseleave',end);c.removeEventListener('touchstart',start);c.removeEventListener('touchmove',move);c.removeEventListener('touchend',end)};let l=d.createElement('link');l.rel='stylesheet';l.href='https://fonts.googleapis.com/css2?family=Raleway:wght@500&display=swap';d.head.appendChild(l);})();">
+        <h3>Draw</h3>
+        <p>Draw directly on the page with a pen or eraser.</p>
+      </div>
 
-  <div class="cardB9" data-command="javascript:(function(){if(window.__spellOffObs){window.__spellOffObs.disconnect();window.__spellOffObs=null;}else{const f=()=>document.querySelectorAll('*').forEach(e=>(e.spellcheck=false,e.setAttribute&&e.setAttribute('spellcheck','false')));f();window.__spellOffObs=new MutationObserver(f);window.__spellOffObs.observe(document.documentElement,{childList:true,subtree:true});}})();">
-  <h3>Spellcheck</h3>
-  <p>Useful for removing the red line under words when editing the page.</p>
-</div>
+      <div class="cardB9" data-command='javascript: (function(){const keys=Object.keys(localStorage);const action=prompt("Choose action: view / set / remove / clear","view");if(action==="view"){let choice=prompt("Choose a key:\n"+keys.join("\n"));if(choice&&localStorage.getItem(choice)!==null){alert(choice+" = "+localStorage.getItem(choice));}else{alert("Key not found.");}}else if(action==="set"){let choice=prompt("Choose existing key or type new:\n"+keys.join("\n"));if(choice){let value=prompt("Value for "+choice+"?",localStorage.getItem(choice)||"");localStorage.setItem(choice,value);alert("Saved "+choice+"="+value);}}else if(action==="remove"){let choice=prompt("Choose key to remove:\n"+keys.join("\n"));if(choice&&localStorage.getItem(choice)!==null){localStorage.removeItem(choice);alert("Removed "+choice);}else{alert("Key not found.");}}else if(action==="clear"){if(confirm("Clear ALL localStorage?")){localStorage.clear();alert("All cleared");}}else{alert("Unknown action.");}})()'>
+        <h3>LocalStorage</h3>
+        <p>Edit, view, remove or clear the LocalStorage of the current page you are on.</p>
+      </div>
 
-<div class="cardB9" data-command="javascript:(()=>{if(window.__drawActive)return;window.__drawActive=true;let d=document,c=d.createElement('canvas'),ctx=c.getContext('2d');Object.assign(c.style,{position:'fixed',top:'0',left:'0',width:'100vw',height:'100vh',zIndex:'9998',pointerEvents:'auto',cursor:'crosshair'});c.width=innerWidth;c.height=innerHeight;d.body.appendChild(c);ctx.lineCap='round';let draw=false,x=0,y=0,color='#000',isEraser=false,penSize=6;let start=e=>{draw=true;let t=e.touches?e.touches[0]:e;x=t.clientX;y=t.clientY};let move=e=>{if(!draw)return;let t=e.touches?e.touches[0]:e,nx=t.clientX,ny=t.clientY;ctx.beginPath();ctx.moveTo(x,y);ctx.lineTo(nx,ny);ctx.lineWidth=penSize;ctx.strokeStyle=color;ctx.globalCompositeOperation=isEraser?'destination-out':'source-over';ctx.stroke();x=nx;y=ny};let end=()=>draw=false;c.addEventListener('mousedown',start);c.addEventListener('mousemove',move);c.addEventListener('mouseup',end);c.addEventListener('mouseleave',end);c.addEventListener('touchstart',start);c.addEventListener('touchmove',move);c.addEventListener('touchend',end);let t=d.createElement('div');Object.assign(t.style,{position:'fixed',top:'10px',left:'50%',transform:'translateX(-50%)',zIndex:'9999',background:'white',padding:'10px',borderRadius:'8px',boxShadow:'0 2px 8px rgba(0,0,0,0.2)',display:'flex',gap:'10px',alignItems:'center',fontFamily:'Raleway, sans-serif',fontWeight:'500'});t.innerHTML='<input type=&quot;color&quot;><input type=&quot;range&quot; min=&quot;1&quot; max=&quot;30&quot; value=&quot;6&quot;><button>Eraser</button><button>Clear</button><button>Exit</button>';d.body.appendChild(t);let picker=t.children[0],slider=t.children[1],eraserBtn=t.children[2],clearBtn=t.children[3],exitBtn=t.children[4];picker.oninput=e=>{color=e.target.value;if(!isEraser)ctx.strokeStyle=color};slider.oninput=e=>penSize=+e.target.value;eraserBtn.onclick=()=>{isEraser=!isEraser;eraserBtn.style.background=isEraser?'lightcoral':''};clearBtn.onclick=()=>ctx.clearRect(0,0,c.width,c.height);exitBtn.onclick=()=>{t.remove();c.style.pointerEvents='none';c.style.cursor='default';window.__drawActive=false;c.removeEventListener('mousedown',start);c.removeEventListener('mousemove',move);c.removeEventListener('mouseup',end);c.removeEventListener('mouseleave',end);c.removeEventListener('touchstart',start);c.removeEventListener('touchmove',move);c.removeEventListener('touchend',end)};let l=d.createElement('link');l.rel='stylesheet';l.href='https://fonts.googleapis.com/css2?family=Raleway:wght@500&display=swap';d.head.appendChild(l);})();">
-  <h3>Draw</h3>
-  <p>Draw directly on the page with a pen or eraser.</p>
-</div>
+      <div class="cardB9" data-command="javascript:(function(){const themes={dark:'html, body { background: #2a2a2a !important; color: #e0e0e0 !important; } a { color: #bb86fc !important; }',light:'html, body { background: #ffffff !important; color: #000000 !important; } a { color: #1a0dab !important; }',pink:'html, body { background: #ffd6eb !important; color: #7a2f5c !important; } a { color: #ff66a3 !important; }',blue:'html, body { background: #ebf5ff !important; color: #003366 !important; } a { color: #3366ff !important; }',sunset:'html, body { background: #fff1d9 !important; color: #4b0000 !important; } a { color: #ff4d6d !important; }',ocean:'html, body { background: #e0f8ff !important; color: #003366 !important; } a { color: #0077cc !important; }',green:'html, body { background: #d6fcd6 !important; color: #003300 !important; } a { color: #2e7d32 !important; }',orange:'html, body { background: #fff3d9 !important; color: #4b2e00 !important; } a { color: #ff6600 !important; }',purple:'html, body { background: #ede0ff !important; color: #330033 !important; } a { color: #b266ff !important; }',gray:'html, body { background: #f8f8f8 !important; color: #1a1a1a !important; } a { color: #555555 !important; }',pink_gradient:'html, body { background: linear-gradient(135deg, #fff0f7, #ffd6eb) !important; color: #7a2f5c !important; } a { color: #ff66a3 !important; }',blue_gradient:'html, body { background: linear-gradient(135deg, #d6f0ff, #a8dfff) !important; color: #003366 !important; } a { color: #00bfff !important; }',sunset_gradient:'html, body { background: linear-gradient(120deg, #fff6eb, #fff1d9) !important; color: #4b0000 !important; } a { color: #ff4d6d !important; }',ocean_gradient:'html, body { background: linear-gradient(135deg, #e0f8ff, #ccefff) !important; color: #003366 !important; } a { color: #0077cc !important; }',green_gradient:'html, body { background: linear-gradient(135deg, #e6ffe6, #b2f0b2) !important; color: #003300 !important; } a { color: #2e7d32 !important; }',orange_gradient:'html, body { background: linear-gradient(135deg, #fff9e6, #ffe5b2) !important; color: #4b2e00 !important; } a { color: #ff6600 !important; }',purple_gradient:'html, body { background: linear-gradient(135deg, #f5e6ff, #dcc3ff) !important; color: #330033 !important; } a { color: #b266ff !important; }'};let choice=prompt('Enter a theme: dark, light, pink, blue, sunset, ocean, green, orange, purple, gray, pink_gradient, blue_gradient, sunset_gradient, ocean_gradient, green_gradient, orange_gradient, purple_gradient, custom');if(!choice)return;choice=choice.toLowerCase();let styleTag=document.getElementById('customThemeBookmarklet');if(!styleTag){styleTag=document.createElement('style');styleTag.id='customThemeBookmarklet';document.head.appendChild(styleTag);}if(themes[choice]){styleTag.innerHTML=themes[choice];}else if(choice==='custom'){const defaultCSS=`html, body {\n  background: #ffffff !important;\n  color: #000000 !important;\n}\na {\n  color: #0000ff !important;\n}`;const userCSS=prompt('Edit your custom CSS:',defaultCSS);if(userCSS)styleTag.innerHTML=userCSS;}else{alert('Theme not found!');}})();">
+        <h3>Themes</h3>
+        <p>Apply custom themes to the current page you're on.</p>
+      </div>
 
-<!-- <div class="cardB9" data-command='getConsoleLibraryCode() // Execute this to get the code, then put it in a bookmark/bookmarklet!'>
-  <h3>Console Library</h3>
-  <p>Try putting this code into a bookmark/bookmarklet!</p>
-</div> -->
+      <div class="cardB9" data-command="javascript:(()=>{if(window.__cmdPalette){window.__cmdPalette.toggle();return;}const l=document.createElement('link');l.href='https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap';l.rel='stylesheet';document.head.appendChild(l);const s=document.createElement('style');s.textContent='#cmdPalette,#cmdConsole{box-sizing:border-box;position:fixed;top:20%;left:50%;transform:translate(-50%,-50%) scale(.9);background:#fff;color:#111827;padding:15px 20px;border-radius:12px;box-shadow:0 15px 50px rgba(0,0,0,.12);z-index:999999;opacity:0;transition:opacity .2s ease,transform .2s ease;cursor:move;width:300px;font-family:Inter,sans-serif}#cmdPalette.show,#cmdConsole.show{opacity:1;transform:translate(-50%,-50%) scale(1)}#cmdPalette input{box-sizing:border-box;width:100%;padding:10px 12px;border:1px solid #e5e7eb;border-radius:8px;outline:none;background:#f9fafb;color:#111827;font-family:Inter,sans-serif;text-align:left}#cmdConsole pre{margin:0;font-size:13px;padding:4px 0;line-height:1.4;height:300px;overflow-y:auto;font-family:Inter,sans-serif;white-space:pre-wrap}';document.head.appendChild(s);const b=document.createElement('div');b.id='cmdPalette';b.innerHTML='<input placeholder=&quot;Type a command...&quot;>';document.body.appendChild(b);const i=b.querySelector('input');const m=[{n:'command',p:'Type a command...'},{n:'google',p:'Search Google...'},{n:'chatgpt',p:'Ask ChatGPT...'}];let x=0;const u=()=>i.placeholder=m[x].p;const n=()=>{x=(x+1)%m.length;u()};function o(){b.classList.add('show');i.focus()}function c(){b.classList.remove('show')}function t(){b.classList.contains('show')?c():o()}i.addEventListener('keydown',e=>{if(e.key==='Enter'){const v=i.value.trim();if(m[x].n==='command'){try{eval(v)}catch(err){console.error(err)}}if(m[x].n==='google'){window.top.location.href='https://www.google.com/search?q='+encodeURIComponent(v)}if(m[x].n==='chatgpt'){window.top.location.href='https://chat.openai.com/?q='+encodeURIComponent(v)}i.value='';c()}});function d(el){let h=false,a=0,y=0;el.addEventListener('mousedown',e=>{if(e.target.tagName==='INPUT')return;h=true;const r=el.getBoundingClientRect();a=e.clientX-r.left;y=e.clientY-r.top;el.style.transition='none';el.style.left=r.left+'px';el.style.top=r.top+'px';el.style.transform='none';document.body.style.userSelect='none'});document.addEventListener('mousemove',e=>{if(!h)return;el.style.left=e.clientX-a+'px';el.style.top=e.clientY-y+'px'});document.addEventListener('mouseup',()=>{h=false;document.body.style.userSelect='auto';el.style.transition=''})}d(b);const cb=document.createElement('div');cb.id='cmdConsole';const p=document.createElement('pre');cb.appendChild(p);document.body.appendChild(cb);d(cb);const ct=()=>cb.classList.toggle('show');const ol=console.log;console.log=function(...a){ol.apply(console,a);p.textContent+=a.map(z=>{if(z instanceof Error)return z.stack||z.message;try{return typeof z==='object'?JSON.stringify(z,null,2):z.toString()}catch(e){return z.toString()}}).join(' ')+'\n';p.scrollTop=p.scrollHeight};const oe=console.error;console.error=function(...a){oe.apply(console,a);p.textContent+=a.map(z=>{if(z instanceof Error)return z.stack||z.message;try{return typeof z==='object'?JSON.stringify(z,null,2):z.toString()}catch(e){return z.toString()}}).join(' ')+'\n';p.scrollTop=p.scrollHeight};document.addEventListener('keydown',e=>{if(e.key==='/'){e.preventDefault();t()}if(e.key==='Escape'){c();cb.classList.remove('show')}if(e.key==='`'){e.preventDefault();ct()}if(e.ctrlKey&&e.key.toLowerCase()==='q'){if(b.classList.contains('show')){e.preventDefault();n()}}});window.__cmdPalette={toggle:t};u();o();})();">
+        <h3>Command Bar</h3>
+        <p>Execute commands, Search Google and Ask ChatGPT.</p>
+      </div>
 
-    <div class="cardB9" data-command='javascript: (function(){const keys=Object.keys(localStorage);const action=prompt("Choose action: view / set / remove / clear","view");if(action==="view"){let choice=prompt("Choose a key:\n"+keys.join("\n"));if(choice&&localStorage.getItem(choice)!==null){alert(choice+" = "+localStorage.getItem(choice));}else{alert("Key not found.");}}else if(action==="set"){let choice=prompt("Choose existing key or type new:\n"+keys.join("\n"));if(choice){let value=prompt("Value for "+choice+"?",localStorage.getItem(choice)||"");localStorage.setItem(choice,value);alert("Saved "+choice+"="+value);}}else if(action==="remove"){let choice=prompt("Choose key to remove:\n"+keys.join("\n"));if(choice&&localStorage.getItem(choice)!==null){localStorage.removeItem(choice);alert("Removed "+choice);}else{alert("Key not found.");}}else if(action==="clear"){if(confirm("Clear ALL localStorage?")){localStorage.clear();alert("All cleared");}}else{alert("Unknown action.");}})()'>
-      <h3>LocalStorage</h3>
-      <p>Edit, view, remove or clear the LocalStorage of the current page you are on.</p>
-    </div>
+      <div class="cardB9" data-command="javascript:(()=>{let flipped=false,s=document.createElement('style');s.id='flipStyle';s.innerHTML='body{transition:transform 0.6s ease;}';document.head.appendChild(s);function toggle(){document.body.style.transform=flipped?'scaleX(1)':'scaleX(-1)';flipped=!flipped;}document.addEventListener('keydown',e=>{if(e.key==='Escape')toggle();});toggle();})()">
+        <h3>Mirror Page</h3>
+        <p>Flip the page horizontally.</p>
+      </div>
 
-<div class="cardB9" data-command="javascript:(function(){const themes={dark:'html, body { background: #2a2a2a !important; color: #e0e0e0 !important; } a { color: #bb86fc !important; }',light:'html, body { background: #ffffff !important; color: #000000 !important; } a { color: #1a0dab !important; }',pink:'html, body { background: #ffd6eb !important; color: #7a2f5c !important; } a { color: #ff66a3 !important; }',blue:'html, body { background: #ebf5ff !important; color: #003366 !important; } a { color: #3366ff !important; }',sunset:'html, body { background: #fff1d9 !important; color: #4b0000 !important; } a { color: #ff4d6d !important; }',ocean:'html, body { background: #e0f8ff !important; color: #003366 !important; } a { color: #0077cc !important; }',green:'html, body { background: #d6fcd6 !important; color: #003300 !important; } a { color: #2e7d32 !important; }',orange:'html, body { background: #fff3d9 !important; color: #4b2e00 !important; } a { color: #ff6600 !important; }',purple:'html, body { background: #ede0ff !important; color: #330033 !important; } a { color: #b266ff !important; }',gray:'html, body { background: #f8f8f8 !important; color: #1a1a1a !important; } a { color: #555555 !important; }',pink_gradient:'html, body { background: linear-gradient(135deg, #fff0f7, #ffd6eb) !important; color: #7a2f5c !important; } a { color: #ff66a3 !important; }',blue_gradient:'html, body { background: linear-gradient(135deg, #d6f0ff, #a8dfff) !important; color: #003366 !important; } a { color: #00bfff !important; }',sunset_gradient:'html, body { background: linear-gradient(120deg, #fff6eb, #fff1d9) !important; color: #4b0000 !important; } a { color: #ff4d6d !important; }',ocean_gradient:'html, body { background: linear-gradient(135deg, #e0f8ff, #ccefff) !important; color: #003366 !important; } a { color: #0077cc !important; }',green_gradient:'html, body { background: linear-gradient(135deg, #e6ffe6, #b2f0b2) !important; color: #003300 !important; } a { color: #2e7d32 !important; }',orange_gradient:'html, body { background: linear-gradient(135deg, #fff9e6, #ffe5b2) !important; color: #4b2e00 !important; } a { color: #ff6600 !important; }',purple_gradient:'html, body { background: linear-gradient(135deg, #f5e6ff, #dcc3ff) !important; color: #330033 !important; } a { color: #b266ff !important; }'};let choice=prompt('Enter a theme: dark, light, pink, blue, sunset, ocean, green, orange, purple, gray, pink_gradient, blue_gradient, sunset_gradient, ocean_gradient, green_gradient, orange_gradient, purple_gradient, custom');if(!choice)return;choice=choice.toLowerCase();let styleTag=document.getElementById('customThemeBookmarklet');if(!styleTag){styleTag=document.createElement('style');styleTag.id='customThemeBookmarklet';document.head.appendChild(styleTag);}if(themes[choice]){styleTag.innerHTML=themes[choice];}else if(choice==='custom'){const defaultCSS=`html, body {\n  background: #ffffff !important;\n  color: #000000 !important;\n}\na {\n  color: #0000ff !important;\n}`;const userCSS=prompt('Edit your custom CSS:',defaultCSS);if(userCSS)styleTag.innerHTML=userCSS;}else{alert('Theme not found!');}})();">
-  <h3>Themes</h3>
-  <p>Apply custom themes to the current page you're on.</p>
-</div>
+      <div class="cardB9" data-command="javascript: print()">
+        <h3>Print</h3>
+        <p>Print the current page you are on.</p>
+      </div>
 
-<div class="cardB9" data-command="javascript:(()=>{if(window.__cmdPalette){window.__cmdPalette.toggle();return;}const l=document.createElement('link');l.href='https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap';l.rel='stylesheet';document.head.appendChild(l);const s=document.createElement('style');s.textContent='#cmdPalette,#cmdConsole{box-sizing:border-box;position:fixed;top:20%;left:50%;transform:translate(-50%,-50%) scale(.9);background:#fff;color:#111827;padding:15px 20px;border-radius:12px;box-shadow:0 15px 50px rgba(0,0,0,.12);z-index:999999;opacity:0;transition:opacity .2s ease,transform .2s ease;cursor:move;width:300px;font-family:Inter,sans-serif}#cmdPalette.show,#cmdConsole.show{opacity:1;transform:translate(-50%,-50%) scale(1)}#cmdPalette input{box-sizing:border-box;width:100%;padding:10px 12px;border:1px solid #e5e7eb;border-radius:8px;outline:none;background:#f9fafb;color:#111827;font-family:Inter,sans-serif;text-align:left}#cmdConsole pre{margin:0;font-size:13px;padding:4px 0;line-height:1.4;height:300px;overflow-y:auto;font-family:Inter,sans-serif;white-space:pre-wrap}';document.head.appendChild(s);const b=document.createElement('div');b.id='cmdPalette';b.innerHTML='<input placeholder=&quot;Type a command...&quot;>';document.body.appendChild(b);const i=b.querySelector('input');const m=[{n:'command',p:'Type a command...'},{n:'google',p:'Search Google...'},{n:'chatgpt',p:'Ask ChatGPT...'}];let x=0;const u=()=>i.placeholder=m[x].p;const n=()=>{x=(x+1)%m.length;u()};function o(){b.classList.add('show');i.focus()}function c(){b.classList.remove('show')}function t(){b.classList.contains('show')?c():o()}i.addEventListener('keydown',e=>{if(e.key==='Enter'){const v=i.value.trim();if(m[x].n==='command'){try{eval(v)}catch(err){console.error(err)}}if(m[x].n==='google'){window.top.location.href='https://www.google.com/search?q='+encodeURIComponent(v)}if(m[x].n==='chatgpt'){window.top.location.href='https://chat.openai.com/?q='+encodeURIComponent(v)}i.value='';c()}});function d(el){let h=false,a=0,y=0;el.addEventListener('mousedown',e=>{if(e.target.tagName==='INPUT')return;h=true;const r=el.getBoundingClientRect();a=e.clientX-r.left;y=e.clientY-r.top;el.style.transition='none';el.style.left=r.left+'px';el.style.top=r.top+'px';el.style.transform='none';document.body.style.userSelect='none'});document.addEventListener('mousemove',e=>{if(!h)return;el.style.left=e.clientX-a+'px';el.style.top=e.clientY-y+'px'});document.addEventListener('mouseup',()=>{h=false;document.body.style.userSelect='auto';el.style.transition=''})}d(b);const cb=document.createElement('div');cb.id='cmdConsole';const p=document.createElement('pre');cb.appendChild(p);document.body.appendChild(cb);d(cb);const ct=()=>cb.classList.toggle('show');const ol=console.log;console.log=function(...a){ol.apply(console,a);p.textContent+=a.map(z=>{if(z instanceof Error)return z.stack||z.message;try{return typeof z==='object'?JSON.stringify(z,null,2):z.toString()}catch(e){return z.toString()}}).join(' ')+'\n';p.scrollTop=p.scrollHeight};const oe=console.error;console.error=function(...a){oe.apply(console,a);p.textContent+=a.map(z=>{if(z instanceof Error)return z.stack||z.message;try{return typeof z==='object'?JSON.stringify(z,null,2):z.toString()}catch(e){return z.toString()}}).join(' ')+'\n';p.scrollTop=p.scrollHeight};document.addEventListener('keydown',e=>{if(e.key==='/'){e.preventDefault();t()}if(e.key==='Escape'){c();cb.classList.remove('show')}if(e.key==='`'){e.preventDefault();ct()}if(e.ctrlKey&&e.key.toLowerCase()==='q'){if(b.classList.contains('show')){e.preventDefault();n()}}});window.__cmdPalette={toggle:t};u();o();})();">
-  <h3>Command Bar</h3>
-  <p>Execute commands, Search Google and Ask ChatGPT.</p>
-</div>
+      <div class="cardB9" data-command="javascript: alert(document.cookie)">
+        <h3>Cookies</h3>
+        <p>View the cookies of the current page you are on.</p>
+      </div>
 
-<div class="cardB9" data-command="javascript:(()=>{let flipped=false,s=document.createElement('style');s.id='flipStyle';s.innerHTML='body{transition:transform 0.6s ease;}';document.head.appendChild(s);function toggle(){document.body.style.transform=flipped?'scaleX(1)':'scaleX(-1)';flipped=!flipped;}document.addEventListener('keydown',e=>{if(e.key==='Escape')toggle();});toggle();})()">
-  <h3>Mirror Page</h3>
-  <p>Flip the page horizontally.</p>
-</div>
+      <div class="cardB9" data-command="javascript: alert(document.body.innerText.split(/\s+/).length);">
+        <h3>Word Count</h3>
+        <p>Show the amount of words that are on the current page.</p>
+      </div>
 
-    <div class="cardB9" data-command="javascript: print()">
-      <h3>Print</h3>
-      <p>Print the current page you are on.</p>
-    </div>
+      <div class="cardB9" data-command="javascript: document.execCommand('undo');">
+        <h3>Undo</h3>
+        <p>Revert your last change and restore the previous state.</p>
+      </div>
 
-    <div class="cardB9" data-command="javascript: alert(document.cookie)">
-      <h3>Cookies</h3>
-      <p>View the cookies of the current page you are on.</p>
-    </div>
+      <div class="cardB9" data-command="javascript: document.execCommand('redo');">
+        <h3>Redo</h3>
+        <p>Reapply the action you just undid to continue editing.</p>
+      </div>
 
-    <div class="cardB9" data-command="javascript: alert(document.body.innerText.split(/\s+/).length);">
-      <h3>Word Count</h3>
-      <p>Show the amount of words that are on the current page.</p>
-    </div>
+      <div class="cardB9" data-command="javascript:(function(){alert('All defined functions have been logged to the console!\n(CTRL/CMD + SHIFT + J)');console.log('--- Defined Functions ---');Object.keys(window).forEach(key=>{try{if(typeof window[key]==='function'&&!/native code/.test(window[key].toString())){console.log(key,window[key]);}}catch(e){}});console.log('------------------------');})();">
+        <h3>Reveal Functions</h3>
+        <p>Log all of the defined functions on the page to the console.</p>
+      </div>
 
-  <div class="cardB9" data-command="javascript: document.execCommand('undo');">
-      <h3>Undo</h3>
-      <p>Revert your last change and restore the previous state.</p>
-    </div>
+      <div class="cardB9" data-command='javascript:(function(){  function getRandomColor() {    var letters = "0123456789ABCDEF";    var color = "#";    for (var i = 0; i < 6; i++) {      color += letters[Math.floor(Math.random() * 16)];    }    return color;  }  function getContrastingColor(color) {    var hex = color.slice(1);    var r = parseInt(hex.substr(0, 2), 16);    var g = parseInt(hex.substr(2, 2), 16);    var b = parseInt(hex.substr(4, 2), 16);    var yiq = (r * 299 + g * 587 + b * 114) / 1000;    return yiq >= 128 ? "#000000" : "#FFFFFF";  }  function applyRandomStyle(element) {    var randomColor = getRandomColor();    element.style.backgroundColor = randomColor;    element.style.color = getContrastingColor(randomColor);  }  var elements = document.getElementsByTagName("*");  for (var i = 0; i < elements.length; i++) {    applyRandomStyle(elements[i]);  }})();'>
+        <h3>Layout Highlighter</h3>
+        <p>Highlight all elements with random colors to visualize layout.</p>
+      </div>
 
+      <div class="cardB9" data-command=' javascript:(function() { var lang = prompt("Enter language code to translate to:", "en"); var translationUrl = "https://translate.google.com/translate?sl=auto&tl=" + lang + "&u=" + encodeURIComponent(window.location.href); window.open(translationUrl, "_blank");})();'>
+        <h3>Translate Page</h3>
+        <p>Translate the current page you are on to a different language using Google Translate.</p>
+      </div>
 
-    <div class="cardB9" data-command="javascript: document.execCommand('redo');">
-      <h3>Redo</h3>
-      <p>Reapply the action you just undid to continue editing.</p>
-    </div>
+      <div class="cardB9" data-command="javascript:(function(){function syntaxHighlight(json){json=JSON.stringify(json,undefined,4);json=json.replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');return json.replace(/(&quot;(\\u[a-zA-Z0-9]{4}|\\\\[^u]|[^\\\\&quot;])*&quot;(\s*:)?|\b(true|false|null)\b|-?\d+(?:\.\d*)?(?:[eE][+-]?\d+)?)/g,function(match){var cls='color: black;';if(/^&quot;/.test(match)){if(/:$/.test(match)){cls='color: green;';}else{cls='color: darkorange;';}}else if(/true|false/.test(match)){cls='color: red;';}else if(/null|-?\d+(?:\.\d*)?(?:[eE][+-]?\d+)?/.test(match)){cls='color: purple;';}return '&lt;span style=&quot;'+cls+'&quot;&gt;'+match+'&lt;/span&gt;';});}var contentType=document.contentType;if(contentType==='application/json'){var json=JSON.parse(document.body.innerText);var highlighted=syntaxHighlight(json);document.body.innerHTML='&lt;pre&gt;'+highlighted+'&lt;/pre&gt;';document.body.style.fontFamily='Arial, sans-serif';document.body.style.fontSize='15px';}else{alert('This page does not contain JSON.');}})();">
+        <h3>JSON Formatter</h3>
+        <p>Auto-formats and highlights JSON on any page.</p>
+      </div>
 
-       <div class="cardB9" data-command="javascript:(function(){alert('All defined functions have been logged to the console!\n(CTRL/CMD + SHIFT + J)');console.log('--- Defined Functions ---');Object.keys(window).forEach(key=>{try{if(typeof window[key]==='function'&&!/native code/.test(window[key].toString())){console.log(key,window[key]);}}catch(e){}});console.log('------------------------');})();">
-      <h3>Reveal Functions</h3>
-      <p>Log all of the defined functions on the page to the console.</p>
-    </div>
-   
-        <div class="cardB9" data-command='javascript:(function(){  function getRandomColor() {    var letters = "0123456789ABCDEF";    var color = "#";    for (var i = 0; i < 6; i++) {      color += letters[Math.floor(Math.random() * 16)];    }    return color;  }  function getContrastingColor(color) {    var hex = color.slice(1);    var r = parseInt(hex.substr(0, 2), 16);    var g = parseInt(hex.substr(2, 2), 16);    var b = parseInt(hex.substr(4, 2), 16);    var yiq = (r * 299 + g * 587 + b * 114) / 1000;    return yiq >= 128 ? "#000000" : "#FFFFFF";  }  function applyRandomStyle(element) {    var randomColor = getRandomColor();    element.style.backgroundColor = randomColor;    element.style.color = getContrastingColor(randomColor);  }  var elements = document.getElementsByTagName("*");  for (var i = 0; i < elements.length; i++) {    applyRandomStyle(elements[i]);  }})();'>
-      <h3>Layout Highlighter</h3>
-      <p>Reapply the action you just undid to continue editing.</p>
-    </div>
+      <div class="cardB9" data-command="javascript:(function(){var c=document.createElement('div');c.setAttribute('style','position:fixed;top:10px;right:10px;z-index:9999;background:white;border-radius:10px;padding:10px;display:flex;align-items:center;font-family:Verdana,sans-serif !important;');var i=document.createElement('input');i.type='color';i.style.width='30px';i.style.height='30px';i.style.marginRight='10px';i.style.fontFamily='Verdana, sans-serif';var b=document.createElement('button');b.textContent='Copy';b.setAttribute('style','padding:5px 10px;margin-right:10px;background:#4CAF50;color:white;border:none;border-radius:5px;cursor:pointer;font-family:Verdana,sans-serif !important;');var x=document.createElement('button');x.textContent='Close';x.setAttribute('style','padding:5px 10px;background:#f44336;color:white;border:none;border-radius:5px;cursor:pointer;font-family:Verdana,sans-serif !important;');b.addEventListener('click',function(){var v=i.value;var t=document.createElement('input');t.value=v;document.body.appendChild(t);t.select();document.execCommand('copy');document.body.removeChild(t);alert('Color copied to clipboard: '+v);});x.addEventListener('click',function(){c.remove();});c.appendChild(i);c.appendChild(b);c.appendChild(x);document.body.appendChild(c);})();">
+        <h3>Color Picker</h3>
+        <p>Pick and copy any color.</p>
+      </div>
 
-       <div class="cardB9" data-command=' javascript:(function() { var lang = prompt("Enter language code to translate to:", "en"); var translationUrl = "https://translate.google.com/translate?sl=auto&tl=" + lang + "&u=" + encodeURIComponent(window.location.href); window.open(translationUrl, "_blank");})();'>
-      <h3>Translate Page</h3>
-      <p>Translate the current page you are on to a different language using Google Translate.</p>
-    </div>
-
-     <div class="cardB9" data-command="javascript:(function(){function syntaxHighlight(json){json=JSON.stringify(json,undefined,4);json=json.replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');return json.replace(/(&quot;(\\u[a-zA-Z0-9]{4}|\\\\[^u]|[^\\\\&quot;])*&quot;(\s*:)?|\b(true|false|null)\b|-?\d+(?:\.\d*)?(?:[eE][+-]?\d+)?)/g,function(match){var cls='color: black;';if(/^&quot;/.test(match)){if(/:$/.test(match)){cls='color: green;';}else{cls='color: darkorange;';}}else if(/true|false/.test(match)){cls='color: red;';}else if(/null|-?\d+(?:\.\d*)?(?:[eE][+-]?\d+)?/.test(match)){cls='color: purple;';}return '&lt;span style=&quot;'+cls+'&quot;&gt;'+match+'&lt;/span&gt;';});}var contentType=document.contentType;if(contentType==='application/json'){var json=JSON.parse(document.body.innerText);var highlighted=syntaxHighlight(json);document.body.innerHTML='&lt;pre&gt;'+highlighted+'&lt;/pre&gt;';document.body.style.fontFamily='Arial, sans-serif';document.body.style.fontSize='15px';}else{alert('This page does not contain JSON.');}})();">
-  <h3>JSON Formatter</h3>
-  <p>Auto-formats and highlights JSON on any page.</p>
-</div>
-
-<div class="cardB9" data-command="javascript:(function(){var c=document.createElement('div');c.setAttribute('style','position:fixed;top:10px;right:10px;z-index:9999;background:white;border-radius:10px;padding:10px;display:flex;align-items:center;font-family:Verdana,sans-serif !important;');var i=document.createElement('input');i.type='color';i.style.width='30px';i.style.height='30px';i.style.marginRight='10px';i.style.fontFamily='Verdana, sans-serif';var b=document.createElement('button');b.textContent='Copy';b.setAttribute('style','padding:5px 10px;margin-right:10px;background:#4CAF50;color:white;border:none;border-radius:5px;cursor:pointer;font-family:Verdana,sans-serif !important;');var x=document.createElement('button');x.textContent='Close';x.setAttribute('style','padding:5px 10px;background:#f44336;color:white;border:none;border-radius:5px;cursor:pointer;font-family:Verdana,sans-serif !important;');b.addEventListener('click',function(){var v=i.value;var t=document.createElement('input');t.value=v;document.body.appendChild(t);t.select();document.execCommand('copy');document.body.removeChild(t);alert('Color copied to clipboard: '+v);});x.addEventListener('click',function(){c.remove();});c.appendChild(i);c.appendChild(b);c.appendChild(x);document.body.appendChild(c);})();">
-  <h3>Color Picker</h3>
-  <p>Pick and copy any color.</p>
-</div>
-
-<div class="cardB9" data-command="javascript:window.location='https://developers.google.com/speed/pagespeed/insights/?url='+encodeURIComponent(window.location);">
-  <h3>PageSpeed Insights</h3>
-  <p>Analyze the current page's speed and performance.</p>
-</div>
+      <div class="cardB9" data-command="javascript:window.location='https://developers.google.com/speed/pagespeed/insights/?url='+encodeURIComponent(window.location);">
+        <h3>PageSpeed Insights</h3>
+        <p>Analyze the current page's speed and performance.</p>
+      </div>
 
       <div class="cardB9" data-command="javascript:(function(){function generatePassword(length){var charset='abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789_-+={}|:&quot;?#$*';var password='';for(var i=0;i<length;i++){var randomIndex=Math.floor(Math.random()*charset.length);password+=charset.charAt(randomIndex);}return password;}var passwordLength=prompt('Enter password length:','8');if(!passwordLength)return;var generatedPassword=generatePassword(passwordLength);prompt('Generated Password:',generatedPassword);})();">
-  <h3>Password Generator</h3>
-  <p>Generate a password of any length to use anywhere.</p>
-</div>
+        <h3>Password Generator</h3>
+        <p>Generate a password of any length to use anywhere.</p>
+      </div>
 
+      <div class="cardB9" data-command='javascript:(function() { var url = encodeURIComponent(window.location.href); var qrCodeUrl = "https://api.qrserver.com/v1/create-qr-code/?data=" + url; window.open(qrCodeUrl, "_blank");})();'>
+        <h3>Generate QR Code</h3>
+        <p>Generate a QR code for the current page you are on.</p>
+      </div>
 
-    <div class="cardB9" data-command='javascript:(function() { var url = encodeURIComponent(window.location.href); var qrCodeUrl = "https://api.qrserver.com/v1/create-qr-code/?data=" + url; window.open(qrCodeUrl, "_blank");})();'>
-      <h3>Generate QR Code</h3>
-      <p>Generate a QR code for the current page you are on.</p>
+      <div class="cardB9" data-command="javascript: const f = prompt('Border: ', 'solid dodgerblue 5px'); document.body.style.border = f;">
+        <h3>Page Border</h3>
+        <p>Add a border to the current page you are on.</p>
+      </div>
+
+      <div class="cardB9" data-command="javascript:(function(){const f=prompt('Padding:','24px');if(f)document.body.style.padding=f;})();">
+        <h3>Page Padding</h3>
+        <p>Change the &lt;body&gt;'s padding for the current page you are on.</p>
+      </div>
+
+      <div class="cardB9" data-command="javascript:(function(){const f=prompt('Margin:','24px');if(f)document.body.style.margin=f;})();">
+        <h3>Page Margin</h3>
+        <p>Change the &lt;body&gt;'s margin for the current page you are on.</p>
+      </div>
+
+      <div class="cardB9" data-command="javascript:(function(){const t=prompt('Clicks per second? (Max 200)','10');if(!t)return;const c=Math.min(200,Math.max(0,Number(t)));if(!c||isNaN(c)){alert('Invalid number');return}const i=1000/c;if(window.__autoclicker&&window.__autoclicker.running){window.__autoclicker.running=false;return}window.__autoclicker={running:true,lastX:0,lastY:0,target:document.elementFromPoint(window.innerWidth/2,window.innerHeight/2)};function m(e){window.__autoclicker.lastX=e.clientX;window.__autoclicker.lastY=e.clientY;window.__autoclicker.target=e.target}function k(e){if(e.key==='Escape'){window.__autoclicker.running=false}}window.addEventListener('mousemove',m);window.addEventListener('keydown',k);let l=performance.now(),a=0;function tick(n){a+=n-l;l=n;while(a>=i&&window.__autoclicker.running){try{const el=window.__autoclicker.target||document.elementFromPoint(window.__autoclicker.lastX||window.innerWidth/2,window.__autoclicker.lastY||window.innerHeight/2);if(el&&typeof el.click==='function')el.click()}catch{}a-=i}if(window.__autoclicker.running)requestAnimationFrame(tick);else{window.removeEventListener('mousemove',m);window.removeEventListener('keydown',k);delete window.__autoclicker;alert('Auto-clicker stopped')}}requestAnimationFrame(tick);alert('Auto-clicker started — move mouse to pick target element. Run again or press ESC to stop.')})()">
+        <h3>Auto-Clicker</h3>
+        <p>Click repeatedly at set CPS. Press ESC to stop.</p>
+      </div>
+
+      <div class="cardB9" data-command="javascript: navigator.clipboard.writeText(window.location.href).then(()=>alert('Page URL copied!'))">
+        <h3>Copy URL</h3>
+        <p>Copy the current page URL to your clipboard.</p>
+      </div>
+
+      <div class="cardB9" data-command="javascript: alert('Viewport size: '+window.innerWidth+'×'+window.innerHeight)">
+        <h3>Viewport Size</h3>
+        <p>Display the current browser window size.</p>
+      </div>
+
+      <div class="cardB9" data-command="javascript: (function(){const s=prompt('Enter text to search:');if(s)window.find(s);})()">
+        <h3>Find Text</h3>
+        <p>Search for text on the current page manually.</p>
+      </div>
+
+      <div class="cardB9" data-command="javascript: (function(){window.__effects=window.__effects||[];let d=document.createElement('div');d.className='__overlay';d.style.cssText='position:fixed;top:0;left:0;width:100vw;height:100vh;pointer-events:none;z-index:9999;background:linear-gradient(270deg,rgba(255,0,0,0.5),rgba(255,165,0,0.5),rgba(255,255,0,0.5),rgba(0,128,0,0.5),rgba(0,0,255,0.5),rgba(75,0,130,0.5),rgba(238,130,238,0.5));background-size:1400% 1400%;animation:disco 10s linear infinite';document.body.appendChild(d);let s=document.createElement('style');s.className='__overlay';s.textContent='@keyframes disco{0%{background-position:0% 50%}50%{background-position:100% 50%}100%{background-position:0% 50%}}';document.head.appendChild(s);window.__effects.push(d,s);if(!window.__escHandler){window.__escHandler=function(e){if(e.key==='Escape'){document.querySelectorAll('.__overlay').forEach(o=>o.remove());document.body.style.transform='';document.body.style.filter='';document.body.style.background='';window.__effects.forEach(a=>{if(a instanceof HTMLElement)a.remove();else clearInterval(a)});window.__effects=[];window.__sounds?.forEach(s=>{s.pause();s.currentTime=0;});window.__sounds=[];}};window.addEventListener('keydown',window.__escHandler);}})();">
+        <h3>Rainbow</h3>
+        <p>Add an animated rainbow overlay to the current page.</p>
+      </div>
+
+      <div class="cardB9" data-command="javascript: (function(){window.__effects=window.__effects||[];document.querySelectorAll('*').forEach(e=>e.style.animation='spin 3s linear infinite');let s=document.createElement('style');s.className='__overlay';s.innerHTML='@keyframes spin{0%{transform:rotate(0deg);}100%{transform:rotate(360deg);}}';document.head.appendChild(s);window.__effects.push(s);if(!window.__escHandler){window.__escHandler=function(e){if(e.key==='Escape'){document.querySelectorAll('.__overlay').forEach(o=>o.remove());document.body.style.transform='';document.body.style.filter='';document.body.style.background='';window.__effects.forEach(a=>{if(a instanceof HTMLElement)a.remove();else clearInterval(a)});window.__effects=[];window.__sounds?.forEach(s=>{s.pause();s.currentTime=0;});window.__sounds=[];document.querySelectorAll('*').forEach(el=>el.style.animation='');}};window.addEventListener('keydown',window.__escHandler);}})();">
+        <h3>Spin Elements</h3>
+        <p>Spin all elements continuously until ESC is pressed.</p>
+      </div>
+
+      <div class="cardB9" data-command="javascript: document.body.style.animation='shake 0.1s infinite';let s=document.createElement('style');s.id='shakeStyle';s.innerHTML='@keyframes shake{0%{transform:translate(0,0)}10%{transform:translate(-10px,10px)}20%{transform:translate(10px,-10px)}30%{transform:translate(-15px,15px)}40%{transform:translate(15px,-15px)}50%{transform:translate(-20px,20px)}60%{transform:translate(20px,-20px)}70%{transform:translate(-15px,15px)}80%{transform:translate(15px,-15px)}90%{transform:translate(-10px,10px)}100%{transform:translate(0,0)}}';document.head.appendChild(s);function stopShake(e){if(e.key==='Escape'){document.body.style.animation='';let t=document.getElementById('shakeStyle');if(t)t.remove();document.removeEventListener('keydown',stopShake);}}document.addEventListener('keydown',stopShake);">
+        <h3>Shake Page</h3>
+        <p>Intense camera shake effect.</p>
+      </div>
+
+      <div class="cardB9" data-command="javascript: (function(){window.__effects=window.__effects||[];let s=document.createElement('style');s.className='__overlay';s.textContent='*{transition:all .2s ease!important;transform:rotate(180deg)!important;}';document.head.appendChild(s);window.__effects.push(s);if(!window.__escHandler){window.__escHandler=function(e){if(e.key==='Escape'){document.querySelectorAll('.__overlay').forEach(o=>o.remove());document.body.style.transform='';document.body.style.filter='';document.body.style.background='';window.__effects.forEach(a=>{if(a instanceof HTMLElement)a.remove();else clearInterval(a)});window.__effects=[];window.__sounds?.forEach(s=>{s.pause();s.currentTime=0;});window.__sounds=[];}};window.addEventListener('keydown',window.__escHandler);}})();">
+        <h3>Flip Page</h3>
+        <p>Flip everything on the page upside down until ESC is pressed.</p>
+      </div>
+
+      <div class="cardB9" data-command="javascript: alert('You have '+(performance.memory?Math.round(performance.memory.usedJSHeapSize/1048576)+'MB used JS heap':'no memory API available'))">
+        <h3>Memory Info</h3>
+        <p>Show current JavaScript memory usage (if supported).</p>
+      </div>
+
+      <div class="cardB9" data-command="javascript: (function(){let s=prompt('Enter CSS selector to highlight (e.g. img, p, div, * = all):');if(!s)return;document.querySelectorAll(s).forEach(e=>e.style.outline='2px solid red');})();">
+        <h3>Highlight Elements</h3>
+        <p>Highlight all elements matching a given CSS selector.</p>
+      </div>
+
+      <div class="cardB9" data-command="javascript: (function(){alert('You are on: '+location.hostname+'\\nProtocol: '+location.protocol+'\\nPath: '+location.pathname);})();">
+        <h3>Page Info</h3>
+        <p>Display hostname, protocol, and path of the current page.</p>
+      </div>
+
+      <div class="cardB9" data-command="javascript: (function(){document.body.style.filter='grayscale(1)';})();">
+        <h3>Grayscale Mode</h3>
+        <p>Turn the entire page black and white.</p>
+      </div>
+
+      <div class="cardB9" data-command="javascript: (function(){const url=prompt('Replace all images with image URL:','https://placekitten.com/400/300');if(!url)return;document.querySelectorAll('img').forEach(img=>{img.dataset._orig=img.src;img.src=url});alert('All images replaced. Original URLs saved in data-_orig on each image.');})()">
+        <h3>Replace Images</h3>
+        <p>Replace every &lt;img&gt; src on the page with a URL you provide (original saved in data-_orig).</p>
+      </div>
+
+      <div class="cardB9" data-command="javascript: (function(){const from=prompt('Text to find:');if(from===null)return;const to=prompt('Replace with:','');if(to===null)return;const walker=document.createTreeWalker(document.body,NodeFilter.SHOW_TEXT);let n;let count=0;while(n=walker.nextNode()){if(n.nodeValue.includes(from)){n.nodeValue=n.nodeValue.split(from).join(to);count++}}alert('Replaced occurrences in '+count+' text nodes.');})()">
+        <h3>Find & Replace</h3>
+        <p>Do a quick find-and-replace on visible text nodes.</p>
+      </div>
+
+      <div class="cardB9" data-command="javascript: (function(){const speed=prompt('Auto scroll speed (px per 50ms). Use negative to scroll up','20');if(speed===null)return;let s=Number(speed)||0;if(window.__autoscrollId){clearInterval(window.__autoscrollId);delete window.__autoscrollId;alert('Auto-scroll stopped');return}window.__autoscrollId=setInterval(()=>window.scrollBy(0,s),50);alert('Auto-scroll started — click this card again to stop.');})()">
+        <h3>Auto Scroll</h3>
+        <p>Start/stop a gentle auto-scroll; useful for long pages.</p>
+      </div>
+
+      <div class="cardB9" data-command="javascript: (function(){if(window.__origFetch) {window.fetch=window.__origFetch;delete window.__origFetch;alert('Fetch restored');return}window.__origFetch=window.fetch;window.fetch=function(){console.log('fetch called with',arguments);return window.__origFetch.apply(this,arguments)};alert('fetch is now being logged to console.')})()">
+        <h3>Log Fetch</h3>
+        <p>Temporarily monkeypatch fetch to log requests in the console.</p>
+      </div>
+
+      <div class="cardB9" data-command="javascript: (function(){const imgs=Array.from(document.images).map(i=>i.src);if(!imgs.length){alert('No images to list');return}const list=imgs.join('\\n');const w=window.open('about:blank','_blank');w.document.write('<pre>'+list.replace(/&/g,'&amp;')+'</pre>');w.document.title='Image URLs';})()">
+        <h3>List Image URLs</h3>
+        <p>Open a new tab listing every image URL on the page.</p>
+      </div>
+
+      <div class="cardB9" data-command="javascript: (function(){window.__effects=window.__effects||[];const fillField=f=>{if(f.type==='email')f.value='user@example.com';else if(f.type==='tel')f.value='0123456789';else if(f.type==='password')f.value='Password123!';else if(f.tagName.toLowerCase()==='select')f.selectedIndex=1;else f.value=f.value||'lorem ipsum';};document.querySelectorAll('input,textarea,select').forEach(fillField);document.querySelectorAll('form').forEach(f=>f.querySelectorAll('input,textarea,select').forEach(fillField));window.__effects.push({reset:()=>{document.querySelectorAll('input,textarea,select').forEach(f=>{f.value='';if(f.tagName.toLowerCase()==='select')f.selectedIndex=0;});}});if(!window.__escHandler){window.__escHandler=function(e){if(e.key==='Escape'){window.__effects.forEach(a=>{if(a.reset)a.reset();else if(a instanceof HTMLElement)a.remove();else clearInterval(a)});window.__effects=[];window.__sounds?.forEach(s=>{s.pause();s.currentTime=0;});window.__sounds=[];}};window.addEventListener('keydown',window.__escHandler);}})();">
+        <h3>Auto-Fill Inputs & Forms</h3>
+        <p>Fill all input fields and forms with dummy data until ESC is pressed.</p>
+      </div>
+
+      <div class="cardB9" data-command="javascript: (function(){window.__effects=window.__effects||[];const origTitle=document.title;const txt=prompt('Enter new document title:');if(txt){document.title=txt;window.__effects.push({reset:()=>{document.title=origTitle;}});}if(!window.__escHandler){window.__escHandler=function(e){if(e.key==='Escape'){window.__effects.forEach(a=>{if(a.reset)a.reset();else if(a instanceof HTMLElement)a.remove();else clearInterval(a)});window.__effects=[];window.__sounds?.forEach(s=>{s.pause();s.currentTime=0;});window.__sounds=[];}};window.addEventListener('keydown',window.__escHandler);}})();">
+        <h3>Change Title</h3>
+        <p>Set a custom page title until ESC is pressed to revert.</p>
+      </div>
+
+      <div class="cardB9" data-command="javascript: (function(){window.__effects=window.__effects||[];const origBg=document.body.style.background;const s=prompt('Enter background color (e.g. red or #ff0000):');if(s){document.body.style.background=s;window.__effects.push({reset:()=>{document.body.style.background=origBg;}});}if(!window.__escHandler){window.__escHandler=function(e){if(e.key==='Escape'){window.__effects.forEach(a=>{if(a.reset)a.reset();else if(a instanceof HTMLElement)a.remove();else clearInterval(a)});window.__effects=[];window.__sounds?.forEach(s=>{s.pause();s.currentTime=0;});window.__sounds=[];}};window.addEventListener('keydown',window.__escHandler);}})();">
+        <h3>Change Background</h3>
+        <p>Temporarily change the background color until ESC is pressed to revert.</p>
+      </div>
+
+      <div class="cardB9" data-command="javascript:(function(){let f=prompt('Enter font:');if(f){let s=document.createElement('style');s.innerHTML='*{font-family:\''+f+'\' !important;}';document.head.appendChild(s);}})();">
+        <h3>Change Font</h3>
+        <p>Change the font for all elements on the page.</p>
+      </div>
+
+      <div class="cardB9" data-command="javascript:(function(){let f=prompt('Font size:', '24px');if(f){let s=document.createElement('style');s.innerHTML='* { font-size: '+f+' !important; }';document.head.appendChild(s);}})();">
+        <h3>Change Font Size</h3>
+        <p>Change the font size for all elements on the page.</p>
+      </div>
+
+      <div class="cardB9" data-command="javascript: (function(){const elems=prompt('Enter CSS selector to log elements to console:','*');if(elems)console.log(document.querySelectorAll(elems));alert('Elements logged to console.');})()">
+        <h3>Log Elements</h3>
+        <p>Inspect selected elements in the console.</p>
+      </div>
+
+      <div class="cardB9" data-command="javascript:(function(){document.body.style.filter=(document.body.style.filter==='invert(1)')?'invert(0)':'invert(1)';})();">
+        <h3>Invert</h3>
+        <p>Invert all colors on the current page.</p>
+      </div>
+
+      <div class="cardB9" data-command="javascript: (function(){document.querySelectorAll('*').forEach(el=>el.setAttribute('data-debug','true'));alert('Debug attributes added.');})()">
+        <h3>Debug Attributes</h3>
+        <p>Mark all elements for inspection in DevTools.</p>
+      </div>
+
+      <div class="cardB9" data-command="javascript: (function(){const css=prompt('Enter custom CSS to inject:','body{border:5px solid red}');if(css){let s=document.createElement('style');s.textContent=css;document.head.appendChild(s);alert('CSS applied!');}})()">
+        <h3>Inject CSS</h3>
+        <p>Add custom CSS to the page instantly.</p>
+      </div>
+
+      <div class="cardB9" data-command="javascript: (function(){const html=prompt('Enter HTML to inject:','&lt;div style=&quot;font-size:24px&quot;&gt;Hello World!&lt;/div&gt;');if(html){const container=document.createElement('div');container.innerHTML=html;document.body.appendChild(container);alert('HTML injected!');}})()">
+        <h3>Inject HTML</h3>
+        <p>Add any HTML snippet to the page instantly.</p>
+      </div>
+
+      <div class="cardB9" data-command="javascript: (function(){const el=prompt('Enter CSS selector to show:', '*');if(el)document.querySelectorAll(el).forEach(e=>e.style.display='');})()">
+        <h3>Show Elements</h3>
+        <p>Reveal elements hidden on the page.</p>
+      </div>
+
+      <div class="cardB9" data-command="javascript: (function(){if(window.__cursorRain){clearInterval(window.__cursorRain);window.removeEventListener('keydown', window.__cursorRainStop);window.__cursorRain=null;alert('Emoji rain stopped');return;}const emojis=['✨','🌟','💫','🔥','🌈','⭐','❄️','🌸','🍀','🍁','🌙','💖','🎈','🎉','🪩','💎','⚡','☀️','🌊','🍂','🎵','🦋','🪶','🌺','💀','👻','🎃','💥','💨','🌹','🌻','🌼','🍄','🍎','🍓','🍇','🍉','🍌','🍪','🍭','🍬','🎂','🎁','❤️','💚','💙','💜','🖤','🤍','🤎','😀','😎','🤩','😈','👾','🤖','🧠','💡','🪙','⚙️'];window.__cursorRainStop=function(e){if(e.key==='Escape'){clearInterval(window.__cursorRain);window.__cursorRain=null;window.removeEventListener('keydown',window.__cursorRainStop);alert('Emoji rain stopped');}};window.addEventListener('keydown',window.__cursorRainStop);window.__cursorRain=setInterval(()=>{let s=document.createElement('div');s.textContent=emojis[Math.floor(Math.random()*emojis.length)];s.style.position='fixed';s.style.left=Math.random()*innerWidth+'px';s.style.top='0';s.style.fontSize=(24+Math.random()*16)+'px';s.style.pointerEvents='none';s.style.zIndex='999999';s.style.opacity='1';document.body.appendChild(s);let y=0;let fall=setInterval(()=>{y+=5;s.style.top=y+'px';s.style.transform='rotate('+y+'deg)';s.style.opacity=(1 - y/innerHeight).toString();if(y>innerHeight){s.remove();clearInterval(fall);}},16);}, 120);alert('Emoji rain started — press ESC to stop.');})();">
+        <h3>Emoji Rain</h3>
+        <p>Make emojis rain down your page until you press ESC to stop.</p>
+      </div>
+
+      <div class="cardB9" data-command="javascript: (function(){window.__effects=window.__effects||[];document.body.style.transition='all .5s';document.body.style.filter='contrast(2) saturate(2)';window.__effects.push({reset:()=>{document.body.style.filter='';}});if(!window.__escHandler){window.__escHandler=function(e){if(e.key==='Escape'){document.querySelectorAll('.__overlay').forEach(o=>o.remove());document.body.style.transform='';document.body.style.filter='';document.body.style.background='';window.__effects.forEach(a=>{if(a.reset)a.reset();else if(a instanceof HTMLElement)a.remove();else clearInterval(a)});window.__effects=[];window.__sounds?.forEach(s=>{s.pause();s.currentTime=0;});window.__sounds=[];}};window.addEventListener('keydown',window.__escHandler);}})();">
+        <h3>Vivid Boost</h3>
+        <p>Double contrast and color for a bright pop effect until ESC is pressed.</p>
+      </div>
+
+      <div class="cardB9" data-command="javascript: (function(){window.__soundPlayers=window.__soundPlayers||[];let a=new Audio('https://github.com/Jamesy-tech/sound-bookmarklets/raw/main/metal-pipe.mp3');a.play();window.__soundPlayers.push(a);window.onkeydown=function(e){if(e.key==='Escape'){window.__soundPlayers.forEach(s=>{s.pause();s.currentTime=0;});window.__soundPlayers=[];}}})();">
+        <h3>[Sound] Metal Pipe</h3>
+        <p>Play sound 'metal-pipe.mp3'</p>
+      </div>
+
+      <div class="cardB9" data-command="javascript: (function(){window.__soundPlayers=window.__soundPlayers||[];let a=new Audio('https://github.com/Jamesy-tech/sound-bookmarklets/raw/main/let-me-know.mp3');a.play();window.__soundPlayers.push(a);window.onkeydown=function(e){if(e.key==='Escape'){window.__soundPlayers.forEach(s=>{s.pause();s.currentTime=0;});window.__soundPlayers=[];}}})();">
+        <h3>[Sound] Let Me Know</h3>
+        <p>Play sound 'let-me-know.mp3'.</p>
+      </div>
+
+      <div class="cardB9" data-command="javascript: (function(){window.__soundPlayers=window.__soundPlayers||[];let a=new Audio('https://github.com/Jamesy-tech/sound-bookmarklets/raw/main/vine-boom.mp3');a.play();window.__soundPlayers.push(a);window.onkeydown=function(e){if(e.key==='Escape'){window.__soundPlayers.forEach(s=>{s.pause();s.currentTime=0;});window.__soundPlayers=[];}}})();">
+        <h3>[Sound] Vine Boom</h3>
+        <p>Play sound 'vine-boom.mp3'.</p>
+      </div>
+
+      <div class="cardB9" data-command="javascript: (function(){window.__soundPlayers=window.__soundPlayers||[];let a=new Audio('https://github.com/Jamesy-tech/sound-bookmarklets/raw/main/get-out.mp3');a.play();window.__soundPlayers.push(a);window.onkeydown=function(e){if(e.key==='Escape'){window.__soundPlayers.forEach(s=>{s.pause();s.currentTime=0;});window.__soundPlayers=[];}}})();">
+        <h3>[Sound] Get Out</h3>
+        <p>Play sound 'get-out.mp3'.</p>
+      </div>
+
+      <div class="cardB9" data-command="javascript: (function(){window.__soundPlayers=window.__soundPlayers||[];let a=new Audio('https://github.com/Jamesy-tech/sound-bookmarklets/raw/main/discord-call.mp3');a.play();window.__soundPlayers.push(a);window.onkeydown=function(e){if(e.key==='Escape'){window.__soundPlayers.forEach(s=>{s.pause();s.currentTime=0;});window.__soundPlayers=[];}}})();">
+        <h3>[Sound] Discord Call</h3>
+        <p>Play sound 'discord-call.mp3'.</p>
+      </div>
+
+      <div class="cardB9" data-command="javascript: (function(){window.__soundPlayers=window.__soundPlayers||[];let a=new Audio('https://github.com/Jamesy-tech/sound-bookmarklets/raw/main/discord-notification.mp3');a.play();window.__soundPlayers.push(a);window.onkeydown=function(e){if(e.key==='Escape'){window.__soundPlayers.forEach(s=>{s.pause();s.currentTime=0;});window.__soundPlayers=[];}}})();">
+        <h3>[Sound] Discord Notification</h3>
+        <p>Play sound 'discord-notification.mp3'.</p>
+      </div>
+
+      <div class="cardB9" data-command="javascript: (function(){window.__soundPlayers=window.__soundPlayers||[];let a=new Audio('https://github.com/Jamesy-tech/sound-bookmarklets/raw/main/roblox-news-guy.mp3');a.play();window.__soundPlayers.push(a);window.onkeydown=function(e){if(e.key==='Escape'){window.__soundPlayers.forEach(s=>{s.pause();s.currentTime=0;});window.__soundPlayers=[];}}})();">
+        <h3>[Sound] Roblox News Guy</h3>
+        <p>Play sound 'roblox-news-guy.mp3'.</p>
+      </div>
+
+      <div class="cardB9" data-command="javascript: (function(){window.__soundPlayers=window.__soundPlayers||[];let a=new Audio('https://github.com/Jamesy-tech/sound-bookmarklets/raw/main/rizz.mp3');a.play();window.__soundPlayers.push(a);window.onkeydown=function(e){if(e.key==='Escape'){window.__soundPlayers.forEach(s=>{s.pause();s.currentTime=0;});window.__soundPlayers=[];}}})();">
+        <h3>[Sound] Rizz</h3>
+        <p>Play sound 'rizz.mp3'.</p>
+      </div>
+
+      <div class="cardB9" data-command="javascript: (function(){window.__soundPlayers=window.__soundPlayers||[];let a=new Audio('https://github.com/Jamesy-tech/sound-bookmarklets/raw/main/what.mp3');a.play();window.__soundPlayers.push(a);window.onkeydown=function(e){if(e.key==='Escape'){window.__soundPlayers.forEach(s=>{s.pause();s.currentTime=0;});window.__soundPlayers=[];}}})();">
+        <h3>[Sound] What</h3>
+        <p>Play sound 'what.mp3'.</p>
+      </div>
+
+      <div class="cardB9" data-command="javascript: (function(){window.__soundPlayers=window.__soundPlayers||[];let a=new Audio('https://github.com/Jamesy-tech/sound-bookmarklets/raw/main/what-da-dog-doin.mp3');a.play();window.__soundPlayers.push(a);window.onkeydown=function(e){if(e.key==='Escape'){window.__soundPlayers.forEach(s=>{s.pause();s.currentTime=0;});window.__soundPlayers=[];}}})();">
+        <h3>[Sound] what da dog doin?</h3>
+        <p>Play sound 'what-da-dog-doin.mp3'.</p>
+      </div>
+
+      <div class="cardB9" data-command="javascript: (function(){window.__soundPlayers=window.__soundPlayers||[];let a=new Audio('https://github.com/Jamesy-tech/sound-bookmarklets/raw/main/ishowspeed-screaming.mp3');a.play();window.__soundPlayers.push(a);window.onkeydown=function(e){if(e.key==='Escape'){window.__soundPlayers.forEach(s=>{s.pause();s.currentTime=0;});window.__soundPlayers=[];}}})();">
+        <h3>[Sound] IShowSpeed Screaming</h3>
+        <p>Play sound 'ishowspeed-screaming.mp3'.</p>
+      </div>
+
+      <div class="cardB9" data-command="javascript: (function(){window.addEventListener('keydown',e=>{if(e.key==='Escape'){document.body.style.filter='';}});let b=document.body;if(b.style.filter.includes('blur')){b.style.filter='';}else{b.style.filter='blur(5px)';}})();">
+        <h3>Blur Page</h3>
+        <p>Toggle blur effect.</p>
+      </div>
+
+      <div class="cardB9" data-command="javascript:(()=>{let els=[...document.querySelectorAll('a,button,[onclick]')];els.forEach(e=>e.style.outline='2px solid red');document.addEventListener('keydown',e=>{if(e.key==='Escape')els.forEach(e=>e.style.outline='')})})();">
+        <h3>Highlight Clickable Elements</h3>
+        <p>Highlight all clickable elements on the current page.</p>
+      </div>
+
+      <div class="cardB9" data-command="javascript:(()=>{let f=e=>e.target.remove();document.addEventListener('click',f);document.addEventListener('keydown',e=>{if(e.key==='Escape')document.removeEventListener('click',f)})})();">
+        <h3>Delete Anything You Click</h3>
+        <p>Deletes every element you click on the current page.</p>
+      </div>
+
+      <div class="cardB9" data-command="javascript:(()=>{let f=e=>e.target.parentNode.appendChild(e.target.cloneNode(true));document.addEventListener('click',f);document.addEventListener('keydown',e=>{if(e.key==='Escape')document.removeEventListener('click',f)})})();">
+        <h3>Duplicate Anything You Click</h3>
+        <p>Duplicates every element you click on the current page.</p>
+      </div>
+
+      <div class="cardB9" data-command="javascript:(()=>{let c=document.createElement('canvas');c.style='position:fixed;top:0;left:0;z-index:9999';document.body.appendChild(c);let x=c.getContext('2d');c.width=innerWidth;c.height=innerHeight;let d=Array(~~(c.width/10)).fill(1),i=setInterval(()=>{x.fillStyle='rgba(0,0,0,0.05)';x.fillRect(0,0,c.width,c.height);x.fillStyle='#0F0';x.font='10px monospace';d.forEach((y,j)=>{let t='01'[Math.random()*2|0];x.fillText(t,j*10,y*10);d[j]=(y*10>c.height&&Math.random()>0.975)?0:y+1})},33);document.addEventListener('keydown',e=>{if(e.key==='Escape'){clearInterval(i);c.remove()}})})();">
+        <h3>Matrix Rain</h3>
+        <p>Create an animated binary rain effect on the current page.</p>
+      </div>
+
+      <div class="cardB9" data-command="javascript:(()=>{document.querySelectorAll('link,style').forEach(e=>e.remove());document.addEventListener('keydown',e=>{if(e.key==='Escape')alert('CSS removed')})})();">
+        <h3>Disable CSS</h3>
+        <p>Remove all styling on the current page.</p>
+      </div>
+
+      <div class="cardB9" data-command="javascript:(()=>{let s=0,f=()=>{s++;document.title='Score: '+s};document.addEventListener('click',f);document.addEventListener('keydown',e=>{if(e.key==='Escape')document.removeEventListener('click',f)})})();">
+        <h3>Click Game</h3>
+        <p>The page's title displays how many times you've clicked on the page.</p>
+      </div>
+
+      <div class="cardB9" data-command="javascript:(function(){document.querySelectorAll('*').forEach(el=>{el.onmousedown=e=>{e.preventDefault();e.stopPropagation();let rect=el.getBoundingClientRect();let sX=e.clientX-rect.left,sY=e.clientY-rect.top;el.style.position='fixed';el.style.zIndex='1000';el.style.left=rect.left+'px';el.style.top=rect.top+'px';el.style.width=rect.width+'px';document.onmousemove=m=>{el.style.left=(m.clientX-sX)+'px';el.style.top=(m.clientY-sY)+'px'};document.onmouseup=()=>{document.onmousemove=null;document.onmouseup=null}}})})();">
+        <h3>Draggable Elements</h3>
+        <p>Drag every element on the page to wherever you want!</p>
+      </div>
+
+      <div class="cardB9" data-command="javascript:(()=>{let els=[...document.querySelectorAll('body *')],vx=[],vy=[],colors=['#f00','#0f0','#00f','#ff0','#0ff','#f0f','#fff'],z=9999;els.forEach((el,i)=>{el.style.position='relative';vx[i]=(Math.random()*10-5);vy[i]=(Math.random()*10-5);el.style.transition='transform 0.05s';});let i=setInterval(()=>{els.forEach((el,j)=>{let t=el.style.transform.match(/translate\(([-\d.]+)px,([-\d.]+)px\)/);let x=t?parseFloat(t[1]):0,y=t?parseFloat(t[2]):0;x+=vx[j];y+=vy[j];if(y>window.innerHeight-50||y<-50)vy[j]*=-1;if(x>window.innerWidth-50||x<-50)vx[j]*=-1;el.style.transform=`translate(${x}px,${y}px)`;el.style.color=colors[Math.floor(Math.random()*colors.length)];el.style.zIndex=++z;});},50);document.addEventListener('click',e=>{let r=50;vx.forEach((v,j)=>{if(els[j].getBoundingClientRect().x<e.clientX+r&&els[j].getBoundingClientRect().x>e.clientX-r&&els[j].getBoundingClientRect().y<e.clientY+r&&els[j].getBoundingClientRect().y>e.clientY-r){vx[j]=(Math.random()*20-10);vy[j]=(Math.random()*20-10);}});});document.addEventListener('keydown',e=>{if(e.key==='Escape'){clearInterval(i);els.forEach(el=>{el.style.transform='';el.style.color='';el.style.zIndex=''});}})})();">
+        <h3>A W E S O M E</h3>
+        <p>[Try running this 7 times] Your page will have a dance party when you run this...</p>
+      </div>
+
+      <div class="cardB9" data-command="const url = prompt('Image URL', 'https://raw.githubusercontent.com/Jamesy-tech/BookUI/main/pixel-cursor-downsized.png'); document.body.style.setProperty('cursor', 'url(' + url + '), auto', 'important');">
+        <h3>Custom Cursor</h3>
+        <p>Change the cursor on the current page.</p>
+      </div>
+
+      <div class="cardB9" data-command="(function(){window.__effects=window.__effects||[];document.body.style.setProperty('cursor','none','important');let u=prompt('Image URL','https://raw.githubusercontent.com/Jamesy-tech/BookUI/main/pixel-cursor.png');let c=document.createElement('img');c.src=u;c.style.cssText='position:fixed;pointer-events:none;z-index:9999;width:32px;height:32px;transform:translate(-50%,-50%) rotate(0deg);transition:transform 0.05s linear';document.body.appendChild(c);window.__effects.push(c);let pos={x:window.innerWidth/2,y:window.innerHeight/2},target={x:window.innerWidth/2,y:window.innerHeight/2},lastPos={x:pos.x,y:pos.y},idleTimeout,lastAngle=0,idle=true;function move(e){target.x=e.clientX;target.y=e.clientY;idle=false;if(idleTimeout)clearTimeout(idleTimeout);idleTimeout=setTimeout(function(){idle=true;},200);}function animate(){pos.x+=(target.x-pos.x)*0.2;pos.y+=(target.y-pos.y)*0.2;let dx=pos.x-lastPos.x,dy=pos.y-lastPos.y;if(dx||dy)lastAngle=Math.atan2(-dy,-dx)*180/Math.PI;c.style.transform='translate(-50%,-50%) rotate('+(idle?lastAngle:lastAngle)+'deg)';c.style.left=pos.x+'px';c.style.top=pos.y+'px';lastPos.x=pos.x;lastPos.y=pos.y;requestAnimationFrame(animate);}window.addEventListener('mousemove',move);requestAnimationFrame(animate);window.__effects.push({reset:()=>{window.removeEventListener('mousemove',move);c.remove();document.body.style.cursor='';}});if(!window.__escHandler){window.__escHandler=function(e){if(e.key==='Escape'){window.__effects.forEach(a=>{if(a.reset)a.reset();else if(a instanceof HTMLElement)a.remove();else clearInterval(a)});window.__effects=[];window.__sounds?.forEach(s=>{s.pause();s.currentTime=0;});window.__sounds=[];}};window.addEventListener('keydown',window.__escHandler);}})();">
+        <h3>Custom Cursor 2</h3>
+        <p>Change the cursor on the current page with a smooth moving effect.</p>
+      </div>
+
+      <div class="cardB9" data-command="javascript:void(window.location.href = 'about:blank'); (1)">
+        <h3>Blank Page</h3>
+        <p>Open a plain white blank page.</p>
+      </div>
+
+      <div class="cardB9" data-command="javascript:(function(){var url=prompt('Website URL');if(!url)return;if(!/^https?:\/\//i.test(url))url='https://'+url;var w=window.open('about:blank','_blank');if(w){w.document.write('<!DOCTYPE html><html><head><title>'+url+'</title><style>html,body,iframe{margin:0;padding:0;width:100%;height:100%;border:0;overflow:hidden;}</style></head><body><iframe src=&quot;'+url+'&quot;></iframe></body></html>');w.document.close();alert('Warning: Not all websites will work due to security restrictions.');}else{alert('Popup blocked.');}})();">
+        <h3>Stealth Tab</h3>
+        <p>Open a website inside a hidden about:blank tab.</p>
+      </div>
+
+      <div class="cardB9" id="addCommandCard" onclick="addCommand()"><center><h1 class="cardPlus">+</h1></center></div>
+
     </div>
-
-
-        <div class="cardB9" data-command="javascript: const f = prompt('Border: ', 'solid dodgerblue 5px'); document.body.style.border = f;">
-      <h3>Page Border</h3>
-      <p>Add a border to the current page you are on.</p>
-    </div>
-
-         <div class="cardB9" data-command="javascript:(function(){const f=prompt('Padding:','24px');if(f)document.body.style.padding=f;})();">
-      <h3>Page Padding</h3>
-      <p>Change the &lt;body&gt;'s padding for the current page you are on.</p>
-    </div>
-
-     <div class="cardB9" data-command="javascript:(function(){const f=prompt('Margin:','24px');if(f)document.body.style.margin=f;})();">
-      <h3>Page Margin</h3>
-      <p>Change the &lt;body&gt;'s margin for the current page you are on.</p>
-    </div>
-
-    <div class="cardB9" data-command="javascript:(function(){const t=prompt('Clicks per second? (Max 200)','10');if(!t)return;const c=Math.min(200,Math.max(0,Number(t)));if(!c||isNaN(c)){alert('Invalid number');return}const i=1000/c;if(window.__autoclicker&&window.__autoclicker.running){window.__autoclicker.running=false;return}window.__autoclicker={running:true,lastX:0,lastY:0,target:document.elementFromPoint(window.innerWidth/2,window.innerHeight/2)};function m(e){window.__autoclicker.lastX=e.clientX;window.__autoclicker.lastY=e.clientY;window.__autoclicker.target=e.target}function k(e){if(e.key==='Escape'){window.__autoclicker.running=false}}window.addEventListener('mousemove',m);window.addEventListener('keydown',k);let l=performance.now(),a=0;function tick(n){a+=n-l;l=n;while(a>=i&&window.__autoclicker.running){try{const el=window.__autoclicker.target||document.elementFromPoint(window.__autoclicker.lastX||window.innerWidth/2,window.__autoclicker.lastY||window.innerHeight/2);if(el&&typeof el.click==='function')el.click()}catch{}a-=i}if(window.__autoclicker.running)requestAnimationFrame(tick);else{window.removeEventListener('mousemove',m);window.removeEventListener('keydown',k);delete window.__autoclicker;alert('Auto-clicker stopped')}}requestAnimationFrame(tick);alert('Auto-clicker started — move mouse to pick target element. Run again or press ESC to stop.')})()">
-      <h3>Auto-Clicker</h3>
-      <p>Click repeatedly at set CPS. Press ESC to stop.</p>
-    </div>
-
-    <div class="cardB9" data-command="javascript: navigator.clipboard.writeText(window.location.href).then(()=>alert('Page URL copied!'))">
-      <h3>Copy URL</h3>
-      <p>Copy the current page URL to your clipboard.</p>
-    </div>
-
-    <div class="cardB9" data-command="javascript: alert('Viewport size: '+window.innerWidth+'×'+window.innerHeight)">
-      <h3>Viewport Size</h3>
-      <p>Display the current browser window size.</p>
-    </div>
-
-    <div class="cardB9" data-command="javascript: (function(){const s=prompt('Enter text to search:');if(s)window.find(s);})()">
-      <h3>Find Text</h3>
-      <p>Search for text on the current page manually.</p>
-    </div>
-
-<div class="cardB9" data-command="javascript: (function(){window.__effects=window.__effects||[];let d=document.createElement('div');d.className='__overlay';d.style.cssText='position:fixed;top:0;left:0;width:100vw;height:100vh;pointer-events:none;z-index:9999;background:linear-gradient(270deg,rgba(255,0,0,0.5),rgba(255,165,0,0.5),rgba(255,255,0,0.5),rgba(0,128,0,0.5),rgba(0,0,255,0.5),rgba(75,0,130,0.5),rgba(238,130,238,0.5));background-size:1400% 1400%;animation:disco 10s linear infinite';document.body.appendChild(d);let s=document.createElement('style');s.className='__overlay';s.textContent='@keyframes disco{0%{background-position:0% 50%}50%{background-position:100% 50%}100%{background-position:0% 50%}}';document.head.appendChild(s);window.__effects.push(d,s);if(!window.__escHandler){window.__escHandler=function(e){if(e.key==='Escape'){document.querySelectorAll('.__overlay').forEach(o=>o.remove());document.body.style.transform='';document.body.style.filter='';document.body.style.background='';window.__effects.forEach(a=>{if(a instanceof HTMLElement)a.remove();else clearInterval(a)});window.__effects=[];window.__sounds?.forEach(s=>{s.pause();s.currentTime=0;});window.__sounds=[];}};window.addEventListener('keydown',window.__escHandler);}})();">
-  <h3>Rainbow</h3>
-  <p>Add an animated rainbow overlay to the current page.</p>
-</div>
-
-
-<div class="cardB9" data-command="javascript: (function(){window.__effects=window.__effects||[];document.querySelectorAll('*').forEach(e=>e.style.animation='spin 3s linear infinite');let s=document.createElement('style');s.className='__overlay';s.innerHTML='@keyframes spin{0%{transform:rotate(0deg);}100%{transform:rotate(360deg);}}';document.head.appendChild(s);window.__effects.push(s);if(!window.__escHandler){window.__escHandler=function(e){if(e.key==='Escape'){document.querySelectorAll('.__overlay').forEach(o=>o.remove());document.body.style.transform='';document.body.style.filter='';document.body.style.background='';window.__effects.forEach(a=>{if(a instanceof HTMLElement)a.remove();else clearInterval(a)});window.__effects=[];window.__sounds?.forEach(s=>{s.pause();s.currentTime=0;});window.__sounds=[];document.querySelectorAll('*').forEach(el=>el.style.animation='');}};window.addEventListener('keydown',window.__escHandler);}})();">
-  <h3>Spin Elements</h3>
-  <p>Spin all elements continuously until ESC is pressed.</p>
-</div>
-
-
-
-<div class="cardB9" data-command="javascript: document.body.style.animation='shake 0.1s infinite';let s=document.createElement('style');s.id='shakeStyle';s.innerHTML='@keyframes shake{0%{transform:translate(0,0)}10%{transform:translate(-10px,10px)}20%{transform:translate(10px,-10px)}30%{transform:translate(-15px,15px)}40%{transform:translate(15px,-15px)}50%{transform:translate(-20px,20px)}60%{transform:translate(20px,-20px)}70%{transform:translate(-15px,15px)}80%{transform:translate(15px,-15px)}90%{transform:translate(-10px,10px)}100%{transform:translate(0,0)}}';document.head.appendChild(s);function stopShake(e){if(e.key==='Escape'){document.body.style.animation='';let t=document.getElementById('shakeStyle');if(t)t.remove();document.removeEventListener('keydown',stopShake);}}document.addEventListener('keydown',stopShake);">
-<h3>Shake Page</h3>
-<p>Intense camera shake effect.</p>
-</div>
-
-
-
-<div class="cardB9" data-command="javascript: (function(){window.__effects=window.__effects||[];let s=document.createElement('style');s.className='__overlay';s.textContent='*{transition:all .2s ease!important;transform:rotate(180deg)!important;}';document.head.appendChild(s);window.__effects.push(s);if(!window.__escHandler){window.__escHandler=function(e){if(e.key==='Escape'){document.querySelectorAll('.__overlay').forEach(o=>o.remove());document.body.style.transform='';document.body.style.filter='';document.body.style.background='';window.__effects.forEach(a=>{if(a instanceof HTMLElement)a.remove();else clearInterval(a)});window.__effects=[];window.__sounds?.forEach(s=>{s.pause();s.currentTime=0;});window.__sounds=[];}};window.addEventListener('keydown',window.__escHandler);}})();">
-  <h3>Flip Page</h3>
-  <p>Flip everything on the page upside down until ESC is pressed.</p>
-</div>
-
-
-    <div class="cardB9" data-command="javascript: alert('You have '+(performance.memory?Math.round(performance.memory.usedJSHeapSize/1048576)+'MB used JS heap':'no memory API available'))">
-      <h3>Memory Info</h3>
-      <p>Show current JavaScript memory usage (if supported).</p>
-    </div>
-
-    <div class="cardB9" data-command="javascript: (function(){let s=prompt('Enter CSS selector to highlight (e.g. img, p, div, * = all):');if(!s)return;document.querySelectorAll(s).forEach(e=>e.style.outline='2px solid red');})();">
-      <h3>Highlight Elements</h3>
-      <p>Highlight all elements matching a given CSS selector.</p>
-    </div>
-
-    <div class="cardB9" data-command="javascript: (function(){alert('You are on: '+location.hostname+'\\nProtocol: '+location.protocol+'\\nPath: '+location.pathname);})();">
-      <h3>Page Info</h3>
-      <p>Display hostname, protocol, and path of the current page.</p>
-    </div>
-
-    <div class="cardB9" data-command="javascript: (function(){document.body.style.filter='grayscale(1)';})();">
-      <h3>Grayscale Mode</h3>
-      <p>Turn the entire page black and white.</p>
-    </div>
-
-    <div class="cardB9" data-command="javascript: (function(){const url=prompt('Replace all images with image URL:','https://placekitten.com/400/300');if(!url)return;document.querySelectorAll('img').forEach(img=>{img.dataset._orig=img.src;img.src=url});alert('All images replaced. Original URLs saved in data-_orig on each image.');})()">
-      <h3>Replace Images</h3>
-      <p>Replace every &lt;img&gt; src on the page with a URL you provide (original saved in data-_orig).</p>
-    </div>
-
-    <div class="cardB9" data-command="javascript: (function(){const from=prompt('Text to find:');if(from===null)return;const to=prompt('Replace with:','');if(to===null)return;const walker=document.createTreeWalker(document.body,NodeFilter.SHOW_TEXT);let n;let count=0;while(n=walker.nextNode()){if(n.nodeValue.includes(from)){n.nodeValue=n.nodeValue.split(from).join(to);count++}}alert('Replaced occurrences in '+count+' text nodes.');})()">
-      <h3>Find & Replace</h3>
-      <p>Do a quick find-and-replace on visible text nodes.</p>
-    </div>
-
-    <div class="cardB9" data-command="javascript: (function(){const speed=prompt('Auto scroll speed (px per 50ms). Use negative to scroll up','20');if(speed===null)return;let s=Number(speed)||0;if(window.__autoscrollId){clearInterval(window.__autoscrollId);delete window.__autoscrollId;alert('Auto-scroll stopped');return}window.__autoscrollId=setInterval(()=>window.scrollBy(0,s),50);alert('Auto-scroll started — click this card again to stop.');})()">
-      <h3>Auto Scroll</h3>
-      <p>Start/stop a gentle auto-scroll; useful for long pages.</p>
-    </div>
-
-    <div class="cardB9" data-command="javascript: (function(){if(window.__origFetch) {window.fetch=window.__origFetch;delete window.__origFetch;alert('Fetch restored');return}window.__origFetch=window.fetch;window.fetch=function(){console.log('fetch called with',arguments);return window.__origFetch.apply(this,arguments)};alert('fetch is now being logged to console.')})()">
-      <h3>Log Fetch</h3>
-      <p>Temporarily monkeypatch fetch to log requests in the console.</p>
-    </div>
-
-    <div class="cardB9" data-command="javascript: (function(){const imgs=Array.from(document.images).map(i=>i.src);if(!imgs.length){alert('No images to list');return}const list=imgs.join('\\n');const w=window.open('about:blank','_blank');w.document.write('<pre>'+list.replace(/&/g,'&amp;')+'</pre>');w.document.title='Image URLs';})()">
-      <h3>List Image URLs</h3>
-      <p>Open a new tab listing every image URL on the page.</p>
-    </div>
-
-
-    <div class="cardB9" data-command="javascript: (function(){window.__effects=window.__effects||[];const fillField=f=>{if(f.type==='email')f.value='user@example.com';else if(f.type==='tel')f.value='0123456789';else if(f.type==='password')f.value='Password123!';else if(f.tagName.toLowerCase()==='select')f.selectedIndex=1;else f.value=f.value||'lorem ipsum';};document.querySelectorAll('input,textarea,select').forEach(fillField);document.querySelectorAll('form').forEach(f=>f.querySelectorAll('input,textarea,select').forEach(fillField));window.__effects.push({reset:()=>{document.querySelectorAll('input,textarea,select').forEach(f=>{f.value='';if(f.tagName.toLowerCase()==='select')f.selectedIndex=0;});}});if(!window.__escHandler){window.__escHandler=function(e){if(e.key==='Escape'){window.__effects.forEach(a=>{if(a.reset)a.reset();else if(a instanceof HTMLElement)a.remove();else clearInterval(a)});window.__effects=[];window.__sounds?.forEach(s=>{s.pause();s.currentTime=0;});window.__sounds=[];}};window.addEventListener('keydown',window.__escHandler);}})();">
-  <h3>Auto-Fill Inputs & Forms</h3>
-  <p>Fill all input fields and forms with dummy data until ESC is pressed.</p>
-</div>
-
-
-  <div class="cardB9" data-command="javascript: (function(){window.__effects=window.__effects||[];const origTitle=document.title;const txt=prompt('Enter new document title:');if(txt){document.title=txt;window.__effects.push({reset:()=>{document.title=origTitle;}});}if(!window.__escHandler){window.__escHandler=function(e){if(e.key==='Escape'){window.__effects.forEach(a=>{if(a.reset)a.reset();else if(a instanceof HTMLElement)a.remove();else clearInterval(a)});window.__effects=[];window.__sounds?.forEach(s=>{s.pause();s.currentTime=0;});window.__sounds=[];}};window.addEventListener('keydown',window.__escHandler);}})();">
-  <h3>Change Title</h3>
-  <p>Set a custom page title until ESC is pressed to revert.</p>
-</div>
-
-<div class="cardB9" data-command="javascript: (function(){window.__effects=window.__effects||[];const origBg=document.body.style.background;const s=prompt('Enter background color (e.g. red or #ff0000):');if(s){document.body.style.background=s;window.__effects.push({reset:()=>{document.body.style.background=origBg;}});}if(!window.__escHandler){window.__escHandler=function(e){if(e.key==='Escape'){window.__effects.forEach(a=>{if(a.reset)a.reset();else if(a instanceof HTMLElement)a.remove();else clearInterval(a)});window.__effects=[];window.__sounds?.forEach(s=>{s.pause();s.currentTime=0;});window.__sounds=[];}};window.addEventListener('keydown',window.__escHandler);}})();">
-  <h3>Change Background</h3>
-  <p>Temporarily change the background color until ESC is pressed to revert.</p>
-</div>
-
-<div class="cardB9" data-command="javascript:(function(){let f=prompt('Enter font:');if(f){let s=document.createElement('style');s.innerHTML='*{font-family:\''+f+'\' !important;}';document.head.appendChild(s);}})();">
-  <h3>Change Font</h3>
-  <p>Change the font for all elements on the page.</p>
-</div>
-
-<div class="cardB9" data-command="javascript:(function(){let f=prompt('Font size:', '24px');if(f){let s=document.createElement('style');s.innerHTML='* { font-size: '+f+' !important; }';document.head.appendChild(s);}})();">
-  <h3>Change Font Size</h3>
-  <p>Change the font size for all elements on the page.</p>
-</div>
-
-
-    <div class="cardB9" data-command="javascript: (function(){const elems=prompt('Enter CSS selector to log elements to console:','*');if(elems)console.log(document.querySelectorAll(elems));alert('Elements logged to console.');})()">
-      <h3>Log Elements</h3>
-      <p>Inspect selected elements in the console.</p>
-    </div>
-
-    <div class="cardB9" data-command="javascript:(function(){document.body.style.filter=(document.body.style.filter==='invert(1)')?'invert(0)':'invert(1)';})();">
-  <h3>Invert</h3>
-  <p>Invert all colors on the current page.</p>
-</div>
-
-    <div class="cardB9" data-command="javascript: (function(){document.querySelectorAll('*').forEach(el=>el.setAttribute('data-debug','true'));alert('Debug attributes added.');})()">
-      <h3>Debug Attributes</h3>
-      <p>Mark all elements for inspection in DevTools.</p>
-    </div>
-
-    <div class="cardB9" data-command="javascript: (function(){const css=prompt('Enter custom CSS to inject:','body{border:5px solid red}');if(css){let s=document.createElement('style');s.textContent=css;document.head.appendChild(s);alert('CSS applied!');}})()">
-      <h3>Inject CSS</h3>
-      <p>Add custom CSS to the page instantly.</p>
-    </div>
-
- <div class="cardB9" data-command="javascript: (function(){const html=prompt('Enter HTML to inject:','&lt;div style=&quot;font-size:24px&quot;&gt;Hello World!&lt;/div&gt;');if(html){const container=document.createElement('div');container.innerHTML=html;document.body.appendChild(container);alert('HTML injected!');}})()">
-  <h3>Inject HTML</h3>
-  <p>Add any HTML snippet to the page instantly.</p>
-</div>
-
- <!-- <div class="cardB9" data-command="">
-  <h3>Untitled command</h3>
-  <p>Paragraph text...</p>
-</div> -->
-
-
-    <div class="cardB9" data-command="javascript: (function(){const el=prompt('Enter CSS selector to show:', '*');if(el)document.querySelectorAll(el).forEach(e=>e.style.display='');})()">
-      <h3>Show Elements</h3>
-      <p>Reveal elements hidden on the page.</p>
-    </div>
-
-<div class="cardB9" data-command="javascript: (function(){
-  if(window.__cursorRain){
-    clearInterval(window.__cursorRain);
-    window.removeEventListener('keydown', window.__cursorRainStop);
-    window.__cursorRain=null;
-    alert('Emoji rain stopped');
-    return;
-  }
-  const emojis=['✨','🌟','💫','🔥','🌈','⭐','❄️','🌸','🍀','🍁','🌙','💖','🎈','🎉','🪩','💎','⚡','☀️','🌊','🍂','🎵','🦋','🪶','🌺','💀','👻','🎃','💥','💨','🌹','🌻','🌼','🍄','🍎','🍓','🍇','🍉','🍌','🍪','🍭','🍬','🎂','🎁','❤️','💚','💙','💜','🖤','🤍','🤎','😀','😎','🤩','😈','👾','🤖','🧠','💡','🪙','⚙️'];
-  window.__cursorRainStop=function(e){if(e.key==='Escape'){clearInterval(window.__cursorRain);window.__cursorRain=null;window.removeEventListener('keydown',window.__cursorRainStop);alert('Emoji rain stopped');}};
-  window.addEventListener('keydown',window.__cursorRainStop);
-  window.__cursorRain=setInterval(()=>{
-    let s=document.createElement('div');
-    s.textContent=emojis[Math.floor(Math.random()*emojis.length)];
-    s.style.position='fixed';
-    s.style.left=Math.random()*innerWidth+'px';
-    s.style.top='0';
-    s.style.fontSize=(24+Math.random()*16)+'px';
-    s.style.pointerEvents='none';
-    s.style.zIndex='999999';
-    s.style.opacity='1';
-    document.body.appendChild(s);
-    let y=0;
-    let fall=setInterval(()=>{
-      y+=5;
-      s.style.top=y+'px';
-      s.style.transform='rotate('+y+'deg)';
-      s.style.opacity=(1 - y/innerHeight).toString();
-      if(y>innerHeight){s.remove();clearInterval(fall);}
-    },16);
-  }, 120);
-  alert('Emoji rain started — press ESC to stop.');
-})();">
-  <h3>Emoji Rain</h3>
-  <p>Make emojis rain down your page until you press ESC to stop.</p>
-</div>
-<div class="cardB9" data-command="javascript: (function(){window.__effects=window.__effects||[];document.body.style.transition='all .5s';document.body.style.filter='contrast(2) saturate(2)';window.__effects.push({reset:()=>{document.body.style.filter='';}});if(!window.__escHandler){window.__escHandler=function(e){if(e.key==='Escape'){document.querySelectorAll('.__overlay').forEach(o=>o.remove());document.body.style.transform='';document.body.style.filter='';document.body.style.background='';window.__effects.forEach(a=>{if(a.reset)a.reset();else if(a instanceof HTMLElement)a.remove();else clearInterval(a)});window.__effects=[];window.__sounds?.forEach(s=>{s.pause();s.currentTime=0;});window.__sounds=[];}};window.addEventListener('keydown',window.__escHandler);}})();">
-  <h3>Vivid Boost</h3>
-  <p>Double contrast and color for a bright pop effect until ESC is pressed.</p>
-</div>
-
-
-<div class="cardB9" data-command="javascript: (function(){window.__soundPlayers=window.__soundPlayers||[];let a=new Audio('https://github.com/Jamesy-tech/sound-bookmarklets/raw/main/metal-pipe.mp3');a.play();window.__soundPlayers.push(a);window.onkeydown=function(e){if(e.key==='Escape'){window.__soundPlayers.forEach(s=>{s.pause();s.currentTime=0;});window.__soundPlayers=[];}}})();">
-  <h3>[Sound] Metal Pipe</h3>
-  <p>Play sound 'metal-pipe.mp3'</p>
-</div>
-
-<div class="cardB9" data-command="javascript: (function(){window.__soundPlayers=window.__soundPlayers||[];let a=new Audio('https://github.com/Jamesy-tech/sound-bookmarklets/raw/main/let-me-know.mp3');a.play();window.__soundPlayers.push(a);window.onkeydown=function(e){if(e.key==='Escape'){window.__soundPlayers.forEach(s=>{s.pause();s.currentTime=0;});window.__soundPlayers=[];}}})();">
-  <h3>[Sound] Let Me Know</h3>
-  <p>Play sound 'let-me-know.mp3'.</p>
-</div>
-
-<div class="cardB9" data-command="javascript: (function(){window.__soundPlayers=window.__soundPlayers||[];let a=new Audio('https://github.com/Jamesy-tech/sound-bookmarklets/raw/main/vine-boom.mp3');a.play();window.__soundPlayers.push(a);window.onkeydown=function(e){if(e.key==='Escape'){window.__soundPlayers.forEach(s=>{s.pause();s.currentTime=0;});window.__soundPlayers=[];}}})();">
-  <h3>[Sound] Vine Boom</h3>
-  <p>Play sound 'vine-boom.mp3'.</p>
-</div>
-
-<div class="cardB9" data-command="javascript: (function(){window.__soundPlayers=window.__soundPlayers||[];let a=new Audio('https://github.com/Jamesy-tech/sound-bookmarklets/raw/main/get-out.mp3');a.play();window.__soundPlayers.push(a);window.onkeydown=function(e){if(e.key==='Escape'){window.__soundPlayers.forEach(s=>{s.pause();s.currentTime=0;});window.__soundPlayers=[];}}})();">
-  <h3>[Sound] Get Out</h3>
-  <p>Play sound 'get-out.mp3'.</p>
-</div>
-
-<div class="cardB9" data-command="javascript: (function(){window.__soundPlayers=window.__soundPlayers||[];let a=new Audio('https://github.com/Jamesy-tech/sound-bookmarklets/raw/main/discord-call.mp3');a.play();window.__soundPlayers.push(a);window.onkeydown=function(e){if(e.key==='Escape'){window.__soundPlayers.forEach(s=>{s.pause();s.currentTime=0;});window.__soundPlayers=[];}}})();">
-  <h3>[Sound] Discord Call</h3>
-  <p>Play sound 'discord-call.mp3'.</p>
-</div>
-
-<div class="cardB9" data-command="javascript: (function(){window.__soundPlayers=window.__soundPlayers||[];let a=new Audio('https://github.com/Jamesy-tech/sound-bookmarklets/raw/main/discord-notification.mp3');a.play();window.__soundPlayers.push(a);window.onkeydown=function(e){if(e.key==='Escape'){window.__soundPlayers.forEach(s=>{s.pause();s.currentTime=0;});window.__soundPlayers=[];}}})();">
-  <h3>[Sound] Discord Notification</h3>
-  <p>Play sound 'discord-notification.mp3'.</p>
-</div>
-
-<div class="cardB9" data-command="javascript: (function(){window.__soundPlayers=window.__soundPlayers||[];let a=new Audio('https://github.com/Jamesy-tech/sound-bookmarklets/raw/main/roblox-news-guy.mp3');a.play();window.__soundPlayers.push(a);window.onkeydown=function(e){if(e.key==='Escape'){window.__soundPlayers.forEach(s=>{s.pause();s.currentTime=0;});window.__soundPlayers=[];}}})();">
-  <h3>[Sound] Roblox News Guy</h3>
-  <p>Play sound 'roblox-news-guy.mp3'.</p>
-</div>
-
-<div class="cardB9" data-command="javascript: (function(){window.__soundPlayers=window.__soundPlayers||[];let a=new Audio('https://github.com/Jamesy-tech/sound-bookmarklets/raw/main/rizz.mp3');a.play();window.__soundPlayers.push(a);window.onkeydown=function(e){if(e.key==='Escape'){window.__soundPlayers.forEach(s=>{s.pause();s.currentTime=0;});window.__soundPlayers=[];}}})();">
-  <h3>[Sound] Rizz</h3>
-  <p>Play sound 'rizz.mp3'.</p>
-</div>
-
-<div class="cardB9" data-command="javascript: (function(){window.__soundPlayers=window.__soundPlayers||[];let a=new Audio('https://github.com/Jamesy-tech/sound-bookmarklets/raw/main/what.mp3');a.play();window.__soundPlayers.push(a);window.onkeydown=function(e){if(e.key==='Escape'){window.__soundPlayers.forEach(s=>{s.pause();s.currentTime=0;});window.__soundPlayers=[];}}})();">
-  <h3>[Sound] What</h3>
-  <p>Play sound 'what.mp3'.</p>
-</div>
-
-<div class="cardB9" data-command="javascript: (function(){window.__soundPlayers=window.__soundPlayers||[];let a=new Audio('https://github.com/Jamesy-tech/sound-bookmarklets/raw/main/what-da-dog-doin.mp3');a.play();window.__soundPlayers.push(a);window.onkeydown=function(e){if(e.key==='Escape'){window.__soundPlayers.forEach(s=>{s.pause();s.currentTime=0;});window.__soundPlayers=[];}}})();">
-  <h3>[Sound] what da dog doin?</h3>
-  <p>Play sound 'what-da-dog-doin.mp3'.</p>
-</div>
-
-<div class="cardB9" data-command="javascript: (function(){window.__soundPlayers=window.__soundPlayers||[];let a=new Audio('https://github.com/Jamesy-tech/sound-bookmarklets/raw/main/ishowspeed-screaming.mp3');a.play();window.__soundPlayers.push(a);window.onkeydown=function(e){if(e.key==='Escape'){window.__soundPlayers.forEach(s=>{s.pause();s.currentTime=0;});window.__soundPlayers=[];}}})();">
-  <h3>[Sound] IShowSpeed Screaming</h3>
-  <p>Play sound 'ishowspeed-screaming.mp3'.</p>
-</div>
-
-<div class="cardB9" data-command="javascript: (function(){window.addEventListener('keydown',e=>{if(e.key==='Escape'){document.body.style.filter='';}});let b=document.body;if(b.style.filter.includes('blur')){b.style.filter='';}else{b.style.filter='blur(5px)';}})();">
-  <h3>Blur Page</h3>
-  <p>Toggle blur effect.</p>
-</div>
-
-<div class="cardB9" data-command="javascript:(()=>{let els=[...document.querySelectorAll('a,button,[onclick]')];els.forEach(e=>e.style.outline='2px solid red');document.addEventListener('keydown',e=>{if(e.key==='Escape')els.forEach(e=>e.style.outline='')})})();">
-  <h3>Highlight Clickable Elements</h3>
-  <p>Highlight all clickable elements on the current page.</p>
-</div>
-
-<div class="cardB9" data-command="javascript:(()=>{let f=e=>e.target.remove();document.addEventListener('click',f);document.addEventListener('keydown',e=>{if(e.key==='Escape')document.removeEventListener('click',f)})})();">
-  <h3>Delete Anything You Click</h3>
-  <p>Deletes every element you click on the current page.</p>
-</div>
-
-<div class="cardB9" data-command="javascript:(()=>{let f=e=>e.target.parentNode.appendChild(e.target.cloneNode(true));document.addEventListener('click',f);document.addEventListener('keydown',e=>{if(e.key==='Escape')document.removeEventListener('click',f)})})();">
-  <h3>Duplicate Anything You Click</h3>
-  <p>Duplicates every element you click on the current page.</p>
-</div>
-
-<div class="cardB9" data-command="javascript:(()=>{let c=document.createElement('canvas');c.style='position:fixed;top:0;left:0;z-index:9999';document.body.appendChild(c);let x=c.getContext('2d');c.width=innerWidth;c.height=innerHeight;let d=Array(~~(c.width/10)).fill(1),i=setInterval(()=>{x.fillStyle='rgba(0,0,0,0.05)';x.fillRect(0,0,c.width,c.height);x.fillStyle='#0F0';x.font='10px monospace';d.forEach((y,j)=>{let t='01'[Math.random()*2|0];x.fillText(t,j*10,y*10);d[j]=(y*10>c.height&&Math.random()>0.975)?0:y+1})},33);document.addEventListener('keydown',e=>{if(e.key==='Escape'){clearInterval(i);c.remove()}})})();">
-  <h3>Matrix Rain</h3>
-  <p>Create an animated binary rain effect on the current page.</p>
-</div>
-
-<div class="cardB9" data-command="javascript:(()=>{document.querySelectorAll('link,style').forEach(e=>e.remove());document.addEventListener('keydown',e=>{if(e.key==='Escape')alert('CSS removed')})})();">
-  <h3>Disable CSS</h3>
-  <p>Remove all styling on the current page.</p>
-</div>
-
-<div class="cardB9" data-command="javascript:(()=>{let s=0,f=()=>{s++;document.title='Score: '+s};document.addEventListener('click',f);document.addEventListener('keydown',e=>{if(e.key==='Escape')document.removeEventListener('click',f)})})();">
-  <h3>Click Game</h3>
-  <p>The page's title displays how many times you've clicked on the page.</p>
-</div>
-
-<div class="cardB9" data-command="javascript:(function(){document.querySelectorAll('*').forEach(el=>{el.onmousedown=e=>{e.preventDefault();e.stopPropagation();let rect=el.getBoundingClientRect();let sX=e.clientX-rect.left,sY=e.clientY-rect.top;el.style.position='fixed';el.style.zIndex='1000';el.style.left=rect.left+'px';el.style.top=rect.top+'px';el.style.width=rect.width+'px';document.onmousemove=m=>{el.style.left=(m.clientX-sX)+'px';el.style.top=(m.clientY-sY)+'px'};document.onmouseup=()=>{document.onmousemove=null;document.onmouseup=null}}})})();">
-  <h3>Draggable Elements</h3>
-  <p>Drag every element on the page to wherever you want!</p>
-</div>
-
-<div class="cardB9" data-command="javascript:(()=>{let els=[...document.querySelectorAll('body *')],vx=[],vy=[],colors=['#f00','#0f0','#00f','#ff0','#0ff','#f0f','#fff'],z=9999;els.forEach((el,i)=>{el.style.position='relative';vx[i]=(Math.random()*10-5);vy[i]=(Math.random()*10-5);el.style.transition='transform 0.05s';});let i=setInterval(()=>{els.forEach((el,j)=>{let t=el.style.transform.match(/translate\(([-\d.]+)px,([-\d.]+)px\)/);let x=t?parseFloat(t[1]):0,y=t?parseFloat(t[2]):0;x+=vx[j];y+=vy[j];if(y>window.innerHeight-50||y<-50)vy[j]*=-1;if(x>window.innerWidth-50||x<-50)vx[j]*=-1;el.style.transform=`translate(${x}px,${y}px)`;el.style.color=colors[Math.floor(Math.random()*colors.length)];el.style.zIndex=++z;});},50);document.addEventListener('click',e=>{let r=50;vx.forEach((v,j)=>{if(els[j].getBoundingClientRect().x<e.clientX+r&&els[j].getBoundingClientRect().x>e.clientX-r&&els[j].getBoundingClientRect().y<e.clientY+r&&els[j].getBoundingClientRect().y>e.clientY-r){vx[j]=(Math.random()*20-10);vy[j]=(Math.random()*20-10);}});});document.addEventListener('keydown',e=>{if(e.key==='Escape'){clearInterval(i);els.forEach(el=>{el.style.transform='';el.style.color='';el.style.zIndex=''});}})})();">
-  <h3>A W E S O M E</h3>
-  <p>[Try running this 7 times] Your page will have a dance party when you run this...</p>
-</div>
-
-<div class="cardB9" data-command="const url = prompt('Image URL', 'https://raw.githubusercontent.com/Jamesy-tech/BookUI/main/pixel-cursor-downsized.png');
-  document.body.style.setProperty('cursor', 'url(' + url + '), auto', 'important');
-">
-  <h3>Custom Cursor</h3>
-  <p>Change the cursor on the current page.</p>
-</div>
-
-<div class="cardB9" data-command="(function(){window.__effects=window.__effects||[];document.body.style.setProperty('cursor','none','important');let u=prompt('Image URL','https://raw.githubusercontent.com/Jamesy-tech/BookUI/main/pixel-cursor.png');let c=document.createElement('img');c.src=u;c.style.cssText='position:fixed;pointer-events:none;z-index:9999;width:32px;height:32px;transform:translate(-50%,-50%) rotate(0deg);transition:transform 0.05s linear';document.body.appendChild(c);window.__effects.push(c);let pos={x:window.innerWidth/2,y:window.innerHeight/2},target={x:window.innerWidth/2,y:window.innerHeight/2},lastPos={x:pos.x,y:pos.y},idleTimeout,lastAngle=0,idle=true;function move(e){target.x=e.clientX;target.y=e.clientY;idle=false;if(idleTimeout)clearTimeout(idleTimeout);idleTimeout=setTimeout(function(){idle=true;},200);}function animate(){pos.x+=(target.x-pos.x)*0.2;pos.y+=(target.y-pos.y)*0.2;let dx=pos.x-lastPos.x,dy=pos.y-lastPos.y;if(dx||dy)lastAngle=Math.atan2(-dy,-dx)*180/Math.PI;c.style.transform='translate(-50%,-50%) rotate('+(idle?lastAngle:lastAngle)+'deg)';c.style.left=pos.x+'px';c.style.top=pos.y+'px';lastPos.x=pos.x;lastPos.y=pos.y;requestAnimationFrame(animate);}window.addEventListener('mousemove',move);requestAnimationFrame(animate);window.__effects.push({reset:()=>{window.removeEventListener('mousemove',move);c.remove();document.body.style.cursor='';}});if(!window.__escHandler){window.__escHandler=function(e){if(e.key==='Escape'){window.__effects.forEach(a=>{if(a.reset)a.reset();else if(a instanceof HTMLElement)a.remove();else clearInterval(a)});window.__effects=[];window.__sounds?.forEach(s=>{s.pause();s.currentTime=0;});window.__sounds=[];}};window.addEventListener('keydown',window.__escHandler);}})();">
-  <h3>Custom Cursor 2</h3>
-  <p>Change the cursor on the current page with a smooth moving effect.</p>
-</div>
-
-
-<div class="cardB9" data-command="javascript:void(window.location.href = 'about:blank'); (1)">
-  <h3>Blank Page</h3>
-  <p>Open a plain white blank page.</p>
-</div>
-
- <div class="cardB9" data-command="javascript:(function(){var url=prompt('Website URL');if(!url)return;if(!/^https?:\/\//i.test(url))url='https://'+url;var w=window.open('about:blank','_blank');if(w){w.document.write('<!DOCTYPE html><html><head><title>'+url+'</title><style>html,body,iframe{margin:0;padding:0;width:100%;height:100%;border:0;overflow:hidden;}</style></head><body><iframe src=&quot;'+url+'&quot;></iframe></body></html>');w.document.close();alert('Warning: Not all websites will work due to security restrictions.');}else{alert('Popup blocked.');}})();">
-  <h3>Stealth Tab</h3>
-  <p>Open a website inside a hidden about:blank tab.</p>
-</div> 
-
-<!-- <div class="cardB9" data-command="javascript: // command">
-  <h3>Example Command</h3>
-  <p>Description text...</p>
-</div> -->
-
-<!-- Last time I checked, it doesn't work <div class="cardB9" data-command='javascript:(function(){var js=document.body.appendChild(document.createElement("script"));js.onerror=function(){alert("Sorry, the script could not be loaded.")};js.src="https://rawgit.com/Krazete/bookmarklets/master/tri.js"})();'>
-  <h3>3D Webpage</h3>
-  <p>Make the current page into a 3D form.</p>
-</div> -->
-      
-         <div class="cardB9" id="addCommandCard" onclick="addCommand()"><center><h1 class="cardPlus">+</h1></center></div>
-
   </div>
+
 </div>
 
 <div class="inputContainerF1">
