@@ -465,3 +465,7 @@ body.theme-c00lgui {
     padding-left: 72px;
     box-sizing: border-box;
 }
+
+.bodyY2 {
+    position: relative;
+}
