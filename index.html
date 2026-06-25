@@ -7,11 +7,33 @@
 
 <meta name="description" content="BookUI is a free bookmarklet command panel with pre-made commands, tools, and scripts for websites. No coding knowledge needed, but it's even better if you can code 👀">
 
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded" rel="stylesheet">
+
 <link rel="stylesheet" href="style.css">
 <link rel="stylesheet" href="themes.css">
 <link rel="icon" href="icon3.png">
 
 <style>
+
+</style>
+
+<style>
+
+.sideNavX9 {
+    position: fixed !important;
+    top: 62px !important;
+    left: 8px !important;
+    border-radius:8px;
+    width: 54px !important;
+    padding-top:4px;
+    height: calc(92vh - 70px) !important;
+    transition:0.3s;
+}
+
+.sideNavX9:hover {
+    background: black !important;
+    width: 235px !important;
+}
 
 </style>
 
@@ -567,6 +589,45 @@
 
 <div class="inputContainerF1">
   <input class="commandInputT5" id="commandInput" type="text" placeholder="Execute a command...">
+</div>
+
+<div class="sideNavX9">
+    <a href="https://jamesy-tech.github.io/BookUI/dashboard.html" class="sideItemX9">
+        <span class="material-symbols-rounded">dashboard</span>
+        <span class="sideTextX9">Dashboard</span>
+    </a>
+
+    <a href="#" onclick="addCommand()" class="sideItemX9">
+        <span class="material-symbols-rounded">add_circle</span>
+        <span class="sideTextX9">New Command</span>
+    </a>
+
+   <!--     <a href="#" class="sideItemX9">
+        <span class="material-symbols-rounded">palette</span>
+        <span class="sideTextX9">Themes</span>
+    </a> -->
+ 
+        <a href="https://jamesy-tech.github.io/protect/index.html?from=scripts&redirect=https://jamesy-tech.github.io/BookUI/dashboard.html?page=scripts';" class="sideItemX9">
+        <span class="material-symbols-rounded">terminal</span>
+        <span class="sideTextX9">Scripts</span>
+    </a>
+
+    <a href="https://github.com/Jamesy-tech/BookUI" class="sideItemX9">
+        <span class="material-symbols-rounded">folder_code</span>
+        <span class="sideTextX9">GitHub Repository</span>
+    </a>
+
+           <a href="https://jamesy-tech.github.io/BookUI/dashboard.html?page=suggestions" class="sideItemX9">
+        <span class="material-symbols-rounded">prompt_suggestion</span>
+        <span class="sideTextX9">Suggest feature</span>
+    </a>
+
+
+        <a href="https://github.com/Jamesy-tech/BookUI/blob/main/README.md" class="sideItemX9">
+        <span class="material-symbols-rounded">help_center</span>
+        <span class="sideTextX9">Help</span>
+    </a>
+
 </div>
 
 <script src="script.js"></script>
