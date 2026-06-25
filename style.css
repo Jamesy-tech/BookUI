@@ -331,14 +331,13 @@ body.theme-c00lgui {
 
 
 
-
-
 .sideNavX9 {
-    position: fixed;
-    top: 62px;
-    left: 0px;
-    width: 52px;
-    height: calc(100vh - 120px);
+    position: relative !important;
+    top: unset !important;
+    left: unset !important;
+    width: 52px !important;
+    height: auto !important;
+    flex-shrink: 0;
     background: #121212;
     border: 1px solid var(--primary-color);
     border-radius: 20px;
@@ -347,13 +346,14 @@ body.theme-c00lgui {
     gap: 6px;
     padding: 8px;
     overflow: hidden;
-    transition: width .28s cubic-bezier(.4,0,.2,1), box-shadow .28s ease;
+    transition: width .28s cubic-bezier(.4,0,.2,1);
     z-index: 1000;
+    margin: 8px;
 }
 
 .sideNavX9:hover {
     width: 240px;
-    box-shadow: 0 0 40px rgba(0,0,0,.5);
+    background: #121212 !important;
 }
 
 .sideItemX9 {
@@ -462,8 +462,8 @@ body.theme-c00lgui {
     flex: 1;
     overflow-y: auto;
     padding: 20px;
-    padding-left: 72px;
     box-sizing: border-box;
+    min-width: 0;
 }
 
 .bodyY2 {
