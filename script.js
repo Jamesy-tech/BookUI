@@ -183,11 +183,19 @@ if (window.location.href.includes("jamesy-tech.github.io/BookUI")) {
 
   console.log("URL contains 'BookUI'!")
 
-  document.getElementById("getBookUIBtn").style.display = "";
+ //  document.getElementById("dashboardBtn").style.display = "none";
+
+ document.getElementById("getBookUIBtn").style.display = "";
+
+// var choice = confirm("Redirecting to BookUI installation page.");
+
+//if (choice) {
+//    window.location.href = "https://sites.google.com/view/get-bookui";
+//}
 
 } else {
   console.log("URL does not contain 'BookUI'")
-  document.getElementById("jamesyBookUIContainer").style.cursor = `url(${cursor_url}), auto`;
+  window.top.eval(`document.getElementById("jamesyBookUIContainer").style.cursor = 'url(${cursor_url}), auto';`);
   input.focus();
 }
 
@@ -207,6 +215,16 @@ console.log('2.9');
 var customCommands = {
   "ttrs-hacks": () => alert(`ttrs-hacks
 auto.js: ttrs-hacks_auto`),
+   
+ /* "ttrs-hacks_get-answer": () => {
+    fetch("https://raw.githubusercontent.com/Jamesy-tech/ttrs-hacks/main/get-answer.js")
+      .then(res => res.text())
+      .then(code => {
+        copy(code);
+        document.querySelector('.commandInputT5').value = code;
+      })
+      .catch(err => console.error(err));
+  }, */
 
     "ttrs-hacks_auto": () => {
     fetch("https://raw.githubusercontent.com/Jamesy-tech/ttrs-hacks/main/auto.js")
@@ -308,7 +326,7 @@ input.addEventListener('keydown', e => {
       } catch {}
     } else {
       try {
-        eval(input.value);
+        window.top.eval(input.value);
         input.style.borderColor = 'lime';
       } catch {}
     }
