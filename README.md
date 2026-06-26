@@ -14,7 +14,14 @@ You can run code in it with or without knowing JavaScript. It’s made to be sim
 __Please note BookUI does not work on ALL websites due to security reasons, try it on Google Search, Jamesy Creator, or your favourite News website. BookUI should work on most websites.__
 
 ## How to Get It
-
+-- Option 1 --
+1. Go to the page where the bookmarklet is shared and download **bookmarklet-code.js**. <a href="bookmarklet-code.js">Click here to access it</a>  
+2. Copy the entire JavaScript/code
+3. In your bookmarks bar (may be hidden, try CTRL + SHIFT + B if you can't see it), right click and press "Add Page"
+4. Name it "BookUI"
+5. Paste the code in the URL
+   
+-- Option 2 (May be outdated) --
 1. Go to the page where the bookmarklet is shared and download **bookmarklet.html**. <a href="bookmarklet.html">Click here to access it</a>  
 2. In Chrome, open the Bookmarks Manager by typing this into the address bar:  
    `chrome://bookmarks`  
