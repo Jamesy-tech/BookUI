@@ -342,6 +342,8 @@ body.theme-c00lgui {
     opacity: 0;
     transform: translateX(-10px);
 
+    text-decoration: none !important;
+    
     white-space: nowrap;
 
     transition:
@@ -400,8 +402,6 @@ body.theme-c00lgui {
 .sideItemX9:hover::before{
     height:60%;
 }
-
-
 
 .bodyY2 {
     position: relative;
