@@ -11,7 +11,7 @@ You can run code in it with or without knowing JavaScript. It’s made to be sim
 • Works for both beginners and coders
 • No extensions or installs needed
 
-__Please note BookUI does not work on ALL websites due to security reasons, try it on Google Search, Jamesy Creator, or your favourite News website. BookUI should work on most websites.__
+__Please note BookUI does not work on ALL websites due to security reasons, try it on Google Search, Jamesy-tech, Wikipedia, or your favourite News website. BookUI should work on most websites.__ (Examples where BookUI does NOT work: Google Docs, Google Classroom, YouTube, Discord, Reddit, Instagram, Facebook)
 
 ## How to Get It
 -- Option 1 --
