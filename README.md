@@ -15,7 +15,7 @@ __Please note BookUI does not work on ALL websites due to security reasons, try 
 
 ## How to Get It
 -- Option 1 --
-1. Go to the page where the bookmarklet is shared and download **bookmarklet-code.js**. <a href="bookmarklet-code.js">Click here to access it</a>  
+1. Go to **bookmarklet-code.js**. <a href="bookmarklet-code.js">Click here to access it</a>  
 2. Copy the entire JavaScript/code
 3. In your bookmarks bar (may be hidden, try CTRL + SHIFT + B if you can't see it), right click and press "Add Page"
 4. Name it "BookUI"
