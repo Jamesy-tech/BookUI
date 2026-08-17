@@ -1,0 +1,439 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>BookUI Documentation</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap" rel="stylesheet">
+    <link rel="icon" href="icon3.png">
+    <style>
+
+ * { 
+    font-family: 'Nunito', sans-serif;
+    box-sizing: border-box;
+ }
+
+ html {
+    scroll-behavior: smooth;
+ }
+
+ body {
+    padding: 20px;
+    padding-top:22px;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    background-color: #ffffff;
+ }
+
+ .page_wrapper {
+    width: 100%;
+    max-width: 1100px;
+ }
+
+ .title {
+    font-size: 22px;
+    cursor: pointer;
+    font-weight: bold;
+ }
+
+ .title_container {
+    display: inline-block;
+    padding-right: 24px;
+ }
+
+ .search_container {
+    display: inline-block;
+ }
+
+ .searchbar {
+    padding: 7px 12px;
+    width: 300px;
+    border: solid black 1px;
+    border-radius: 1.5px;
+    outline: none;
+    transition: border 0.2s ease, outline 0.2s ease;
+    margin-left:5px;
+ }
+
+ .searchbar:focus {
+    border: solid dodgerblue 1px;
+    border-radius: 1.5px;
+    outline: solid dodgerblue 1px;
+ }
+
+ .top_nav {
+    padding-left: 7px;
+    display: flex;
+    align-items: center;
+    width: 100%;
+    padding-bottom: 15px;
+    border-bottom: 1px solid #eee;
+ }
+
+ .on_the_right_container {
+    margin-left: auto;
+ }
+
+ .item {
+    display: inline-block;
+    font-size: 18px;
+    padding: 5px 10px;
+    text-decoration: none;
+    color: black;
+    transition: color 0.2s ease;
+ }
+
+ .item:hover {
+    color: dodgerblue;
+ }
+
+ .main_container {
+    display: flex;
+    gap: 40px;
+    margin-top: 25px;
+ }
+
+ .side_nav {
+    background: rgb(251, 251, 251);
+    width: 250px;
+    height: fit-content;
+    padding-top: 14px;
+    padding-bottom: 14px;
+    border-radius: 10px;
+    position: sticky;
+    top: 20px;
+    flex-shrink: 0;
+ }
+
+ .side_nav .option {
+    display: block;
+    width: 100%;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    padding: 12px 20px;
+    text-decoration: none;
+    color: #333;
+    font-size: 16px;
+    border-left: 3px solid transparent;
+ }
+
+ .side_nav .option:hover {
+    background: whitesmoke;
+    color: dodgerblue;
+    padding-left: 25px;
+ }
+
+ .side_nav .option.active {
+    color: dodgerblue;
+    font-weight: bold;
+    background: #f0f7ff;
+    border-left: 3px solid dodgerblue;
+ }
+
+ .side_nav .option.hidden {
+    display: none;
+ }
+
+ .body {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 60px;
+    padding-bottom: 100px;
+ }
+
+ .section {
+    scroll-margin-top: 40px;
+    transition: opacity 0.3s ease;
+ }
+
+ .section.hidden {
+    display: none;
+ }
+
+ .body_title {
+    font-size: 32px;
+    display: block;
+    font-weight: 700;
+    margin-bottom: 12px;
+ }
+
+ .body_text {
+    font-size: 17px;
+    line-height: 1.6;
+    color: #444;
+    display: block;
+ }
+
+ .feature_list {
+    margin: 10px 0;
+    padding-left: 20px;
+ }
+
+ .feature_list li {
+    margin-bottom: 8px;
+    font-size: 17px;
+    color: #444;
+ }
+
+ .notice_box {
+    background: #fff9e6;
+    border-left: 4px solid #ffc107;
+    padding: 15px;
+    border-radius: 4px;
+    margin: 15px 0;
+ }
+
+ .no_results {
+    display: none;
+    font-size: 18px;
+    color: #888;
+    padding: 40px 0;
+ }
+
+ mark {
+    background-color: #ffe066;
+    color: inherit;
+    padding: 0 2px;
+    border-radius: 2px;
+ }
+
+ code {
+    background: #f4f4f4;
+    padding: 2px 6px;
+    border-radius: 4px;
+    font-family: monospace;
+ }
+
+    </style>
+</head>
+<body>
+
+  <div class="page_wrapper">
+
+    <div class="top_nav">
+        <div class="title_container" onclick="window.location.href = 'index.html';">
+            <span class="title">BookUI Documentation</span>
+        </div>
+
+        <div class="search_container">
+            <input id="searchbar" class="searchbar" placeholder="Search the documentation..." type="search">
+        </div>
+
+        <div class="on_the_right_container">
+            <a href="https://jamesy-tech.github.io/AddBookUI" class="item" target="_blank">Add BookUI</a>
+            <a href="https://jamesy-tech.github.io/BookUI" class="item" target="_blank">Command Panel</a>
+        </div>
+    </div>
+
+    <div class="main_container">
+
+        <div class="side_nav">
+          <a href="#overview" class="option active" data-section="overview">Overview</a>
+          <a href="#features" class="option" data-section="features">Features</a>
+          <a href="#compatibility" class="option" data-section="compatibility">Compatibility</a>
+          <a href="#how-to-get-it" class="option" data-section="how-to-get-it">How to Get It</a>
+          <a href="#what-it-does" class="option" data-section="what-it-does">What It Does</a>
+          <a href="#example-uses" class="option" data-section="example-uses">Example Uses</a>
+          <a href="#author" class="option" data-section="author">Author</a>
+        </div>
+
+        <div class="body">
+
+          <div id="no-results" class="no_results">
+            No matching documentation sections found.
+          </div>
+
+          <div id="overview" class="section">
+            <br>
+            <span class="body_title">BookUI Command Panel</span>
+            <span class="body_text">
+              BookUI is a bookmarklet that opens a command panel inside your browser. You can run code in it with or without knowing JavaScript. It's made to be simple to use and quick to set up.
+              <br><br>
+              <a href="https://jamesy-tech.github.io/BookUI" target="_blank" style="color: dodgerblue;">https://jamesy-tech.github.io/BookUI</a>
+            </span>
+          </div>
+
+          <div id="features" class="section">
+             <span class="body_title">Features</span>
+             <span class="body_text">
+               <ul class="feature_list">
+                 <li>Opens a command-style panel on any page</li>
+                 <li>Lets you run JavaScript instantly</li>
+                 <li>Works for both beginners and coders</li>
+                 <li>No extensions or installs needed</li>
+               </ul>
+             </span>
+          </div>
+
+          <div id="compatibility" class="section">
+             <span class="body_title">Website Compatibility</span>
+             <div class="notice_box">
+               <span class="body_text">
+                 <strong>Please note:</strong> BookUI does not work on ALL websites due to security reasons. Try it on Google Search, Jamesy-tech, Wikipedia, or your favorite news website. BookUI should work on most websites.
+                 <br><br>
+                 Examples where BookUI does <em>NOT</em> work: Google Docs, Google Classroom, YouTube, Discord, Reddit, Instagram, Facebook.
+               </span>
+             </div>
+          </div>
+
+          <div id="how-to-get-it" class="section">
+             <span class="body_title">How to Get It</span>
+             <span class="body_text">
+               1. Go to <a href="https://jamesy-tech.github.io/AddBookUI" target="_blank" style="color: dodgerblue;">https://jamesy-tech.github.io/AddBookUI</a><br>
+               2. Drag &amp; drop the BookUI button into your browser's bookmarks bar.
+               <br><br>
+               You're done!
+             </span>
+          </div>
+
+          <div id="what-it-does" class="section">
+             <span class="body_title">What It Does</span>
+             <span class="body_text">
+               When you click on BookUI, it adds a small panel that appears over the page. You can type code in it or use the buttons to perform actions. Try having a bit of fun editing Google.
+             </span>
+          </div>
+
+          <div id="example-uses" class="section">
+             <span class="body_title">Example Uses</span>
+             <span class="body_text">
+               <ul class="feature_list">
+                 <li>Try small JavaScript commands</li>
+                 <li>Edit or test code on a website</li>
+                 <li>Learn how code affects pages directly</li>
+               </ul>
+              <!-- BookUI — a simple bookmarklet that helps you run and test code right from your browser.-->
+             </span>
+          </div>
+
+          <div id="author" class="section">
+             <span class="body_title">Author</span>
+             <span class="body_text">
+               Made by JamesyDeveloper (<strong>@Jamesy-tech</strong> on GitHub).
+             </span>
+          </div>
+
+        </div>
+
+    </div>
+
+  </div>
+
+  <script>
+    const options = document.querySelectorAll('.side_nav .option');
+    const sections = document.querySelectorAll('.section');
+    const searchInput = document.getElementById('searchbar');
+    const noResultsMsg = document.getElementById('no-results');
+
+    // Store original text contents for search highlights
+    const originalTextMap = new Map();
+    sections.forEach(section => {
+      originalTextMap.set(section, section.innerHTML);
+    });
+
+    // Handle Active Nav Highlight on Scroll
+    window.addEventListener('scroll', () => {
+      let currentSection = '';
+
+      sections.forEach(section => {
+        if (!section.classList.contains('hidden')) {
+          const sectionTop = section.offsetTop;
+          if (window.scrollY >= sectionTop - 120) {
+            currentSection = section.getAttribute('id');
+          }
+        }
+      });
+
+      options.forEach(option => {
+        option.classList.remove('active');
+        if (option.getAttribute('href') === `#${currentSection}`) {
+          option.classList.add('active');
+        }
+      });
+    });
+
+    // Real-Time Search Logic
+    searchInput.addEventListener('input', (e) => {
+      const searchTerm = e.target.value.trim().toLowerCase();
+
+      let visibleCount = 0;
+
+      sections.forEach(section => {
+        const originalHTML = originalTextMap.get(section);
+        const sectionId = section.getAttribute('id');
+        const navLink = document.querySelector(`.side_nav .option[data-section="${sectionId}"]`);
+
+        if (!searchTerm) {
+          // Reset highlights and visibilities
+          section.innerHTML = originalHTML;
+          section.classList.remove('hidden');
+          if (navLink) navLink.classList.remove('hidden');
+          visibleCount++;
+        } else {
+          // Extract searchable plain text
+          const tempDiv = document.createElement('div');
+          tempDiv.innerHTML = originalHTML;
+          const textContent = tempDiv.textContent.toLowerCase();
+
+          if (textContent.includes(searchTerm)) {
+            section.classList.remove('hidden');
+            if (navLink) navLink.classList.remove('hidden');
+            visibleCount++;
+
+            // Highlight matches
+            highlightTextNode(section, searchTerm);
+          } else {
+            section.classList.add('hidden');
+            if (navLink) navLink.classList.add('hidden');
+            section.innerHTML = originalHTML; // Reset HTML structure
+          }
+        }
+      });
+
+      // Show/Hide "No Results" Message
+      if (visibleCount === 0) {
+        noResultsMsg.style.display = 'block';
+      } else {
+        noResultsMsg.style.display = 'none';
+      }
+    });
+
+    // Text Node Search Highlighter helper
+    function highlightTextNode(element, term) {
+      const walker = document.createTreeWalker(element, NodeFilter.SHOW_TEXT, null, false);
+      const textNodes = [];
+
+      while (walker.nextNode()) {
+        textNodes.push(walker.currentNode);
+      }
+
+      textNodes.forEach(node => {
+        const text = node.nodeValue;
+        const lowerText = text.toLowerCase();
+        const index = lowerText.indexOf(term);
+
+        if (index !== -1 && node.parentNode.nodeName !== 'MARK' && node.parentNode.nodeName !== 'SCRIPT') {
+          const parent = node.parentNode;
+          const before = text.substring(0, index);
+          const match = text.substring(index, index + term.length);
+          const after = text.substring(index + term.length);
+
+          const frag = document.createDocumentFragment();
+          if (before) frag.appendChild(document.createTextNode(before));
+
+          const mark = document.createElement('mark');
+          mark.textContent = match;
+          frag.appendChild(mark);
+
+          if (after) frag.appendChild(document.createTextNode(after));
+
+          parent.replaceChild(frag, node);
+        }
+      });
+    }
+  </script>
+
+</body>
+</html>
