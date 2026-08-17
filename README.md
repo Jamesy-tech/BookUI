@@ -1,8 +1,8 @@
-# BookUI+ Command Panel
+# BookUI Command Panel
 
 https://jamesy-tech.github.io/BookUI
 
-BookUI+ is a bookmarklet that opens a command panel inside your browser.  
+BookUI is a bookmarklet that opens a command panel inside your browser.  
 You can run code in it with or without knowing JavaScript. It’s made to be simple to use and quick to set up.
 
 ## Features
