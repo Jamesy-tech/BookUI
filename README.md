@@ -14,7 +14,7 @@ You can run code in it with or without knowing JavaScript. It’s made to be sim
 __Please note BookUI does not work on ALL websites due to security reasons, try it on Google Search, Jamesy-tech, Wikipedia, or your favourite News website. BookUI should work on most websites.__ (Examples where BookUI does NOT work: Google Docs, Google Classroom, YouTube, Discord, Reddit, Instagram, Facebook)
 
 ## How to Get It
-• Go to https://jamesy-tech.github.io/AddBookUI
+• Go to <a href="https://jamesy-tech.github.io/AddBookUI">https://jamesy-tech.github.io/AddBookUI</a><br>
 • Drag & drop the BookUI button into your bookmarks bar
 
 You're done!
